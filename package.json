@@ -79,6 +79,7 @@
     "react-image-gallery": "^0.8.16",
     "react-load-script": "^0.0.6",
     "react-lottie": "^1.2.3",
+    "react-native": "0.66.5",
     "react-pdf": "^4.1.0",
     "react-popover": "^0.5.10",
     "react-qr-code": "^2.0.2",
