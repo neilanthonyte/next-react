@@ -1,0 +1,30 @@
+@import "../../../scss/variables.scss";
+
+.GroupHeading {
+  text-align: center;
+  position: relative;
+  margin: $spacing-md 0;
+
+  h3 {
+    display: inline-block;
+    background: #fff; // match the website
+    padding: $spacing-xs $spacing-md;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $headings-textColor;
+  }
+
+  &::before {
+    width: 600px;
+    max-width: 100%;
+    border-bottom: 2px solid $separators-color;
+    content: "";
+    top: 19px;
+    /* height: 2px; */
+    /* background-color: black; */
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+}

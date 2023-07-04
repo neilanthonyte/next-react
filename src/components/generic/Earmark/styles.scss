@@ -1,0 +1,68 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+$earmark-size: 90px;
+$sqrt-2: 1.4142;
+$earmark-size-wrapper: calc(#{$earmark-size}/#{$sqrt-2});
+
+.Earmark {
+  position: absolute;
+  top: math.div(-$earmark-size, 2);
+  right: math.div(-$earmark-size, 2);
+  height: $earmark-size;
+  width: $earmark-size;
+  transform: rotate(45deg);
+
+  &.-xs {
+    font-size: $standard-size-xs;
+  }
+  &.-sm {
+    font-size: $standard-size-sm;
+  }
+  &.-md {
+    font-size: $standard-size-md;
+  }
+  &.-lg {
+    font-size: $standard-size-lg;
+  }
+
+  &_wrapper {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: $earmark-size-wrapper;
+    width: $earmark-size-wrapper;
+  }
+
+  &_icon {
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    transform: rotate(-45deg);
+  }
+
+  &_one {
+    background-color: lightskyblue;
+  }
+
+  &_two {
+    background-color: lightcoral;
+  }
+
+  &_three {
+    background-color: lightgreen;
+  }
+
+  &_four {
+    background-color: lightyellow;
+  }
+
+  &_five {
+    background-color: lightsalmon;
+  }
+
+  &_six {
+    background-color: lightblue;
+  }
+}

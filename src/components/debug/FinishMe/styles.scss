@@ -1,0 +1,22 @@
+// be just annoying enough that people want to replace it
+@keyframes blinkingText {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgba(white, 0.5);
+  }
+  100% {
+    color: white;
+  }
+}
+
+.FinishMe {
+  background-color: #f00;
+  color: white;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  animation: blinkingText 2s infinite;
+  font-weight: bold;
+}

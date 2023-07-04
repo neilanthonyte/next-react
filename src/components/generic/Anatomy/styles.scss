@@ -1,0 +1,109 @@
+@import "../../../scss/variables.scss";
+
+.anatomy {
+  &.-block {
+    position: relative;
+    min-height: 600px;
+  }
+
+  &.-fullScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &_screen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_description {
+    position: absolute;
+    bottom: $spacing-md;
+    left: $spacing-md;
+    max-width: 400px;
+  }
+
+  &_clickToInteract {
+    $size: 200px;
+    width: $size;
+    height: $size;
+    border: 2px solid #555;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    text-align: center;
+    background-color: rgba(#fff, 0.7);
+
+    span {
+      font-size: $size * 0.15;
+      font-weight: 100;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+  }
+
+  &_exitInteractiveMode {
+    position: absolute;
+    top: $spacing-md;
+    left: $spacing-md;
+  }
+
+  iframe {
+    position: absolute;
+    border: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .placeholder {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+
+    &_spinner {
+      margin-right: 50px;
+    }
+  }
+
+  &_options {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: left;
+
+    > div {
+      padding: 0 0 20px 40px;
+    }
+
+    h4 {
+      color: $color-primary;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+  }
+}

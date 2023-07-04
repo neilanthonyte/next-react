@@ -1,0 +1,14 @@
+@use "sass:math";
+@import "../variables.scss";
+@import "./stdActionSizes.scss";
+
+@mixin pill() {
+  // This is overwritten if a standard sizing prop is provided.
+  border-radius: 16px;
+  @include stdHeights(true);
+
+  padding: math.div($btn-padding, 2) 0.6em;
+  border: 2px solid $color-primary;
+  color: $color-primary !important;
+  font-weight: bold;
+}

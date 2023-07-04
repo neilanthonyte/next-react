@@ -1,0 +1,42 @@
+@import "../../../scss/variables.scss";
+
+.OptionsPopover {
+  &_section + &_section {
+    margin-top: $spacing-sm;
+  }
+  &_section_label {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    color: $color-gray-dark;
+  }
+  &_option {
+    min-width: 140px;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    padding: $spacing-xs;
+    border-radius: 4px;
+    font-size: 0.9em;
+    line-height: 1em;
+    &_label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &_icon {
+      font-size: 1.2em;
+      margin-right: $spacing-xs;
+    }
+    &.-disabled {
+      color: $color-disabled;
+    }
+    &:hover:not(.-disabled) {
+      cursor: pointer;
+      background-color: $color-active;
+      color: $color-active-alt;
+      .OptionsPopover_option_icon {
+        color: $color-active-alt;
+      }
+    }
+  }
+}

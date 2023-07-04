@@ -1,0 +1,92 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+.FilterControl {
+  display: flex;
+  $decoration-size: 18px;
+  font-size: 1em;
+  line-height: $decoration-size;
+
+  &_filter {
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &_decoration {
+      box-sizing: content-box;
+      width: $decoration-size;
+      height: $decoration-size;
+      border-radius: 50%;
+      border: 2px solid $color-gray-dark;
+      margin-right: $spacing-sm;
+      position: relative;
+    }
+
+    &.-active.-condensed {
+      background-color: $color-active;
+      color: white;
+    }
+
+    &.-active &_decoration:before {
+      $active-size: math.div($decoration-size, 1.5);
+      $active-position: math.div($decoration-size, 2) -
+        math.div($active-size, 2);
+      content: "";
+      display: block;
+      width: $active-size;
+      height: $active-size;
+      background-color: $color-active;
+      border-radius: 50%;
+      position: absolute;
+      top: $active-position;
+      left: $active-position;
+    }
+
+    & + & {
+      margin-left: $spacing-lg;
+    }
+
+    &.-condensed {
+      padding: $spacing-xs $spacing-sm;
+      // overwrite the padding from the above setting.
+      margin-left: 0px;
+      font-weight: 700;
+    }
+
+    @mixin colorVariant($name, $color) {
+      &.-state-#{$name} {
+        color: $color;
+
+        &.-active.-condensed {
+          background-color: $color;
+          color: #fff;
+        }
+      }
+
+      &.-state-#{$name}.-active &_decoration {
+        border-color: $color;
+
+        &:before {
+          background-color: $color;
+        }
+      }
+    }
+
+    @include colorVariant("success", $color-success);
+    @include colorVariant("warning", $color-warning);
+    @include colorVariant("danger", $color-danger);
+    @include colorVariant("error", $color-error);
+    @include colorVariant("info", $color-info);
+    @include colorVariant("disabled", $color-disabled);
+    // @include colorVariant("subtle", $color-subtle);
+    @include colorVariant("option-a", $color-optionA);
+    @include colorVariant("option-b", $color-optionB);
+    @include colorVariant("option-c", $color-optionC);
+    @include colorVariant("option-d", $color-optionD);
+    @include colorVariant("option-e", $color-optionE);
+    @include colorVariant("option-f", $color-optionF);
+  }
+}

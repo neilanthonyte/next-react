@@ -1,0 +1,56 @@
+@import "../../../scss/mixins/breakpoints.scss";
+@import "../../../scss/variables.scss";
+
+.SplitView {
+  position: relative;
+  align-items: flex-start;
+  display: flex;
+
+  &_details {
+    &.-isSticky {
+      position: sticky;
+      top: 0;
+    }
+  }
+
+  @include aboveMobile {
+    &_content {
+      flex: 1;
+
+      &.-align-left {
+        text-align: left;
+      }
+
+      &.-align-center {
+        text-align: center;
+      }
+
+      &.-align-right {
+        text-align: right;
+      }
+    }
+
+    &_details {
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      &.-size {
+        &-xs {
+          width: 300px;
+        }
+
+        &-sm {
+          width: 350px;
+        }
+
+        &-md {
+          width: 400px;
+        }
+
+        &-lg {
+          width: 450px;
+        }
+      }
+    }
+  }
+}

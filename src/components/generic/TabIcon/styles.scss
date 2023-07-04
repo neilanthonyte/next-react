@@ -1,0 +1,34 @@
+@import "../../../scss/variables.scss";
+
+.TabIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.-selected {
+    color: $color-active;
+  }
+
+  &.-disabled {
+    opacity: 0.4;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  &_badge {
+    position: absolute;
+    top: $spacing-xs;
+    left: calc(50% + #{$spacing-xs});
+  }
+}

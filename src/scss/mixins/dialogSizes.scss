@@ -1,0 +1,33 @@
+@mixin dialog_sizeVariant($size, $left: 0px) {
+  width: 100%;
+  max-width: calc(#{$size} - #{$left});
+  left: $left;
+}
+
+@mixin dialogVariations {
+  &.-size {
+    &-liquid {
+      display: inline-block;
+    }
+
+    &-sm {
+      @include dialog_sizeVariant(400px);
+    }
+
+    &-md {
+      @include dialog_sizeVariant(600px);
+    }
+
+    &-lg {
+      @include dialog_sizeVariant(800px);
+    }
+
+    &-xl {
+      @include dialog_sizeVariant(1000px);
+    }
+
+    &-full {
+      width: 100%;
+    }
+  }
+}

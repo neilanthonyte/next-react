@@ -1,0 +1,211 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints";
+
+@mixin sizeVariant($padding) {
+  > .baseSection_header {
+    padding: max($padding, $spacing-md) $padding;
+
+    @include forMobile {
+      padding: max($padding, $spacing-sm * 2) $padding;
+    }
+
+    &.-well {
+      padding-bottom: $spacing-sm;
+
+      @include forMobile {
+        padding-bottom: $spacing-xs;
+      }
+    }
+  }
+
+  > .baseSection_body > div > div > .baseSection_body_inner {
+    padding: $padding;
+  }
+
+  > .baseSection_body:not(:first-child) > div > div > .baseSection_body_inner {
+    // add top padding when no header is present
+    padding-top: 0;
+  }
+}
+
+.baseSection {
+  @include sizeVariant($spacing-md);
+  padding: 0;
+  position: relative;
+
+  &.-fullWidth {
+    > .baseSection_header,
+    > .baseSection_body > div > div > .baseSection_body_inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.-size {
+    &-xs {
+      @include sizeVariant($spacing-xs);
+    }
+
+    &-sm {
+      @include sizeVariant($spacing-sm);
+    }
+
+    &-lg {
+      @include sizeVariant($spacing-lg);
+
+      @include belowTabletPortrait {
+        @include sizeVariant($spacing-md);
+      }
+      @include forMobile {
+        @include sizeVariant($spacing-sm);
+      }
+    }
+
+    &-xl {
+      @include sizeVariant($spacing-xl);
+
+      @include belowTabletPortrait {
+        @include sizeVariant($spacing-md);
+      }
+      @include forMobile {
+        @include sizeVariant($spacing-sm);
+      }
+    }
+  }
+
+  @include forMobile {
+    @include sizeVariant($spacing-xs);
+  }
+
+  &_header {
+    line-height: $line-height-headings;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    @include forMobile {
+      &_inputs {
+        margin-top: $spacing-sm;
+        width: 100%;
+      }
+    }
+
+    &_actions {
+      font-size: 110%;
+
+      &_icon {
+        font-size: 110%;
+      }
+      &_button {
+        font-size: 90%;
+      }
+    }
+
+    &_decorations {
+      display: flex;
+      flex-direction: row;
+      font-size: 110%;
+
+      > span {
+        display: inline-block;
+        margin-left: $spacing-sm * 2;
+      }
+    }
+
+    &.-sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 7; // makes sure the header goes on top of the content, rather than under.
+    }
+
+    &.-active {
+      background-color: $color-gray-dark;
+      color: white;
+    }
+
+    &_inputs,
+    &_text,
+    &_badge {
+      display: inline-block;
+      margin-left: $spacing-sm;
+    }
+  }
+
+  &_lead {
+    font-size: 0.9em;
+    text-transform: uppercase;
+  }
+
+  &_options {
+    font-size: 1em;
+
+    @include belowTabletPortrait {
+      margin-top: $spacing-base;
+    }
+  }
+
+  &_disabledLink {
+    color: $color-disabled;
+    cursor: not-allowed;
+  }
+
+  > .baseSection_body.-noPadding {
+    // ensure we don't overrule any internal uses of same pattern
+    > div > div > .baseSection_body_inner {
+      padding: 0;
+    }
+  }
+
+  &:not(:last-child) {
+    @if $theme == "svc" or $theme == "zam" or $theme == "one" {
+      border-bottom: none;
+    } @else {
+      border-bottom: 1px solid $color-gray-lighter;
+    }
+  }
+
+  &:nth-child(even).-candycane {
+    background-color: $defaults-backgroundColor-alt;
+    .baseSection_header {
+      background-color: $defaults-backgroundColor-alt;
+    }
+  }
+
+  &.-fancy {
+    border-width: 0 0 1px 5px;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  &.-narrow &_header,
+  &.-narrow &_body {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  @mixin stateVariant($name, $color-light, $color-dark) {
+    &.-state-#{$name} {
+      background-color: $color-light;
+
+      &.-fancy {
+        border-color: $color-dark;
+      }
+    }
+  }
+
+  @include stateVariant("success", $color-success-alt, $color-success);
+  @include stateVariant("error", $color-error-alt, $color-error);
+  @include stateVariant("danger", $color-danger-alt, $color-danger);
+  @include stateVariant("info", $color-info-alt, $color-info);
+  @include stateVariant("warning", $color-warning-alt, $color-warning);
+  @include stateVariant("disabled", $color-disabled, $color-disabled);
+  // colour scheme
+  @include stateVariant("option-a", $color-optionA-alt, $color-optionA);
+  @include stateVariant("option-b", $color-optionB-alt, $color-optionB);
+  @include stateVariant("option-c", $color-optionC-alt, $color-optionC);
+  @include stateVariant("option-d", $color-optionD-alt, $color-optionD);
+  @include stateVariant("option-e", $color-optionE-alt, $color-optionE);
+  @include stateVariant("option-f", $color-optionF-alt, $color-optionF);
+}

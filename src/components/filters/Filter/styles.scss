@@ -1,0 +1,7 @@
+.Filter {
+  // this is needed for the css ellipses truncation in the Tag component to work
+  &_tag-container {
+    overflow-x: hidden;
+    display: inline-flex;
+  }
+}

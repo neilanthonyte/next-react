@@ -1,0 +1,17 @@
+@import "../../../scss/variables.scss";
+
+.noDataCell {
+  padding: $spacing-md;
+  text-align: center;
+  background-color: $color-gray-lighter;
+  color: $color-gray-dark;
+  border: 2px dashed $color-gray;
+  border-radius: $border-radius-size;
+  &_message {
+    font-size: $font-size-h4;
+  }
+  &_actions {
+    display: block;
+    margin: $spacing-base auto 0 auto;
+  }
+}

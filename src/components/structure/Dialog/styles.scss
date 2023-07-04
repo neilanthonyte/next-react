@@ -1,0 +1,79 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/clearfix.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+@import "../../../scss/mixins/dialogSizes.scss";
+
+.Dialog {
+  @include dialogVariations;
+  border: $dialog-border;
+  background-color: $dialog-color-background;
+  box-shadow: $dialog-box-shadow;
+  border: $dialog-border;
+  border-radius: $dialog-border-radius;
+  color: $defaults-textColor;
+
+  @include aboveTabletPortrait {
+    padding: $spacing-md;
+  }
+
+  &.-sticky &_header {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    background-color: #fff;
+    padding: 24px 0 8px;
+  }
+
+  &.-sticky &_body {
+    margin: $spacing-xl 0;
+    @include forMobile {
+      margin: $spacing-lg 0;
+    }
+  }
+
+  @include belowTabletPortrait {
+    padding: $spacing-md $spacing-sm * 2;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: $defaults-textColor;
+  }
+
+  a {
+    // hack, ".screen:not(.-alt) *" overrides this rule
+    // even though the dialog is within the screen so this rule should be more specific
+    // only seems to affect "a" tags in chrome
+    color: $hyperlink-textColor !important;
+    font-weight: bold;
+  }
+
+  &_header {
+    padding-bottom: $spacing-sm;
+    margin-bottom: $spacing-md;
+    border-bottom: 1px solid $separators-color;
+  }
+
+  &_body {
+    padding: $spacing-sm 0;
+
+    &.-fixedHeight {
+      max-height: 500px;
+      overflow-y: auto;
+    }
+  }
+
+  &_footer {
+    margin-top: $spacing-md;
+    padding-top: $spacing-sm;
+    &.-isSticky {
+      background-color: rgba(white, 0.9);
+      padding: $spacing-sm;
+      position: sticky;
+      bottom: 0;
+    }
+  }
+}

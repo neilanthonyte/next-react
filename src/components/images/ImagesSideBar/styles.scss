@@ -1,0 +1,11 @@
+@import "../../../scss/variables.scss";
+
+.imagesSideBar {
+  &_imagePreview {
+    min-height: 200px;
+    margin-bottom: $spacing-sm;
+    background-size: cover;
+    background-color: $color-gray;
+    width: 100%;
+  }
+}

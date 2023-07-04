@@ -1,0 +1,28 @@
+@import "../../../scss/variables";
+
+.SuburbResults {
+  border: solid 1px $color-active;
+  border-radius: $border-radius-size;
+  padding: 0.5em;
+  font-size: $font-size;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &_primary {
+    color: $color-gray-darker;
+  }
+
+  &_secondary {
+    color: $color-gray-dark;
+    font-size: 80%;
+  }
+
+  &_icon {
+    margin-right: $spacing-sm;
+  }
+}

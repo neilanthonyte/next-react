@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.packages.json",
+  "references": [
+    {
+      "path": "../next-shared"
+    }
+  ],
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "types": ["react", "jest", "fhir"]
+  }
+}

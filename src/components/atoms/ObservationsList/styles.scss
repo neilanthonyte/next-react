@@ -1,0 +1,10 @@
+.ObservationsList {
+  max-height: 100%;
+  overflow-y: auto;
+
+  &_item {
+    &_timestamp {
+      float: right;
+    }
+  }
+}

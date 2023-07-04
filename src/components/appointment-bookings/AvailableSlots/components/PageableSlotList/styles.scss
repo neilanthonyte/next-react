@@ -1,0 +1,28 @@
+@import "../../../../../scss/variables.scss";
+
+.SlotList {
+  display: flex;
+
+  &_porthole {
+    width: 0; // flex-grow will expand this
+    flex-grow: 1;
+    overflow: hidden;
+    margin: 0 $spacing-sm * 0.5;
+  }
+
+  &_arrowButton {
+    width: 5.5ex; // HACK until the Button does standard sizes
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  &_allSlotButtons {
+    display: grid;
+    grid-auto-flow: column;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &_slotButtonContainer {
+    margin: 0 $spacing-sm * 0.5;
+  }
+}

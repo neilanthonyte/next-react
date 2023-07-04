@@ -1,0 +1,26 @@
+@import "../../../scss/variables.scss";
+
+.TeamMemberDecoration {
+  padding: $spacing-sm;
+  background-color: $decoration-background-color;
+  border: 1px solid $decoration-border-color;
+  border-radius: $decoration-border-radius;
+  display: inline-flex;
+
+  $border-width: 1px;
+  $padding: $spacing-xs;
+
+  &_icon_wrapper {
+    border: $border-width solid $color-primary;
+    border-radius: 50%;
+    padding: $padding;
+    overflow: hidden;
+    background-color: $color-primary-alt;
+  }
+
+  &_icon {
+    position: relative;
+    bottom: calc(-#{$padding} - #{$border-width * 2});
+    line-height: 1;
+  }
+}

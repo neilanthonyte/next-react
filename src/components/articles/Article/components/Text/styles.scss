@@ -1,0 +1,12 @@
+@import "../../../../../scss/variables.scss";
+
+.Text {
+  p {
+    margin-bottom: 1em;
+  }
+
+  figure img {
+    // for those put in using a wizywig
+    max-width: 100%;
+  }
+}

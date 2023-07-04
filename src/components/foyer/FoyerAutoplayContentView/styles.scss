@@ -1,0 +1,68 @@
+@use "sass:math";
+
+@import "../../../scss/variables.scss";
+@import "../../../scss/core/transitions.scss";
+
+.FoyerAutoplayContentView {
+  position: fixed;
+  pointer-events: none;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_content {
+    position: relative;
+    width: 100%;
+    padding: $spacing-md $spacing-md $spacing-lg $spacing-md;
+  }
+
+  &_inner {
+    position: relative;
+    background-color: rgba($defaults-backgroundColor, 0.8);
+  }
+
+  &_disableTouch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.foyerContent {
+  @include fadeIn(2000ms);
+}
+
+@mixin foyerSize($width, $height) {
+  height: math.div($height, 2);
+  width: math.div($width, 2);
+
+  .FoyerAutoplayContentView {
+    width: $width;
+    height: $height;
+    left: math.div($width, -4);
+    top: math.div($height, -4);
+    transform: scale(0.5);
+  }
+}
+
+.readme {
+  // override the standard, full-size positioning
+  .FoyerAutoplayContentView {
+    height: 600px;
+    width: 100%;
+    background-color: lightblue;
+    position: relative;
+  }
+
+  // force to a good size for landscape
+  &.-landscape {
+    @include foyerSize(1920px, 1080px);
+  }
+  &.-portrait {
+    @include foyerSize(1080px, 1920px);
+  }
+}

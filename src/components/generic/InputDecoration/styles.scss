@@ -1,0 +1,67 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/input.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+@import "../../../scss/mixins/clearfix.scss";
+
+.InputDecoration {
+  transition: opacity 0.5s;
+  position: relative;
+
+  @include inputsSelector {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  &_container {
+    margin-bottom: $spacing-sm;
+  }
+
+  &_label {
+    display: block;
+
+    &_optional {
+      color: $color-gray;
+      font-size: 90%;
+    }
+  }
+
+  &_description {
+    @include clearfix;
+    padding-bottom: $spacing-sm;
+    font-size: 80%;
+    color: $color-gray-dark;
+  }
+
+  &_descriptionImage {
+    width: 300px;
+    max-width: 100%;
+    @include aboveMobile {
+      float: right;
+    }
+  }
+
+  &.-error {
+    label {
+      color: $color-error;
+    }
+
+    @include inputsSelector {
+      border: 2px solid $color-danger;
+
+      &:focus,
+      &.focus {
+        box-shadow: 0 0 0 2px rgba($color-danger, 0.5);
+      }
+    }
+  }
+
+  &.-layout-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  &.-layout-row &_container {
+    flex-grow: 1;
+  }
+}

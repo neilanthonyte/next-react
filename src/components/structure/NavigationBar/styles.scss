@@ -1,0 +1,32 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/schemes.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+.NavigationBar {
+  @include selectedScheme();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14pt;
+  padding: 22px 12px;
+
+  @media (max-width: $screen-md-max) {
+    padding: 18px 12px;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    padding: 7px;
+  }
+
+  label {
+    padding: 0 5px;
+    font-size: 105%;
+  }
+
+  &_back {
+    cursor: pointer;
+  }
+  &_title {
+    font-size: 1em;
+  }
+}

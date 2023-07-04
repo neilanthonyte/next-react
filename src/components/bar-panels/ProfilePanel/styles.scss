@@ -1,0 +1,21 @@
+@import "../../../scss/variables.scss";
+
+.ProfilePanel {
+  height: 100%;
+  &_content {
+    display: flex;
+    height: 100%;
+  }
+  &_main {
+    flex: 1;
+  }
+  &_message {
+    white-space: pre-line;
+  }
+  &_main + &_accessCode {
+    margin-left: $spacing-xl;
+  }
+  &_message + &_match {
+    margin-top: $spacing-base;
+  }
+}

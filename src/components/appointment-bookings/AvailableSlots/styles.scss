@@ -1,0 +1,53 @@
+@import "../../../scss/variables.scss";
+
+@mixin responsiveItem($defaultWidth) {
+  &.-vertical {
+    width: 100%;
+
+    margin-top: $spacing-sm * 0.5;
+    margin-bottom: $spacing-sm * 0.5;
+  }
+
+  &.-horizontal {
+    width: $defaultWidth;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.AvailableSlots {
+  display: flex;
+  width: 100%;
+
+  &.-vertical {
+    flex-direction: column;
+  }
+
+  &.-horizontal {
+    flex-direction: row;
+  }
+
+  &_label {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    @include responsiveItem(300px);
+  }
+
+  &_slots {
+    &.-horizontal {
+      flex-grow: 1;
+      padding: 0 $spacing-sm;
+    }
+
+    @include responsiveItem(80px);
+  }
+
+  &_more {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    @include responsiveItem(80px);
+  }
+}

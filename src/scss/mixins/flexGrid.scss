@@ -1,0 +1,41 @@
+@use "sass:math";
+@import "../variables.scss";
+
+@mixin flexGrid($elements-spacing, $columns-number: 1, $fixed-columns: false) {
+  -js-display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  // for flex-wrap to work with flexibility.js, the container width must be set
+  // width: 100%;
+  width: calc(100% + #{$elements-spacing});
+  $gutter: math.div($elements-spacing, 2);
+  margin-right: -$gutter;
+  margin-left: -$gutter;
+
+  @if $theme == "svc" {
+    -js-display: block;
+    display: block;
+    margin-top: $elements-spacing;
+    margin-bottom: -$elements-spacing;
+  }
+
+  > * {
+    // Set to flex to different height items will be the same size
+    display: flex;
+    @if $fixed-columns == false {
+      width: math.div(100%, $columns-number);
+    }
+    padding-left: $gutter;
+    padding-right: $gutter;
+    padding-bottom: $elements-spacing;
+
+    @if $theme == "svc" {
+      display: inline-flex;
+    }
+
+    > a {
+      display: block;
+      width: 100%;
+    }
+  }
+}

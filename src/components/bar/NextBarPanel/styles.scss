@@ -1,0 +1,48 @@
+@import "../../../scss/variables.scss";
+
+.NextBarPanel {
+  height: $navbar-panel-height;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: $spacing-md;
+  border-top: 1px solid $color-gray-light;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10%);
+
+  &_title {
+    color: $color-gray-darker;
+  }
+
+  &_info {
+    width: $navbar-info-width;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+    color: $defaults-textColor;
+    padding-right: $spacing-md;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_content {
+    height: 100%;
+    flex-grow: 1;
+    max-height: $navbar-panel-height;
+  }
+
+  &_description {
+    color: $color-gray-dark;
+    font-size: 90%;
+    flex: 1;
+  }
+
+  &_title + &_description,
+  &_title + &_actions,
+  &_description + &_actions {
+    margin-top: $spacing-base;
+  }
+
+  &_action {
+    margin-bottom: $spacing-xs;
+  }
+}

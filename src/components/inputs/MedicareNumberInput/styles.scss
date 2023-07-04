@@ -1,0 +1,14 @@
+@import "../../../scss/variables.scss";
+
+.MedicareNumberInput {
+  display: inline-flex;
+  gap: $spacing-sm;
+  width: 100%;
+
+  > input:first-child {
+    width: 70%;
+  }
+  > input:last-child {
+    width: 30%;
+  }
+}

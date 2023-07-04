@@ -1,0 +1,58 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+.Filters {
+  display: flex;
+  align-items: center;
+  column-gap: $spacing-sm;
+  width: 100%;
+
+  &_tags {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    flex-grow: 1;
+  }
+
+  &_summary {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    column-gap: $spacing-xs;
+    color: $filters-color-accent;
+    font-weight: 700;
+
+    &_count {
+      padding: math.div($spacing-xs, 2) $spacing-sm;
+      border-radius: 1em;
+      background-color: $filters-color-accent;
+      color: $filters-color-alt;
+      font-size: 0.8em;
+    }
+    &.-collapsible:hover {
+      cursor: pointer;
+    }
+  }
+
+  &_popover {
+    &_inputs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-lg;
+    }
+    &_close {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      font-size: 1.5em;
+    }
+    &_actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      column-gap: $spacing-sm;
+    }
+  }
+}

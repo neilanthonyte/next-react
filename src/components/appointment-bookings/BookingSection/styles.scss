@@ -1,0 +1,11 @@
+@import "../../../scss/variables.scss";
+
+.BookingSection {
+  min-height: 400px;
+
+  &_heading {
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-base;
+    text-align: center;
+  }
+}

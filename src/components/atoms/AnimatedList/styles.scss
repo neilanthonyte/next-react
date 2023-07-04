@@ -1,0 +1,23 @@
+.transition {
+  &Enter {
+    max-height: 0px;
+    overflow: hidden;
+  }
+
+  &EnterActive {
+    max-height: 100px;
+    transition: max-height 500ms ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    max-height: 100px;
+    overflow: hidden;
+    transition: max-height 0.4s 0.2s ease-in-out;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    max-height: 0;
+  }
+}

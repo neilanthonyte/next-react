@@ -1,0 +1,86 @@
+@import "../../../scss/variables.scss";
+
+$spacing: $spacing-xs;
+
+.actionable {
+  display: flex;
+
+  &_body {
+    flex-grow: 1;
+  }
+
+  &_actions {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: $spacing-sm;
+
+    > span {
+      padding-left: $spacing;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    &.-size-xs {
+      &.-count-1 {
+        width: ($standard-size-xs + $spacing) * 1;
+      }
+      &.-count-2 {
+        width: ($standard-size-xs + $spacing) * 2;
+      }
+      &.-count-3 {
+        width: ($standard-size-xs + $spacing) * 3;
+      }
+      &.-count-4 {
+        width: ($standard-size-xs + $spacing) * 4;
+      }
+    }
+
+    &.-size-sm {
+      &.-count-1 {
+        width: ($standard-size-sm + $spacing) * 1;
+      }
+      &.-count-2 {
+        width: ($standard-size-sm + $spacing) * 2;
+      }
+      &.-count-3 {
+        width: ($standard-size-sm + $spacing) * 3;
+      }
+      &.-count-4 {
+        width: ($standard-size-sm + $spacing) * 4;
+      }
+    }
+
+    &.-size-md {
+      &.-count-1 {
+        width: ($standard-size-md + $spacing) * 1;
+      }
+      &.-count-2 {
+        width: ($standard-size-md + $spacing) * 2;
+      }
+      &.-count-3 {
+        width: ($standard-size-md + $spacing) * 3;
+      }
+      &.-count-4 {
+        width: ($standard-size-md + $spacing) * 4;
+      }
+    }
+
+    &.-size-lg {
+      &.-count-1 {
+        width: ($standard-size-lg + $spacing) * 1;
+      }
+      &.-count-2 {
+        width: ($standard-size-lg + $spacing) * 2;
+      }
+      &.-count-3 {
+        width: ($standard-size-lg + $spacing) * 3;
+      }
+      &.-count-4 {
+        width: ($standard-size-lg + $spacing) * 4;
+      }
+    }
+  }
+}

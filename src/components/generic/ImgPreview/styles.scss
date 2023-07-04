@@ -1,0 +1,57 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+$action-size: 32px;
+
+.ImgPreview {
+  position: relative;
+  height: 200px;
+  margin-bottom: $spacing-md;
+
+  &_mainImage {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_img {
+      height: 100%;
+      width: 100%;
+    }
+
+    &_loading {
+      display: none;
+    }
+  }
+
+  &_empty {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-style: dashed;
+    border-width: 2px;
+    border-color: lightgray;
+
+    &_icon {
+      // overwrite the default icon colour
+      color: lightgray !important;
+    }
+  }
+
+  &_actions {
+    position: absolute;
+    z-index: 2;
+    font-size: $action-size;
+    display: flex;
+    flex-direction: column;
+
+    top: math.div($action-size, -4);
+    right: math.div($action-size, -4);
+
+    > * {
+      margin-bottom: 5px;
+    }
+  }
+}

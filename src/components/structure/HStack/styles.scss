@@ -1,0 +1,73 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/input";
+@import "../../../scss/mixins/breakpoints.scss";
+
+$input-spacing: $spacing-xs;
+
+@mixin variant($size) {
+  > * {
+    margin-left: $size;
+    margin-right: $size;
+  }
+  > *:first-child {
+    margin-left: 0;
+  }
+  > *:last-child {
+    margin-right: 0;
+  }
+}
+
+// Display inputs in a grid
+.HStack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  // when wrapped in a CardBody component, there is an overflow-y set to auto,
+  // causing the content to scroll horizontally. Setting the width to 100% fixes the issue
+  width: 100%;
+
+  &.-align-center {
+    align-items: center;
+  }
+
+  @include variant($spacing-sm);
+
+  &.-size {
+    &-xs {
+      @include variant($spacing-xs);
+    }
+    &-sm {
+      @include variant($spacing-sm);
+    }
+    &-md {
+      @include variant($spacing-md);
+    }
+    &-lg {
+      @include variant($spacing-lg);
+    }
+  }
+
+  @include forMobile {
+    @include variant($spacing-xs);
+  }
+
+  > * {
+    flex: 1;
+    display: block;
+  }
+
+  @include inputsSelector {
+    width: 100%;
+  }
+
+  &.-medicare {
+    > *:last-child {
+      width: 100px;
+      flex-grow: 0;
+    }
+  }
+}
+
+.HStack_solid {
+  flex: none !important;
+}

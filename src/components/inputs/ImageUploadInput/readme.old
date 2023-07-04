@@ -1,0 +1,43 @@
+### No state being maintained
+
+Check console to see upload results
+
+```jsx
+import { ImageUploadInput } from "./";
+import { MockCameraUploadHandler } from "../../handlers/MockCameraUploadHandler";
+
+<MockCameraUploadHandler>
+  <ImageUploadInput uploadNameSpace="testing" onChange={() => {
+    // TODO do something
+  })} />
+</MockCameraUploadHandler>;
+```
+
+### Maintaining state (like it would be used in a form)
+
+```jsx
+import { ImageUploadInput } from "./";
+import { MockCameraUploadHandler } from "../../handlers/MockCameraUploadHandler";
+
+const [images, setImages] = React.useState([
+  {
+    id: 101,
+    url: "https://www.placecage.com/gif/200/200?randomNumber=137",
+    _fieldHandle: "myFieldName",
+  },
+]);
+
+<MockCameraUploadHandler>
+  <ImageUploadInput
+    uploadNameSpace="testing"
+    value={images}
+    onInputChange={(x) => setImages(x)}
+    metadata={{
+      _fieldHandle: "fooField",
+    }}
+  />
+  <div>
+    <pre>{JSON.stringify(images, null, 2)}</pre>
+  </div>
+</MockCameraUploadHandler>;
+```

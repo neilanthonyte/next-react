@@ -1,0 +1,23 @@
+@import "../../../scss/core/transitions.scss";
+
+.Collapse {
+  &_contents {
+    &.-closed {
+      display: none;
+    }
+  }
+  &_transition {
+    &-xs {
+      @include collapseExtraSmall;
+    }
+    &-sm {
+      @include collapseSmall;
+    }
+    &-md {
+      @include collapseMedium;
+    }
+    &-lg {
+      @include collapseLarge;
+    }
+  }
+}

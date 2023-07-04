@@ -1,0 +1,19 @@
+.pattern {
+  background-position: 0 0;
+  background-size: 200px;
+
+  &-fingerprint {
+    background-image: url("https://s3-ap-southeast-2.amazonaws.com/florey-cms-assets/branding/pattern-fingerprint.jpg");
+  }
+}
+
+.fingerprintBackground {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: 0 0;
+  background-size: 200px;
+  background-image: url("https://s3-ap-southeast-2.amazonaws.com/florey-cms-assets/branding/pattern-fingerprint.jpg");
+}

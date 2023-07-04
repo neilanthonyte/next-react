@@ -1,0 +1,52 @@
+{
+  "references": [
+    {
+      "path": "../next-shared"
+    }
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "compilerOptions": {
+    "rootDir": "../",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    // HACK doesn't work with styleguidist
+    // "paths": {
+    //   "@next-shared/*": [
+    //     "next-shared/src/*"
+    //   ]
+    // },
+    // "experimentalDecorators": true,
+    // "emitDecoratorMetadata": true,
+    // "moduleResolution": "node",
+    // "declaration": true,
+    // "declarationMap": true,
+    // // "sourceMap": true,
+    // "inlineSources": true,
+    // "importHelpers": true,
+    // "composite": true,
+    // // "target": "es5",
+    // "target": "es2017",
+    // // next
+    // "incremental": true,
+    // "module": "commonjs",
+    // "lib": [
+    //   "dom",
+    //   "es2017"
+    // ],
+    // "allowSyntheticDefaultImports": true,
+    // "noImplicitAny": true,
+    // "noImplicitThis": true,
+    // "alwaysStrict": true,
+    // "strictFunctionTypes": false,
+    // "jsx": "react",
+    // "skipLibCheck": true,
+    // "allowJs": false,
+    // "forceConsistentCasingInFileNames": true,
+    // "sourceRoot": "/",
+    // // LEGACY
+    // "downlevelIteration": true
+  }
+}

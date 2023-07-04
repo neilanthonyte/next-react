@@ -1,0 +1,50 @@
+@import "../../../scss/variables.scss";
+
+.SelectableListWithDetail {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  &_list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    &_content {
+      height: 100%;
+      overflow-y: auto;
+      padding-bottom: $spacing-xs;
+    }
+    &_item {
+      padding: $spacing-sm;
+      border-radius: $border-radius-size;
+      &:hover,
+      &.-selected {
+        background-color: $color-active-light;
+        cursor: pointer;
+      }
+      & + & {
+        margin-top: $spacing-xs;
+      }
+    }
+    &_actions {
+      background-color: $color-gray-lighter;
+      padding: $spacing-sm $spacing-xl;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &_action:not(:first-child) {
+        margin-left: $spacing-sm;
+      }
+      &_action {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+
+  &_detail {
+    margin-left: $spacing-md;
+    // TODO maybe add more options
+    width: 40%;
+  }
+}

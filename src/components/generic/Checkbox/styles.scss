@@ -1,0 +1,72 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdActionSizes.scss";
+
+$border-width: 2px;
+
+@mixin customSize($size) {
+  height: $size;
+  width: $size;
+  line-height: $size - 2 * $border-width;
+  font-size: $size;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+.Checkbox {
+  @include stdActionSizes(1, $border-width, true);
+
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  border-radius: 20%;
+  text-align: center;
+  text-decoration: none;
+  font-weight: normal !important;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s,
+    box-shadow 0.5s, transform 0.5s, background-position 0.5s;
+  position: relative;
+  border: $border-width solid $icons-textColor;
+  color: $color-gray-light;
+
+  &::before,
+  &::after {
+    font-size: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+    line-height: normal;
+  }
+
+  // STATES
+  // HACK need to custom color these as we are passing the className straight to the Icon component as prop, which uses the stdColor mixin
+  // and this pattern does not work with webpack and hashing the class names
+  &.-success {
+    background-color: $color-success;
+    color: $color-success-alt;
+    border-color: $color-success;
+  }
+  &.-error {
+    background-color: $color-error;
+    color: $color-error-alt;
+    border-color: $color-error;
+  }
+  &.-disabled {
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: $color-disabled;
+    background-color: $color-disabled;
+    color: $color-disabled-alt;
+  }
+
+  &.-customSize {
+    &-medium {
+      @include customSize(16px);
+    }
+  }
+}

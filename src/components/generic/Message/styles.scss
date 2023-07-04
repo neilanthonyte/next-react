@@ -1,0 +1,39 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdColors.scss";
+
+.Message {
+  @include stdColorSchemesSubtle();
+
+  padding: $spacing-sm * 1.5 $spacing-sm;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1.5px;
+  margin-bottom: $spacing-xs;
+  background-color: $color-gray-lighter;
+  text-align: center;
+
+  &_title + &_body {
+    padding-top: $spacing-xs;
+  }
+  &_body {
+    font-size: 90%;
+  }
+
+  // &.-status {
+  //   &-success {
+  //     border-color: $color-success;
+  //     background-color: lighten($color-success, 40%);
+  //     * {
+  //       color: $color-success;
+  //     }
+  //   }
+
+  //   &-error {
+  //     border-color: $color-error;
+  //     background-color: lighten($color-error, 35%);
+  //     * {
+  //       color: $color-error;
+  //     }
+  //   }
+  // }
+}

@@ -1,0 +1,115 @@
+@import "../variables.scss";
+
+$elements-spacing: $spacing-base;
+
+@mixin cell($className, $left-decoration-width: 24px) {
+  -js-display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  // padding: $spacing-sm 0;
+
+  & + .#{$className} {
+    margin-top: $spacing-sm;
+  }
+
+  // Row layout specific style
+  &.-row {
+    .#{$className}_decoration {
+      margin-right: $elements-spacing;
+    }
+    .#{$className}_actions {
+      margin-left: $elements-spacing;
+    }
+  }
+
+  &.-heading {
+    @if $theme == "svc" {
+      font-weight: 600;
+    }
+  }
+
+  // Column layout specific style
+  &.-column {
+    flex-direction: column;
+    text-align: center;
+    .#{$className}_decoration + .#{$className}_body {
+      margin-top: $elements-spacing;
+    }
+    .#{$className}_body + .#{$className}_actions {
+      margin-top: $elements-spacing;
+    }
+  }
+
+  .#{$className}_type {
+    color: $color-active;
+    & + .#{$className}_body {
+      margin-top: $spacing-sm;
+    }
+  }
+
+  .#{$className}_body {
+    max-width: calc(100% - #{$indent-base} - #{$spacing-base});
+    flex-grow: 1;
+    header {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  .#{$className}_body {
+    &.-noIndent {
+      max-width: 100% !important;
+    }
+  }
+
+  .#{$className}_decoration,
+  .#{$className}_actions {
+    -js-display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .#{$className}_decoration {
+    width: $indent-base;
+    > span {
+      // color: $color-active;
+      font-size: $left-decoration-width;
+    }
+    > img {
+      width: $left-decoration-width;
+      border-radius: 50%;
+    }
+  }
+
+  .#{$className}_actions {
+    > span {
+      font-size: 2em;
+    }
+    > span + span {
+      margin-left: $spacing-xs;
+    }
+  }
+
+  .#{$className}_body {
+    .#{$className}_description {
+      margin-top: $spacing-xs;
+      color: $color-gray-dark;
+      @if $theme == "svc" {
+        color: $color-primary-alt;
+      }
+    }
+  }
+
+  &.-lead {
+    .#{$className}_decoration {
+      > span {
+        font-size: $left-decoration-width * 1.7;
+      }
+      > img {
+        width: $left-decoration-width * 1.7;
+      }
+    }
+  }
+}

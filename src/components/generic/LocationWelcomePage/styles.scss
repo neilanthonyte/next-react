@@ -1,0 +1,29 @@
+@import "../../../scss/variables.scss";
+
+.LocationWelcomePage {
+  height: 100%;
+
+  &_poster {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  &_fade {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to right,
+      rgba(234, 242, 240, 1) 40%,
+      rgba(234, 242, 240, 0.9)
+    );
+  }
+  &_container {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    // padding: $spacing-lg;
+  }
+}

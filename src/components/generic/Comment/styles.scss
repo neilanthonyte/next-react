@@ -1,0 +1,28 @@
+.comment {
+  background-color: #fdfdfd;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  padding: 16px;
+  width: 100%;
+
+  .commentText {
+    font-style: italic;
+    padding: 16px 0px;
+  }
+
+  .commentHeader,
+  .commentFooter {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.comment:not(:first-child) {
+  margin-top: 10px;
+}
+
+.childComment {
+  padding-left: 32px;
+  margin-top: 10px;
+  width: 100%;
+}

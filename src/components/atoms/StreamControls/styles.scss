@@ -1,0 +1,46 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+$border-radius: 16px;
+
+.StreamControls {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(#000, 0.5);
+  padding: $spacing-base;
+  @include forMobile {
+    padding: $spacing-sm;
+  }
+  border-radius: $border-radius;
+
+  &_control {
+    font-size: 24px;
+    height: 2em;
+    flex-shrink: 0;
+    margin-left: $spacing-sm;
+    &:hover {
+      cursor: pointer;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &.-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(#fff, 0.6);
+      width: 2em;
+      border-radius: 50%;
+    }
+    &.-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.5em;
+      color: #fff;
+      background-color: $color-error;
+      border-radius: math.div($border-radius, 2);
+    }
+  }
+}

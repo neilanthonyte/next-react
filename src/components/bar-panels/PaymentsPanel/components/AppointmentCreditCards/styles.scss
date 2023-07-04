@@ -1,0 +1,12 @@
+// make sure the panel is scrollable if content overflows
+.AppointmentCreditCards {
+  &_heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > label {
+      flex-grow: 1;
+    }
+  }
+}

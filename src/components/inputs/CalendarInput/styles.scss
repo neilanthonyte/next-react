@@ -1,0 +1,68 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/input.scss";
+@import "../../../scss/mixins/stdActionSizes.scss";
+
+%center {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+$min-width: 6em;
+$icon-size: 1.5em;
+
+.CalendarInput {
+  display: inline-flex;
+
+  &_picker {
+    background-color: white;
+    // defaults apply margin of 1em, switch to padding
+    margin: 0;
+    padding: 1em;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &_date-field {
+    @include stdActionSizes(0.45);
+    @include inputField();
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+
+    &.-disabled {
+      background-color: $color-disabled;
+    }
+  }
+
+  &_date {
+    min-width: $min-width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &_placeholder {
+    color: $color-gray;
+  }
+
+  &_range-container {
+    @extend %center;
+    gap: $spacing-xs;
+  }
+
+  &_icon {
+    font-size: $icon-size;
+    @extend %center;
+    margin-left: $spacing-sm;
+  }
+
+  &.-selected:not(:hover) {
+    background-color: $color-active;
+    color: $color-active-alt;
+  }
+}

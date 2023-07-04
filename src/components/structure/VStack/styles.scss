@@ -1,0 +1,26 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+.VStack {
+  &.-size-compact &_container + &_container {
+    margin-top: $spacing-sm;
+
+    @include forMobile {
+      margin-top: $spacing-sm;
+    }
+  }
+  &.-size-comfortable &_container + &_container {
+    margin-top: $spacing-lg;
+
+    @include forMobile {
+      margin-top: $spacing-md;
+    }
+  }
+  &_container + &_container {
+    margin-top: $spacing-md;
+
+    @include forMobile {
+      margin-top: $spacing-sm;
+    }
+  }
+}

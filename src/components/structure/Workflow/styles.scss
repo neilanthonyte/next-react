@@ -1,0 +1,35 @@
+@import "../../../scss/variables.scss";
+
+.Workflow {
+  &_title {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &_summary {
+    padding: $spacing-sm;
+    background-color: $color-active;
+
+    &_header {
+      margin-bottom: $spacing-sm;
+      text-transform: uppercase;
+      opacity: 0.5;
+      * {
+        color: $color-active-alt;
+      }
+    }
+
+    &_content {
+      > div {
+        // HACK - remove margin from content, e.g. card
+        margin: 0;
+      }
+    }
+
+    &_item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+  }
+}

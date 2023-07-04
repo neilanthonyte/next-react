@@ -1,0 +1,372 @@
+@use "sass:math";
+@import "../../../scss/core/animations.scss";
+@import "../../../scss/variables.scss";
+@import "../../../scss/variables-icons.scss";
+@import "../../../scss/mixins/flexGrid.scss";
+@import "../../../scss/mixins/icons.scss";
+@import "../../../scss/mixins/clearfix.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+$clickable-option-margin-left: 2px;
+
+@mixin sizeVariant(
+  $size,
+  $border-width,
+  $padding-vertical: 0.75em,
+  $padding-horizontal: 1em
+) {
+  font-size: $size;
+  border: $border-width solid transparent;
+  padding: $padding-vertical $padding-horizontal;
+
+  $clickable-options-padding: $padding-horizontal * 0.5;
+
+  // takes into account spacing from label + horizontal padding + border
+  $right-offset: calc(
+    $padding-horizontal + $clickable-options-padding * 2 +
+      $clickable-option-margin-left + $border-width
+  );
+
+  &.-hasClickableOptions {
+    // adds font size
+    padding-right: calc($right-offset + 1em);
+  }
+
+  &_right-decoration {
+    margin-left: $padding-horizontal;
+  }
+  &_options .-clickable {
+    padding: $clickable-options-padding;
+  }
+
+  @include belowTabletPortrait {
+    $factor: 0.8;
+    padding: $padding-vertical * $factor $padding-horizontal * $factor;
+    &.-hasClickableOptions {
+      // adds font size
+      padding-right: calc($right-offset * $factor + 1em);
+    }
+
+    &_right-decoration {
+      margin-left: $padding-horizontal * $factor;
+    }
+    &_options .-clickable {
+      padding: $clickable-options-padding * $factor;
+    }
+  }
+
+  @include forMobile {
+    $factor: 0.6;
+    padding: $padding-vertical * $factor $padding-horizontal * $factor;
+    &.-hasClickableOptions {
+      // adds font size
+      padding-right: calc($right-offset * $factor + 1em);
+    }
+
+    &_right-decoration {
+      margin-left: $padding-horizontal * $factor;
+    }
+    &_options .-clickable {
+      padding: $clickable-options-padding * $factor;
+    }
+  }
+
+  &:active {
+    box-shadow: $button-boxShadow-active;
+  }
+  &:hover {
+    color: $color-hover !important;
+    background-color: $color-highlight !important;
+    background-position: 33.3333% (-$border-width);
+  }
+  &.-block {
+    padding: $padding-vertical 0;
+  }
+  &.-pending {
+    background-position: 33.3333% (-$border-width);
+  }
+  &.-secondary {
+    &:active {
+      border-width: $border-width;
+      padding: $padding-vertical $padding-horizontal;
+    }
+  }
+
+  &.-error {
+    background-position: 100% (-$border-width);
+  }
+
+  &[disabled],
+  &.-disabled {
+    background-position: 100% (-$border-width);
+  }
+}
+
+.Button {
+  @extend %button;
+  @include sizeVariant(100%, 2px);
+
+  // TODO move to standard sizes?
+  &.-size {
+    &-xs {
+      @include sizeVariant(60%, 1px);
+    }
+    &-sm {
+      @include sizeVariant(80%, 1.5px);
+    }
+    // &-md {
+    //   default size - not explicitly set to aid with use on the website
+    // }
+    &-lg {
+      @include sizeVariant(150%, 3px);
+    }
+  }
+
+  &:before {
+    color: white !important;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:before,
+  &:after {
+    @include icon;
+    $fontSize: 2em;
+
+    content: "";
+    -webkit-font-smoothing: antialiased;
+    font-size: $fontSize;
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: $fontSize;
+    height: $fontSize;
+    margin-top: math.div($fontSize, -2);
+    margin-left: math.div($fontSize, -2);
+    opacity: 0;
+    transition: opacity 0.5s;
+    line-height: $fontSize;
+  }
+
+  &:before {
+    content: unicode($icon-spinner);
+    animation: spinFullCircle 1s ease infinite;
+  }
+
+  &_icon {
+    margin: 0 0.5em 0 -0.1em;
+  }
+
+  &.-block {
+    width: 100%;
+    text-align: center;
+  }
+
+  &_right-decoration {
+    vertical-align: middle;
+  }
+
+  &_options {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
+    display: flex;
+    align-items: center;
+    .-clickable {
+      display: flex;
+      align-items: center;
+      align-self: stretch;
+      margin-left: $clickable-option-margin-left;
+      border-radius: math.div($button-radius, 2);
+    }
+  }
+
+  &.-variant {
+    &-primary {
+      background-color: $button-color-primary;
+      color: $color-primary-alt;
+      text-shadow: $defaults-textShadow-base;
+      box-shadow: $defaults-boxShadow-none;
+
+      &.-isActive {
+        background-color: $color-active !important;
+        color: $color-active-alt !important;
+
+        &:before {
+          color: $color-active !important;
+        }
+        &:hover {
+          box-shadow: $defaults-boxShadow-base;
+        }
+        &:active {
+          transition: box-shadow 0.1s;
+          box-shadow: none;
+        }
+      }
+    }
+    &-secondary {
+      $color-alt: $color-active;
+
+      background: none;
+      box-shadow: none;
+      border-color: $color-alt;
+      background-color: rgb(234, 242, 240) !important;
+      color: $color-alt !important;
+
+      &:before {
+        color: $color-alt !important;
+      }
+      &:hover {
+        box-shadow: $button-boxShadow-hover;
+      }
+      &:active {
+        transition: box-shadow 0.1s;
+        box-shadow: none;
+      }
+      // special inversed treatment for secondary as it has a light background
+      &.-default .Button_options {
+        border-left: 1px solid $color-alt;
+
+        .-clickable:hover {
+          background-color: rgba($color-alt, 0.3);
+        }
+      }
+    }
+  }
+
+  // TODO - use the standard colors
+  &.-status {
+    &-success {
+      background-color: $color-success !important;
+    }
+
+    &-fail,
+    &-error {
+      background-color: $color-error !important;
+    }
+
+    &-danger {
+      background-color: $color-danger !important;
+    }
+
+    &-info {
+      background-color: $color-info !important;
+    }
+
+    &-warning {
+      background-color: $color-warning !important;
+    }
+
+    &-disabled {
+      background-color: $color-disabled !important;
+    }
+  }
+
+  // Only style clickable part of options when idle (default mode), so that it will be hidden in any other modes (pending, success and error)
+  &.-default {
+    .Button_options {
+      border-left: 1px solid $color-primary-alt;
+      .-clickable {
+        // HACK the :after on the button covers the clickable area
+        z-index: 1;
+        &:hover {
+          background-color: rgba($color-primary-alt, 0.4);
+        }
+      }
+    }
+  }
+
+  &.-pending,
+  &.-success,
+  &.-error,
+  &.-disabled,
+  &[disabled] {
+    &:hover {
+      border-color: transparent;
+    }
+  }
+
+  &.-pending {
+    color: transparent !important;
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &.-success {
+    color: transparent !important;
+    background-color: $color-success !important;
+
+    &:after {
+      content: unicode($icon-tick);
+      color: white !important;
+      opacity: 1;
+    }
+  }
+
+  &.-error {
+    color: transparent !important;
+    background-color: $color-error !important;
+
+    &:after {
+      content: unicode($icon-close-hollow);
+      color: white !important;
+      opacity: 1;
+    }
+  }
+
+  &[disabled],
+  &.-disabled {
+    background-color: $color-disabled !important;
+    color: $color-gray-dark !important;
+    box-shadow: 0 0 0 transparent;
+  }
+
+  &.-withLabel {
+    > span:first-child {
+      position: relative;
+      top: -1ex;
+    }
+  }
+
+  &_label {
+    display: block;
+    position: absolute; // so that it doesn't affect button size
+    opacity: 0.6;
+    bottom: 0.8ex;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 80%;
+  }
+
+  // push text to the left and the badge to the right
+  &.-hasBadge {
+    @include aboveMobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      > span:first-child {
+        padding-left: $spacing-sm;
+      }
+      > span:last-child {
+        padding-right: $spacing-sm;
+      }
+    }
+
+    // HACK - makes slot buttons look good - is this universal?
+    @include forMobile {
+      > span {
+        display: block;
+      }
+      > span:first-child {
+        padding-bottom: $spacing-sm;
+      }
+    }
+  }
+}

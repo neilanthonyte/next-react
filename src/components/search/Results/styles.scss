@@ -1,0 +1,53 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/flexGrid.scss";
+
+$decoraiton-size: 60px;
+
+.Result {
+  display: flex;
+  width: 100%;
+  // border-bottom: 2px solid $color-primary;
+  // padding-bottom: $spacing-sm;
+  &_decoration {
+    width: $decoraiton-size;
+    height: $decoraiton-size;
+    border-radius: $border-radius-size;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  &_body {
+    flex: 1;
+  }
+  &_decoration + &_body {
+    margin-left: $spacing-sm;
+  }
+  &_title + &_content {
+    margin-top: $spacing-sm;
+  }
+  &_body + &_actions {
+    margin-left: $spacing-sm;
+  }
+  &_actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    > * + * {
+      margin-top: $spacing-xs;
+    }
+  }
+  &_preview_list {
+    margin: -4px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &_preview {
+    padding-left: 4px;
+    padding-bottom: 4px;
+    display: flex;
+    align-items: center;
+    &_img + &_description {
+      margin-left: $spacing-sm;
+    }
+  }
+}

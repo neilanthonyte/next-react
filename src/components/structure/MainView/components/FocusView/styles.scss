@@ -1,0 +1,57 @@
+@use "sass:math";
+@import "../../../../../scss/variables.scss";
+@import "../../../../../scss/mixins/breakpoints";
+
+@include aboveTabletPortrait {
+  .focusView {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background: $color-gray-light;
+
+    &_body {
+      width: calc(100% - #{$sideNav-desktop-open});
+      left: $sideNav-desktop-open;
+      background-color: $defaults-backgroundColor;
+      position: relative;
+      transition: left 0.5s;
+      min-height: 100vh;
+    }
+
+    &_exit {
+      position: absolute;
+      top: $spacing-sm;
+      left: $spacing-sm;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    &.-focused &_body {
+      left: math.div($sideNav-desktop-open, 2);
+    }
+    &.-focused &_exit {
+      opacity: 1;
+    }
+  }
+}
+
+@include forUpToTabletLandscape {
+  .focusView {
+    &_body {
+      width: calc(100% - #{$sideNav-tablet-open});
+      left: $sideNav-tablet-open;
+    }
+    &.-focused &_body {
+      left: math.div($sideNav-tablet-open, 2);
+    }
+  }
+}
+
+@include belowTabletPortrait {
+  .focusView {
+    &_body {
+      width: 100%;
+    }
+  }
+}

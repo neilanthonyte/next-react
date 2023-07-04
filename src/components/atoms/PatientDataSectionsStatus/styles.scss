@@ -1,0 +1,36 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdColors.scss";
+
+.PatientDataSectionsStatus {
+  &_grid {
+    display: grid;
+    column-gap: $spacing-sm;
+    row-gap: $spacing-base;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 120px));
+  }
+
+  &_title + &_grid {
+    margin-top: $spacing-base;
+  }
+
+  &_grid + &_action {
+    margin-top: $spacing-base;
+  }
+
+  &_item {
+    text-align: center;
+  }
+  &_badge {
+    margin-top: $spacing-xs;
+    @include stdColorSchemes();
+    padding: $spacing-xs $spacing-base;
+    border-radius: 1em;
+    font-weight: bold;
+    font-size: 80%;
+  }
+  &_status {
+    margin-top: $spacing-xs;
+    text-transform: capitalize;
+    font-size: 80%;
+  }
+}

@@ -1,0 +1,9 @@
+@import "../../scss/mixins/input.scss";
+
+.Input {
+  @include inputField();
+  // HACK caters for multi-select selects
+  &[multiple] {
+    min-width: 200px;
+  }
+}

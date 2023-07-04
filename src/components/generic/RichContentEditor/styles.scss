@@ -1,0 +1,10 @@
+@import "../../../scss/variables.scss";
+// @import "./redactor.min.css";
+
+.RichContentEditor {
+  // HACK set to match inputs
+  border: 1px solid $color-gray-dark;
+  border-radius: $input-border-radius;
+  padding: $spacing-sm;
+  min-height: 100px;
+}

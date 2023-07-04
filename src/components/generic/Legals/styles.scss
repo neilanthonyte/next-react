@@ -1,0 +1,23 @@
+@import "../../../scss/variables.scss";
+
+.acceptLegals {
+  &_link {
+    cursor: pointer;
+    color: $color-secondary;
+    text-decoration: none;
+  }
+
+  &_container {
+    height: 300px;
+    // margin-bottom: $spacing-base;
+    border: $color-active 1px solid;
+  }
+
+  &_content {
+    padding: $spacing-md $spacing-lg $spacing-sm $spacing-md;
+
+    &_heading {
+      margin-bottom: $spacing-sm;
+    }
+  }
+}

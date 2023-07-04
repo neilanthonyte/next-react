@@ -1,0 +1,107 @@
+@use "sass:math";
+@import "../variables.scss";
+@import "../variables-icons.scss";
+@import "./schemes";
+@import "./icons.scss";
+
+@mixin card($className) {
+  width: 100%;
+  position: relative;
+
+  @if $theme== "next" {
+    border: 1px solid $color-gray-lighter;
+    box-shadow: $defaults-boxShadow-base;
+    background-color: white;
+  }
+
+  // HACK - not supported in IE11
+  // display: flex;
+  // flex-direction: column;
+
+  .#{$className}_body {
+    flex: 1;
+    padding: $spacing-md;
+  }
+
+  header {
+    margin-bottom: $spacing-sm;
+  }
+
+  &.-link {
+    color: $color-primary-alt;
+    padding-right: $spacing-lg;
+    transition: box-shadow 0.3s ease;
+
+    &:after {
+      transition: right 0.2s ease;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: $defaults-boxShadow-hover;
+
+      &:after {
+        right: 0;
+      }
+    }
+
+    &:active {
+      box-shadow: $defaults-boxShadow-active;
+    }
+
+    &:after {
+      @include icon;
+
+      font-size: 2em;
+      content: unicode($icon-chevron-small-right);
+      display: block;
+      color: $color-primary;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: $spacing-xs;
+    }
+  }
+
+  .#{$className}_actions {
+    $action-size: 32px;
+
+    position: absolute;
+    top: $spacing-base;
+    right: math.div($action-size, -2);
+    font-size: $action-size;
+
+    &_icon {
+      // HACK - reinstate
+      // @include circularIconVariant($action-size);
+      box-shadow: $defaults-boxShadow-base;
+      display: block;
+      margin-bottom: $spacing-xs;
+    }
+  }
+
+  &.-highlight {
+    //border: 3px solid $color-info;
+    box-shadow: 0 0 6px $color-warning;
+  }
+
+  .#{$className}_pendingOverlay {
+    display: none;
+  }
+
+  &.-pending {
+    border: 2px solid $color-gray;
+
+    .#{$className}_pendingOverlay {
+      display: block;
+    }
+  }
+
+  &.-active {
+    @include selectedScheme;
+  }
+
+  .cell + .cell {
+    margin-top: $spacing-base;
+  }
+}

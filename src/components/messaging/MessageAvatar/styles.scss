@@ -1,0 +1,8 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdActionSizes.scss";
+
+.MessageAvatar {
+  &_logo {
+    @include stdActionSizes($isSquare: true);
+  }
+}

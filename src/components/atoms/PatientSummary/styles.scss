@@ -1,0 +1,81 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+.PatientSummary {
+  display: flex;
+  align-items: center;
+
+  &.-layout {
+    &-column {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &_avatar {
+    // HACK needs to match the size of the chosen icon
+    width: $standard-size-md + $spacing-sm;
+    flex-grow: 0;
+    flex-shrink: 0;
+    // centers the element vertically
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &_content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.-loading {
+        opacity: 30%;
+      }
+    }
+  }
+
+  &_loader {
+    position: absolute;
+  }
+
+  &_details {
+    flex-grow: 1;
+    &_children {
+      // HACK reset line-height because of spacing constraints
+      line-height: 1;
+      margin-top: math.div($spacing-xs, 2);
+    }
+  }
+
+  &_alerts {
+    display: inline-flex;
+    > * {
+      margin-right: 4px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &_alert {
+    display: flex;
+    &.-preview + &.-preview {
+      margin-top: 0;
+      margin-left: $spacing-xs;
+    }
+  }
+
+  &_alert + &_alert {
+    margin-top: $spacing-xs;
+  }
+
+  &_details {
+    &.-scheme {
+      &-dark {
+        color: #fff;
+        h4 {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

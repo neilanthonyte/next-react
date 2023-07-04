@@ -1,0 +1,8 @@
+@import "../../../scss/variables.scss";
+
+.patientNote {
+  text-align: left;
+  &.-compact {
+    font-size: 80%;
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../../scss/variables.scss";
+
+.ObservationCell {
+  display: flex;
+  align-items: center;
+  &_body {
+    flex: 1;
+  }
+  &_body + &_actions {
+    margin-left: $spacing-sm;
+  }
+  &_action + &_action {
+    margin-left: $spacing-xs;
+  }
+}

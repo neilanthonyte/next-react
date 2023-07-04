@@ -1,0 +1,34 @@
+@import "../../../scss/variables.scss";
+
+.NextBarContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &_body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: $spacing-sm;
+    // HACK push in to give a bit of extra spacing for the action overhang
+    padding-left: $spacing-sm;
+    padding-right: $spacing-sm;
+    overflow-y: hidden;
+    color: $defaults-textColor;
+  }
+
+  &_footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-top: $spacing-sm;
+  }
+
+  &_item {
+    flex-grow: 1;
+    flex-basis: 0;
+    // overflow-y: auto;
+  }
+  &_item + &_item {
+    margin-left: $spacing-lg;
+  }
+}

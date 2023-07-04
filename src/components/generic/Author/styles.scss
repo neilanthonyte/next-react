@@ -1,0 +1,23 @@
+@import "../../../scss/variables.scss";
+
+.author {
+  display: flex;
+  align-items: center;
+  $size: 30px;
+  margin-bottom: $spacing-sm;
+
+  &_avatar {
+    width: $size;
+    height: $size;
+    min-height: $size;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: $spacing-sm;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &_name {
+    flex-grow: 1;
+  }
+}

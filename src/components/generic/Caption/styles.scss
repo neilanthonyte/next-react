@@ -1,0 +1,11 @@
+.caption {
+  text-align: center;
+  font-style: italic;
+
+  &_title {
+    font-size: 18px;
+  }
+  &_description {
+    font-size: 13px;
+  }
+}

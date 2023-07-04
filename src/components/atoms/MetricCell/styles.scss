@@ -1,0 +1,56 @@
+@import "../../../scss/variables.scss";
+
+.metricCell {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  &_metric {
+    margin-right: $spacing-md;
+    &_value {
+      font-size: $font-size-h3;
+      // flex-grow: 1;
+    }
+  }
+
+  &_trend {
+    display: inline-block;
+    &.-up {
+      transform: rotate(0deg);
+    }
+    &.-down {
+      transform: rotate(180deg);
+    }
+    &.-stable {
+      transform: rotate(90deg);
+    }
+    > span {
+      color: $color-gray;
+    }
+    & + span {
+      margin-left: $spacing-sm;
+    }
+  }
+
+  &_goal {
+    font-size: $font-size-h4;
+    .metricCell_label {
+      color: $color-goal;
+    }
+  }
+
+  &_label {
+    font-size: 1rem;
+    color: $color-gray-dark;
+  }
+
+  &_metric,
+  &_goal {
+    text-align: center;
+  }
+}
+
+* + .metricCell {
+  margin-top: $spacing-base;
+}

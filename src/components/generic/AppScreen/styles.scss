@@ -1,0 +1,18 @@
+@import "../../../scss/variables.scss";
+
+.AppScreen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+
+  &_body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: $spacing-sm * 2 $spacing-sm;
+
+    &.-muted {
+      background: $color-gray-lighter;
+    }
+  }
+}

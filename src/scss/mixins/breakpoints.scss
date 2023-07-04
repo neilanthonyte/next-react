@@ -1,0 +1,115 @@
+@mixin forLargeDisplays {
+  @media (min-width: $screen-xl-min) {
+    @content;
+  }
+}
+
+@mixin forDesktop {
+  @media (min-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+@mixin belowDesktop {
+  @media (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin forMobile {
+  @media (max-width: $screen-xs-max) {
+    @content;
+  }
+}
+
+@mixin aboveMobile {
+  @media (min-width: $screen-sm-min) {
+    @content;
+  }
+}
+
+// LEGACY
+
+@mixin forXLScreen {
+  @media (min-width: $screen-xl-min) {
+    @content;
+  }
+}
+
+@mixin forLgScreen {
+  @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+    @content;
+  }
+}
+
+@mixin forLargerThanLgScreen {
+  @media (min-width: $screen-xl-min) {
+    @content;
+  }
+}
+
+@mixin forUpToLgScreen {
+  @media (max-width: $screen-lg-max) {
+    @content;
+  }
+}
+
+@mixin forTabletLandscape {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin forLargerThanTabletLandscape {
+  @media (min-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+@mixin forUpToTabletLandscape {
+  @media (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin belowTabletLandscape {
+  @media (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+@mixin aboveTabletLandscape {
+  @media (min-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+@mixin forUpToLargeLandscape {
+  @media (max-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+@mixin forTabletPortrait {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin aboveTabletPortrait {
+  @media (min-width: $screen-md-min) {
+    @content;
+  }
+}
+
+@mixin belowTabletPortrait {
+  @media (max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+@mixin forLargerThanMobile {
+  @media (min-width: $screen-sm-min) {
+    @content;
+  }
+}

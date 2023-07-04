@@ -1,0 +1,74 @@
+@import "./backgroundImage";
+@import "./breakpoints";
+
+@mixin contentWithDecoration(
+  $className,
+  $padding-size: 0,
+  $decoration-position: top
+) {
+  position: relative;
+
+  .#{$className}_decoration {
+    @include backgroundImage;
+
+    position: absolute;
+    top: 0;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  @if $decoration-position == right {
+    padding-right: $padding-size;
+
+    .#{$className}_decoration {
+      right: 0;
+      width: $padding-size;
+      height: 100%;
+    }
+
+    .#{$className}_body {
+      padding-right: $spacing-md;
+    }
+  } @else if $decoration-position == left {
+    padding-left: $padding-size;
+
+    .#{$className}_decoration {
+      left: 0;
+      width: $padding-size;
+      height: 100%;
+    }
+
+    .#{$className}_body {
+      padding-left: $spacing-md;
+    }
+  } @else {
+    // This is for top positioned decoration
+    padding: 0;
+    padding-top: $padding-size;
+
+    .#{$className}_decoration {
+      height: $padding-size;
+      width: 100%;
+    }
+  }
+}
+
+// Switches the padding to top when on mobile
+@mixin dynamicContentWithDecoration(
+  $className,
+  $leftSize,
+  $topSize,
+  $preferredSide: right
+) {
+  @include forLargerThanMobile {
+    @include contentWithDecoration($className, $leftSize, $preferredSide);
+  }
+
+  @include forMobile {
+    @include contentWithDecoration($className, $topSize, top);
+  }
+}

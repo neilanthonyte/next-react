@@ -1,0 +1,27 @@
+@import "../../../scss/variables.scss";
+
+.CreditCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_number {
+    flex-grow: 1;
+    padding-left: 1.5em;
+    font-size: 110%;
+    font-weight: bold;
+  }
+
+  &_expiry {
+    color: $color-gray-darker;
+    padding-left: 1.5em;
+  }
+
+  &_type {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  &_edit {
+    margin-left: $spacing-md;
+  }
+}

@@ -1,0 +1,52 @@
+@use "sass:math";
+@import "./_core";
+
+:global {
+  @import "react-image-gallery/styles/scss/image-gallery-no-icon.scss";
+}
+
+:global #app {
+  height: 100%;
+}
+
+:global .debug {
+  margin-top: 40px;
+  border-top: 1px dashed gray;
+  padding-top: 15px;
+  background: white;
+  position: relative;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 10px 0 5px 0 !important;
+    color: #666 !important;
+  }
+  p {
+    font-size: 80%;
+  }
+
+  pre {
+    font-size: 8pt;
+    border: 1px solid gray;
+    padding: 10px;
+    background: #eee;
+    white-space: pre-wrap;
+  }
+
+  &::before {
+    $fontSize: 16px;
+    content: "DEBUG";
+    background: white;
+    position: absolute;
+    left: 10px;
+    top: math.div(-$fontSize, 2);
+    padding: 0 5px;
+    display: inline-block;
+    font-size: $fontSize;
+    line-height: $fontSize;
+    font-family: "Courier New", Courier, monospace;
+  }
+}

@@ -1,0 +1,66 @@
+@import "../../../scss/variables.scss";
+
+.BaseAction {
+  width: 100%;
+  border-radius: 20px;
+  padding: $spacing-sm * 2;
+
+  &.-variant {
+    &-patient {
+      background: #000;
+      border-radius: 40px;
+      padding-left: $spacing-sm * 4;
+    }
+    &-default {
+      color: $color-gray-dark;
+    }
+    &-goal {
+      color: $color-goal-alt;
+      background-color: $color-goal;
+      * {
+        color: $color-goal-alt;
+      }
+    }
+    &-disabled {
+      * {
+        color: $color-gray-dark;
+      }
+    }
+    &-success {
+      color: $color-success;
+      border-color: $color-success;
+      * {
+        color: $color-success;
+      }
+    }
+    &-fail {
+      color: $color-error;
+      border-color: $color-error;
+      * {
+        color: $color-error;
+      }
+    }
+  }
+
+  &_details {
+    display: flex;
+    align-items: center;
+  }
+  &_icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: $spacing-sm * 2;
+  }
+  &_description {
+    flex-grow: 1;
+    text-align: left;
+    small {
+      font-size: 90%;
+    }
+  }
+  &_timestamp {
+    font-size: 80%;
+    font-weight: bold;
+    float: right;
+  }
+}

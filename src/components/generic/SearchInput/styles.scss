@@ -1,0 +1,38 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/variables-icons";
+@import "../../../scss/mixins/icons";
+@import "../../../scss/mixins/stdActionSizes.scss";
+
+.SearchInput {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  input {
+    @include stdActionSizes(0.5);
+    border: 2px solid $color-gray !important;
+    border-radius: 20px !important;
+    width: 100%;
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+
+    &::-ms-clear {
+      display: none;
+    }
+  }
+
+  &_icon {
+    position: absolute;
+    top: 50%;
+    right: 0.5em;
+    font-size: $font-size;
+    margin-top: -0.6em;
+    * {
+      color: $color-gray;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../../scss/variables.scss";
+
+.PatientLogin {
+  max-width: 500px;
+  margin: 0 auto;
+
+  &_logo {
+    max-width: 100px;
+    margin: 0 auto;
+  }
+
+  &_message {
+    text-align: center;
+    padding-bottom: $spacing-md;
+    margin-bottom: $spacing-md;
+    border-bottom: 1px solid $color-gray-light;
+  }
+}

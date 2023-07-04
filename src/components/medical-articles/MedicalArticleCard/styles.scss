@@ -1,0 +1,47 @@
+@import "../../../scss/variables.scss";
+@import "../../mixins/cards";
+@import "../../mixins/contentLayout";
+@import "../../mixins/schemes";
+
+.articlePreview {
+  // background-color: $defaults-backgroundColor;
+  // padding: $spacing-xs;
+
+  &_body {
+    color: $color-primary-alt;
+  }
+
+  &.-standalone {
+    @include card("articlePreview");
+  }
+
+  &.-active {
+    @include selectedScheme;
+  }
+
+  &.-withPosterImage.-standalone {
+    @media (min-width: $screen-sm-min) {
+      @include contentWithDecoration("articlePreview", 150px, top);
+    }
+
+    @media (max-width: $screen-xs-max) {
+      @include contentWithDecoration("articlePreview", 150px);
+    }
+  }
+
+  &.-withPosterImage:not(.-standalone) {
+    @media (min-width: $screen-sm-min) {
+      @include contentWithDecoration("articlePreview", 100px, right);
+    }
+
+    @media (max-width: $screen-xs-max) {
+      @include contentWithDecoration("articlePreview", 100px);
+    }
+  }
+}
+
+.-active {
+  .articlePreview {
+    @include selectedScheme;
+  }
+}

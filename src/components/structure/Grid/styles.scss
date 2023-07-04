@@ -1,0 +1,53 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+.grid {
+  display: grid;
+  margin-bottom: $spacing-sm;
+
+  // HACK consider making default if this does not break any existing uses
+  &.-fullHeight {
+    height: 100%;
+  }
+
+  &.-xs {
+    grid-gap: $spacing-xs;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  }
+
+  &.-sm {
+    grid-gap: $spacing-xs;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+
+    @include forMobile {
+      grid-gap: $spacing-xs;
+    }
+  }
+
+  &.-md {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: $spacing-sm;
+
+    @include forMobile {
+      grid-gap: $spacing-xs;
+    }
+  }
+
+  &.-lg {
+    grid-gap: $spacing-md;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    @include forMobile {
+      grid-template-columns: none;
+    }
+  }
+
+  &.-xl {
+    grid-gap: $spacing-md;
+    grid-template-columns: repeat(auto-fill, minmax(455px, 1fr));
+
+    @include forMobile {
+      grid-template-columns: none;
+    }
+  }
+}

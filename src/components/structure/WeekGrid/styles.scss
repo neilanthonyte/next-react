@@ -1,0 +1,12 @@
+@import "../../../scss/variables.scss";
+
+.WeekGrid {
+  display: flex;
+  margin-top: $spacing-sm;
+  margin-bottom: $spacing-md;
+  justify-content: space-between;
+
+  &_item {
+    width: 13%;
+  }
+}

@@ -1,0 +1,35 @@
+@import "../variables.scss";
+
+@mixin barChartColors {
+  .bar-1 {
+    fill: $bar-1;
+  }
+
+  .bar-2 {
+    fill: $bar-2;
+  }
+
+  .bar-3 {
+    fill: $bar-3;
+  }
+
+  .bar-4 {
+    fill: $bar-4;
+  }
+
+  .bar-5 {
+    fill: $bar-5;
+  }
+
+  .bar-success {
+    fill: $bar-success;
+  }
+
+  .bar-warning {
+    fill: $bar-warning;
+  }
+
+  .bar-danger {
+    fill: $bar-danger;
+  }
+}

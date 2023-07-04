@@ -1,0 +1,71 @@
+@import "../../../scss/variables.scss";
+
+.informationHeader {
+  &_primary {
+    width: 70%;
+    float: left;
+  }
+
+  &_primaryHeader,
+  &_secondaryHeader {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+
+    @if $theme == "svc" {
+      font-weight: bold;
+    }
+  }
+
+  &.-size-xs &_primaryHeader,
+  &.-size-xs &_secondaryHeader {
+    font-size: $font-size-h4;
+  }
+
+  &.-size-sm &_primaryHeader,
+  &.-size-sm &_secondaryHeader {
+    font-size: $font-size-h3;
+  }
+
+  &.-size-md &_primaryHeader,
+  &.-size-md &_secondaryHeader {
+    font-size: 2.1em;
+  }
+
+  &.-size-lg &_primaryHeader,
+  &.-size-lg &_secondaryHeader {
+    font-size: $font-size-h2;
+  }
+
+  &.-size-xs &_primaryDescription,
+  &.-size-xs &_secondaryDescription {
+    font-size: $font-size * 0.8;
+  }
+
+  &.-size-sm &_primaryDescription,
+  &.-size-sm &_secondaryDescription {
+    font-size: $font-size;
+  }
+
+  &.-size-md &_primaryDescription,
+  &.-size-md &_secondaryDescription {
+    font-size: $font-size-h4;
+  }
+
+  &.-size-lg &_primaryDescription,
+  &.-size-lg &_secondaryDescription {
+    font-size: $font-size-h3;
+  }
+
+  &_secondary {
+    text-align: right;
+    float: right;
+  }
+
+  &_secondaryHeader {
+    @if $theme == "svc" {
+      font-weight: bold;
+    }
+  }
+}

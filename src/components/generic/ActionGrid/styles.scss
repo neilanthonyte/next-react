@@ -1,0 +1,23 @@
+@import "../../../scss/variables.scss";
+
+.actionGrid {
+  padding: $spacing-md;
+
+  &_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &_icon {
+    font-size: $font-size * 4;
+    float: left;
+    z-index: 1;
+  }
+
+  &_button {
+    width: calc(100% - 64px);
+    left: -10px;
+    border-radius: 2em;
+  }
+}

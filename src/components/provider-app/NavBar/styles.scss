@@ -1,0 +1,29 @@
+@import "../../../scss/mixins/schemes.scss";
+
+$height: 80px;
+
+.NavBar {
+  @include primaryScheme;
+  display: flex;
+
+  // HACK assumptions
+  > a {
+    flex-grow: 1;
+    height: $height;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
+
+    // HACK further assumptions
+    label {
+      display: block;
+      font-size: 9pt;
+      margin-top: 5px;
+    }
+  }
+  &_active {
+    @include reversedScheme;
+  }
+}

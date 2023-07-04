@@ -1,0 +1,38 @@
+@mixin brandingVariant(
+  $logo-size: 150px,
+  $tagline-size: 1em,
+  $tagline-margin: $spacing-sm
+) {
+  text-align: center;
+  > img {
+    @media (min-width: $screen-sm-min) {
+      width: $logo-size;
+    }
+    @media (max-width: $screen-xs-max) {
+      width: 200px;
+    }
+  }
+  > .tagline {
+    text-transform: uppercase;
+    color: $color-primary;
+    margin-top: $tagline-margin;
+    @media (min-width: $screen-sm-min) {
+      font-size: $tagline-size;
+    }
+    @media (max-width: $screen-xs-max) {
+      font-size: 1em;
+    }
+  }
+}
+
+.branding {
+  &.-base {
+    @include brandingVariant();
+  }
+  &.-lg {
+    @include brandingVariant(200px, 1.2em);
+  }
+  &.-xl {
+    @include brandingVariant(450px, 2em, $spacing-base);
+  }
+}

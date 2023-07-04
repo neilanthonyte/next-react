@@ -1,0 +1,126 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+/**  
+ * On small screen, the .main panel height controls the position of the sliding panels
+ * when full height, the panels will be pushed off screens.
+ * This means for larger screen, the panels need to be absolute and manually positioned.
+*/
+
+// element sizes
+$main-content-sm-layout-minimised-height: 200px;
+$main-content-sm-layout-height: calc(100% - #{$tabbed-nav-height});
+$sidebar-lg-layout-width: 400px;
+$main-content-lg-layout-width: calc(100% - #{$sidebar-lg-layout-width});
+
+// used to calculate view size when minimised in EHR
+$HH-sidebar-media-max-width: 1152px;
+$HH-lg-sidebar-width: 240px;
+$HH-sm-sidebar-width: 190px;
+$view-minimised-height: 150px;
+
+// transitions
+$transition-duration: 250ms;
+$transition-delay: 250ms;
+
+.TelehealthScreenView {
+  // allow to be minimised bottom left corner
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 250ms, height 250ms;
+
+  &_main {
+    height: $main-content-sm-layout-height;
+    &.-shrink {
+      height: $main-content-sm-layout-minimised-height;
+    }
+    transition: height $transition-duration, transform $transition-duration,
+      width $transition-duration;
+
+    @include aboveTabletPortrait {
+      height: 100%;
+      width: $main-content-lg-layout-width;
+      transform: translateX($sidebar-lg-layout-width);
+    }
+  }
+
+  &_panel {
+    height: 100%;
+    padding: $spacing-base;
+    background-color: $tabbed-nav-light-active;
+    // needed to position the close icon
+    position: relative;
+
+    @include aboveTabletPortrait {
+      position: absolute;
+      top: 0;
+    }
+    &_close {
+      position: absolute;
+      top: $spacing-sm;
+      right: $spacing-sm;
+    }
+  }
+
+  &_toggleSize {
+    position: absolute;
+    top: $spacing-sm;
+    right: $spacing-sm;
+  }
+
+  &_tabs {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &_panel,
+  &_tabs {
+    transition: transform $transition-duration;
+    @include aboveTabletPortrait {
+      width: $sidebar-lg-layout-width;
+    }
+  }
+
+  /**
+   * ANIMATIONS
+   */
+
+  &:not(.-minimised) {
+    height: 100%;
+    width: 100%;
+    transition-delay: 0;
+
+    .TelehealthScreenView_main {
+      @include aboveTabletPortrait {
+        transition-delay: $transition-delay;
+      }
+    }
+    .TelehealthScreenView_panel,
+    .TelehealthScreenView_tabs {
+      @include aboveTabletPortrait {
+        transition-delay: $transition-delay;
+      }
+    }
+  }
+
+  &.-minimised {
+    width: $HH-lg-sidebar-width;
+    height: $view-minimised-height;
+    @media (max-width: $HH-sidebar-media-max-width) {
+      width: $HH-sm-sidebar-width;
+    }
+    transition-delay: $transition-delay;
+
+    .TelehealthScreenView_panel,
+    .TelehealthScreenView_tabs {
+      transform: translateX(-$sidebar-lg-layout-width);
+      transition-delay: 0;
+    }
+    .TelehealthScreenView_main {
+      width: 100%;
+      transform: translateX(0);
+    }
+  }
+}

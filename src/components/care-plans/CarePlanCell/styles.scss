@@ -1,0 +1,65 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/truncate.scss";
+
+.CarePlanCell {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &_revisions {
+    display: block;
+  }
+
+  &_detail {
+    margin: 0 $spacing-sm;
+    flex: 1;
+
+    &.-hidden {
+      opacity: 0;
+    }
+    &.-primary {
+      line-height: 1em;
+      margin-left: 0;
+      text-align: left;
+    }
+    position: relative;
+  }
+
+  &_child {
+    padding: $spacing-xs 0;
+  }
+
+  &_status {
+    $margin-horizontal: $spacing-md;
+    margin: 0 $margin-horizontal;
+    width: calc(100% - #{$margin-horizontal} * 2);
+    line-height: 1;
+    border-radius: 1em;
+    padding: $spacing-xs $spacing-base;
+    border: 2px solid transparent;
+    text-align: center;
+    position: absolute;
+    transform: translateY(-50%);
+    @include truncate();
+    &.-draft {
+      border-style: dashed;
+      border-color: $defaults-textColor;
+    }
+    &:not(.-visible) {
+      opacity: 0;
+    }
+  }
+
+  &_actions {
+    display: flex;
+    align-items: center;
+    line-height: 1em;
+    column-gap: $spacing-xs;
+    &_action {
+      cursor: pointer;
+      &.-hidden {
+        opacity: 0;
+      }
+    }
+  }
+}

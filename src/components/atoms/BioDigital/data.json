@@ -1,0 +1,678 @@
+{
+  "data": [{
+      "type": "anatomy",
+      "title": "Diafragma  (Diaphragm)",
+      "slug": "diafragma-diaphragm",
+      "sceneName": "be=2izZ",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5109/diafragma-diaphragm.jpg?mtime=20181120064132",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Fortnite skull trooper",
+      "slug": "fortnite-skull-trooper",
+      "sceneName": "be=2izX",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5107/fornight-skull-trooper.jpg?mtime=20181120063625",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Gallbladder",
+      "slug": "gallbladder",
+      "sceneName": "be=2izU",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5105/Gallbladder.jpg?mtime=20181120063215",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Diverticulosis",
+      "slug": "diverticulosis",
+      "sceneName": "be=2izQ",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5103/diverticulosis.jpg?mtime=20181120062702",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Chronic idiopathic constipation",
+      "slug": "chronic-idiopathic-constipation",
+      "sceneName": "be=2ixw",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5101/chronic-idiopathic-constipation.jpg?mtime=20181119220733",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Abdominal pain",
+      "slug": "abdominal-pain",
+      "sceneName": "be=2ixo",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5099/Abnominal-Pain.jpg?mtime=20181119201401",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Concussion",
+      "slug": "concussion",
+      "sceneName": "be=2ixn",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5097/Concussion.jpg?mtime=20181119201103",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Neurotransmitter activity",
+      "slug": "neurotransmitter-activity",
+      "sceneName": "be=2ix",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5095/neurotransmitter-activity.jpg?mtime=20181119200419",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Systems"
+    },
+    {
+      "type": "anatomy",
+      "title": "Neurones with degenerated myelin",
+      "slug": "neurones-with-degenerated-myelin",
+      "sceneName": "be=2ixk",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5093/neurones-with-degenerated-myelin.jpg?mtime=20181119195840",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Systems"
+    },
+    {
+      "type": "anatomy",
+      "title": "Nerve impulse",
+      "slug": "nerve-impulse",
+      "sceneName": "be=2ixi",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5091/Nerve-Impluse.jpg?mtime=20181119195222",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Systems"
+    },
+    {
+      "type": "anatomy",
+      "title": "Brain sagittal cross section",
+      "slug": "brain-sagittal-cross-section-1",
+      "sceneName": "be=2ixh",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5089/brain-sagittal-cross-section.jpg?mtime=20181119194721",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Brain coronal cross section",
+      "slug": "brain-coronal-cross-section",
+      "sceneName": "be=2ixd",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5087/brain-coronal-cross-section.jpg?mtime=20181119194232",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Brain activity in frontal lobe",
+      "slug": "brain-activity-in-frontal-lobe",
+      "sceneName": "be=2ixD",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5085/brain-activity-in-frontal-lobe.jpg?mtime=20181119193845",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Arterial supply of nerves",
+      "slug": "arterial-supply-of-nerves",
+      "sceneName": "be=2ix6",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/5083/Arterial-supply-of-nerves.jpg?mtime=20181119193423",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Systems"
+    },
+    {
+      "type": "anatomy",
+      "title": "Hypertension",
+      "slug": "hypertension",
+      "sceneName": "be=2Ebj",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Hypertension.jpg?mtime=20171102120651",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Glucose Absorption In DM2",
+      "slug": "glucose-absorption-in-dm2",
+      "sceneName": "m=glucose_absorption_type_2_diabetes",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Diabetes.jpg?mtime=20171102114052",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Torn Rotator Cuff",
+      "slug": "torn-rotator-cuff",
+      "sceneName": "m=torn_rotator_cuff",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Torn-Supraspinatus.jpg?mtime=20171102113504",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Wrist Sprain",
+      "slug": "wrist-sprain",
+      "sceneName": "m=wrist_sprain",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Wrist-Sprain.jpg?mtime=20171102112835",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Flexor Tendon Injury of Hand",
+      "slug": "flexor-tendon-injury-of-hand",
+      "sceneName": "m=flexor_tendon_injuries",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Flexor-Tendon-Injury.jpg?mtime=20171102112242",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Musculoskeletal system of Knee",
+      "slug": "musculoskeletal-system-of-knee",
+      "sceneName": "m=musculoskeletal_system_knee",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Knee.jpg?mtime=20171102111352",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Musculoskeletal System of the Foot",
+      "slug": "musculoskeletal-system-of-the-foot",
+      "sceneName": "m=musculoskeletal_system_foot",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Foot.jpg?mtime=20171102110752",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Venous Blood Clot",
+      "slug": "venous-blood-clot",
+      "sceneName": "m=blood_clot_in_vein",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Venous-Blood-Clot.jpg?mtime=20171102110026",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Coronary Artery Disease",
+      "slug": "coronary-artery-disease",
+      "sceneName": "m=coronary_artery_disease_v02",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/2XQKV_asb6gu61_v1-0.jpg?mtime=20171220132659",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Conditions"
+    },
+    {
+      "type": "anatomy",
+      "title": "Respiratory system: male",
+      "slug": "respiratory-system-female",
+      "sceneName": "m=male_system_anatomy_respiratory_whole",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Respiratory-System.jpg?mtime=20171101162939",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Systems"
+    },
+    {
+      "type": "anatomy",
+      "title": "Digestive System: male",
+      "slug": "digestive-system-female",
+      "sceneName": "m=male_system_anatomy_digestive_whole",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Digestive-System.jpg?mtime=20171101162443",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Systems"
+    },
+    {
+      "type": "anatomy",
+      "title": "Nervous System: Male",
+      "slug": "nervous-system-male",
+      "sceneName": "m=male_system_anatomy_nervous_whole",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Nervous-System.jpg?mtime=20171101162013",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Systems"
+    },
+    {
+      "type": "anatomy",
+      "title": "Cardiovascular System: Male",
+      "slug": "cardiovascular-system-female",
+      "sceneName": "m=male_system_anatomy_cardiovascular_whole",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/CV-System.jpg?mtime=20171101161635",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Systems"
+    },
+    {
+      "type": "anatomy",
+      "title": "Skeletal System: Male",
+      "slug": "skeletal-system-female",
+      "sceneName": "m=male_system_anatomy_skeletal_whole",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Skeletal-System.jpg?mtime=20171101161339",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Systems"
+    },
+    {
+      "type": "anatomy",
+      "title": "Auditory system",
+      "slug": "auditory-system-female",
+      "sceneName": "m=male_system_anatomy_auditory_whole",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/2XQK7_4wcao0s2_v1-0.jpg?mtime=20171220132330",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Systems"
+    },
+    {
+      "type": "anatomy",
+      "title": "Abdomen: Male",
+      "slug": "abdomen-male",
+      "sceneName": "m=human_02_regional_male_abdomen",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Abdo.jpg?mtime=20171101160155",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Back",
+      "slug": "back-male",
+      "sceneName": "m=human_02_regional_male_back",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/2XQKK_t3d9bxie_v1-0.jpg?mtime=20171220132525",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Thorax",
+      "slug": "thorax",
+      "sceneName": "m=human_02_regional_male_thorax",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Thorax.jpg?mtime=20171101154438",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Heart: Coronal Cross Section",
+      "slug": "heart-coronal-cross-section",
+      "sceneName": "m=heart_coronal_cross_section",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/2XQJh_vo48bm91_v1-0.jpg?mtime=20171220131955",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Ear: Coronal Cross Section",
+      "slug": "ear-coronal-cross-section",
+      "sceneName": "m=ear_cross_section_coronal",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/2XQKj_8wvrv7p0_v1-0.jpg?mtime=20171220132857",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Brain: Sagittal Cross Section",
+      "slug": "brain-sagittal-cross-section",
+      "sceneName": "m=sagittal_brain_cross_section",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Brain-Sagittal-CS.jpg?mtime=20171101152625",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Adult male lower limb",
+      "slug": "adult-male-lower-limb",
+      "sceneName": "m=human_02_regional_male_lower_limb",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Lower-limb.jpg?mtime=20171101151945",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Pelvis: male",
+      "slug": "female-pelvis",
+      "sceneName": "m=human_02_regional_male_pelvis",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Female-pelvis-alt.jpg?mtime=20171101143532",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": {
+          "position": {
+            "x": 17.916,
+            "y": 98.344999999999999,
+            "z": -36.033000000000001
+          },
+          "target": {
+            "x": 4.0170000000000003,
+            "y": 89.144999999999996,
+            "z": -0.45600000000000002
+          },
+          "up": {
+            "x": -0.095000000000000001,
+            "y": 0.97199999999999998,
+            "z": 0.214
+          }
+        },
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Head & Neck",
+      "slug": "head-neck",
+      "sceneName": "m=human_02_regional_male_head_neck",
+      "description": "",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/Head-Neck.jpg?mtime=20171101142854",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Upper Limb",
+      "slug": "upper-limb",
+      "sceneName": "m=human_02_regional_male_upper_limb",
+      "description": "In nostrud proident ad elit consectetur magna magna culpa dolore nisi ut ut cupidatat in dolore voluptate anim velit qui dolor magna et officia do reprehenderit.",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/2S2lP_pwcfueym_v1-0_171017_072125.jpg?mtime=20171017182126",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": null,
+        "primary": null,
+        "secondary": null
+      },
+      "category": "Regional anatomy"
+    },
+    {
+      "type": "anatomy",
+      "title": "Male Urinary System",
+      "slug": "male-urinary-system",
+      "sceneName": "m=male_system_anatomy_urinary_whole",
+      "description": "The urinary system, also called the renal system, is responsible for filtering waste from the bloodstream and expelling it out of the body as urine. Parts of the urinary system include the kidneys, ureters, bladder, and urethra.",
+      "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/2QdAn_e2np7xsf_v1-0.jpg?mtime=20170930222107",
+      "placeholderImage": null,
+      "cameraPositions": {
+        "default": {
+          "position": {
+            "x": -7.6799999999999997,
+            "y": 118.611,
+            "z": -41.814999999999998
+          },
+          "target": {
+            "x": -0.10100000000000001,
+            "y": 104.44199999999999,
+            "z": 5.7640000000000002
+          },
+          "up": {
+            "x": 0.043999999999999997,
+            "y": 0.95899999999999996,
+            "z": 0.27900000000000003
+          }
+        },
+        "primary": {
+          "position": {
+            "x": -2.077,
+            "y": 116.572,
+            "z": -40.942
+          },
+          "target": {
+            "x": 13.65,
+            "y": 104.73099999999999,
+            "z": 5.2560000000000002
+          },
+          "up": {
+            "x": 0.075999999999999998,
+            "y": 0.97199999999999998,
+            "z": 0.223
+          }
+        },
+        "secondary": {
+          "position": {
+            "x": 14.034000000000001,
+            "y": 116.572,
+            "z": -43.545000000000002
+          },
+          "target": {
+            "x": 13.65,
+            "y": 104.73099999999999,
+            "z": 5.2560000000000002
+          },
+          "up": {
+            "x": -0.002,
+            "y": 0.97199999999999998,
+            "z": 0.23599999999999999
+          }
+        }
+      },
+      "category": ""
+    },
+
+  ],
+  "meta": {
+    "pagination": {
+      "total": 41,
+      "count": 41,
+      "per_page": 100,
+      "current_page": 1,
+      "total_pages": 1,
+      "links": []
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/input.scss";
+
+// To allow inputs to be cleared
+.InputControls {
+  margin-bottom: $spacing-xs;
+
+  // for inputs that don't look good with a clear button on the right
+  &.-indentClear {
+    padding-right: $input-clear-size + ($input-clear-spacing * 2);
+  }
+  &.-indentClear &_clear {
+    right: -($input-clear-size + $input-clear-spacing);
+  }
+
+  // A button to allow someone to clear the input
+  &_input {
+    position: relative;
+    display: block;
+
+    @include inputsSelector {
+      padding: 0 ($input-clear-size + $input-clear-spacing * 2) 0 $input-padding;
+    }
+  }
+
+  &_clear {
+    font-size: $input-clear-size;
+    position: absolute;
+    right: $input-clear-spacing;
+    top: 50%;
+    margin-top: math.div(-$input-clear-size, 2);
+    width: $input-clear-size;
+    text-align: center;
+    opacity: 0.1;
+    transition: opacity 200ms;
+
+    &.-active {
+      opacity: 1;
+    }
+  }
+
+  &_messages {
+    margin: $spacing-xs 0 $spacing-sm 0;
+  }
+}

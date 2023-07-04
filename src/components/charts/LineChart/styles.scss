@@ -1,0 +1,43 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdColors.scss";
+
+.lineChart {
+  .zoom {
+    fill: transparent;
+  }
+  .chart {
+    clip-path: url(#clip);
+  }
+  .line {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    // stroke: $color-secondary;
+    fill: none;
+  }
+  .point {
+    @include stdColorSchemesSvg;
+    stroke-width: 1.5;
+    z-index: 1;
+
+    &.-active {
+      stroke-width: 2;
+      z-index: 10;
+    }
+  }
+  .axis {
+    text {
+      fill: #ddd;
+      font-size: 12pt;
+    }
+  }
+  :global {
+    .tick {
+      line {
+        stroke: #ddd;
+      }
+    }
+    .domain {
+      display: none;
+    }
+  }
+}

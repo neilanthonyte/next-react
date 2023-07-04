@@ -1,0 +1,16 @@
+@import "../../../scss/variables.scss";
+
+.goal {
+  background: $gradient-goal;
+  padding: 0.4em 0.8em;
+  color: white;
+  border-radius: 1em;
+  display: inline-block;
+  text-align: center;
+
+  small {
+    padding-left: 0.2em;
+    font-size: 70%;
+    opacity: 0.6;
+  }
+}

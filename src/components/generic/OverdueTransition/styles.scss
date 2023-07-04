@@ -1,0 +1,23 @@
+@import "../../../scss/variables.scss";
+
+.overdueTransition {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &_body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  &_decoration {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}

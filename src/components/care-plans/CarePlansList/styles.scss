@@ -1,0 +1,16 @@
+@import "../../../scss/variables.scss";
+
+.CarePlansList {
+  &_item {
+    padding: $spacing-sm;
+    border-radius: 4px;
+
+    &:nth-child(odd) {
+      background-color: $defaults-backgroundColor-alt;
+    }
+
+    & + & {
+      margin-top: $spacing-xs;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/schemes";
+
+.SideBarSection {
+  position: relative;
+  background-color: $sidebar-section-background;
+
+  &_header {
+    background-color: $sidebar-section-header-background;
+  }
+
+  &_body {
+    background-color: $sidebar-section-body-background;
+    position: relative;
+  }
+}

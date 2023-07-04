@@ -1,0 +1,12 @@
+@import "../../../scss/variables.scss";
+
+.AcceptLegalsInput {
+  &_error {
+    &_retry {
+      color: $color-primary;
+    }
+  }
+  &_legals {
+    padding-top: $spacing-sm;
+  }
+}

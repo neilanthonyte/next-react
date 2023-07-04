@@ -1,0 +1,47 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+.PropertyGrid {
+  // padding: 0 $spacing-md 0 $spacing-md;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  tr {
+    td:first-child {
+      text-align: right;
+      padding-right: 10px;
+    }
+  }
+
+  td {
+    padding: math.div($spacing-base, 2);
+    vertical-align: middle;
+  }
+
+  thead td {
+    background-color: $color-active;
+    color: white;
+  }
+
+  &.-preset {
+    &-content {
+      th,
+      tr {
+        td:nth-child(1) {
+          width: 40%;
+        }
+        td:nth-child(2) {
+          width: 60%;
+        }
+      }
+    }
+    &-even {
+      td {
+        width: 50%;
+      }
+    }
+  }
+}

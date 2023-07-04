@@ -1,0 +1,48 @@
+@import "../../../scss/variables.scss";
+
+.videoView {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $color-gray-dark;
+  transition: opacity 0.5s;
+
+  &_body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(#000, 0.3);
+  }
+
+  &.-isPlaying &_body {
+    opacity: 0;
+  }
+
+  &_welcomeNote {
+    max-width: 50%;
+    opacity: 0.95;
+  }
+
+  &_playButton {
+    //width: 40%;
+    font-size: 100px;
+    color: #fff;
+    margin: 0 40px;
+  }
+
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    //z-index: -1000;
+    //overflow: hidden;
+  }
+}

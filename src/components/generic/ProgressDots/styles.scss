@@ -1,0 +1,22 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+$dot-size: 10px;
+
+.ProgressDots {
+  display: inline-flex;
+  justify-content: center;
+
+  &_dot {
+    margin: 2px;
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: math.div($dot-size, 2);
+    border: solid 1px $color-active;
+    background-color: $defaults-backgroundColor;
+
+    &.-active {
+      background-color: $color-active;
+    }
+  }
+}

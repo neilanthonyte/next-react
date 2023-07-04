@@ -1,0 +1,52 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints";
+
+.mainView {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  transition: left 0.5s;
+  background-color: $defaults-backgroundColor;
+
+  // overflow: hidden;
+
+  &_sideNav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: left 0.5s;
+  }
+
+  &_mobileNav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: left 0.5s;
+  }
+
+  @include belowTabletPortrait {
+    padding-top: $mobileNav-height;
+
+    &_sideNav {
+      left: -$sideNav-tablet-open;
+    }
+
+    &.-showSideNav {
+      // Reveal the off-screen side nav
+      left: $sideNav-tablet-open;
+    }
+  }
+
+  @include aboveTabletPortrait {
+    &.-focused &_sideNav {
+      left: -$sideNav-desktop-open;
+    }
+
+    &_mobileNav {
+      display: none;
+    }
+  }
+}

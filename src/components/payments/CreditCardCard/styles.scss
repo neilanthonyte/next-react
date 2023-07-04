@@ -1,0 +1,23 @@
+@import "../../../scss/variables.scss";
+
+.creditCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_number {
+    flex-grow: 1;
+    padding-left: 1.5em;
+    font-size: 110%;
+
+    small {
+      color: $color-gray;
+      padding-left: 1.5em;
+    }
+  }
+
+  &_type {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

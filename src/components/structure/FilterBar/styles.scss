@@ -1,0 +1,25 @@
+@import "../../../scss/variables.scss";
+
+.FilterBar {
+  display: flex;
+  flex-direction: row;
+
+  &_item {
+    // display: flex;
+    // flex-direction: row;
+    min-width: 200px;
+    margin-right: 10px;
+
+    &.-natural {
+      min-width: initial;
+    }
+  }
+
+  &_actions {
+    width: 100%;
+    text-align: right;
+    a {
+      margin-left: $spacing-md;
+    }
+  }
+}

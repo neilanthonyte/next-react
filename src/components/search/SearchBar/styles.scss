@@ -1,0 +1,32 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+.SearchBar {
+  &_searchbar {
+    display: flex;
+    width: 450px;
+    max-width: 100%;
+    padding: 0px $spacing-lg;
+    @include forMobile {
+      padding: 0px $spacing-sm;
+    }
+
+    & > * {
+      width: 100%;
+    }
+  }
+
+  &_filter {
+    width: 100%;
+    // only give left margin as the content is horizontally scrollable
+    margin-left: $spacing-md;
+    @include forMobile {
+      margin-left: $spacing-base;
+    }
+
+    &_option {
+      display: flex;
+      padding: $spacing-sm;
+    }
+  }
+}

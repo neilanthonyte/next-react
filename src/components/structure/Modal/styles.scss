@@ -1,0 +1,145 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+@import "../../../scss/mixins/dialogSizes.scss";
+
+%paddedContent {
+  padding: $spacing-base;
+  @include forMobile {
+    padding: $spacing-sm;
+  }
+}
+
+$modal-margins: 1em;
+$modal-body-min-height: 100px;
+
+.Modal {
+  &_root {
+    // react-responsive-modal now applies default z-index to its root
+    z-index: $zIndex-overlays;
+    height: 100vh;
+  }
+
+  &_overlay {
+    background-color: $modal-overlay-backgroundColor;
+
+    &.-relative {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include forMobile {
+      padding: 5px;
+    }
+
+    &.-size {
+      &-bookings {
+        height: 100%;
+        margin: 0;
+
+        // HACK must match FlowSummary and next-cms
+        @include aboveTabletLandscape {
+          @include dialog_sizeVariant(100%, $sideNav-desktop-open);
+        }
+        @include belowTabletLandscape {
+          @include dialog_sizeVariant(100%, $sideNav-tablet-open);
+        }
+        @include belowTabletPortrait {
+          @include dialog_sizeVariant(100%);
+        }
+      }
+    }
+  }
+
+  &_content {
+    max-height: calc(100vh - #{$modal-margins} * 2);
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &_modal {
+    box-shadow: $modal-box-shadow;
+    border-radius: $modal-border-radius;
+    @include dialogVariations;
+    margin: $modal-margins;
+    padding: 0;
+    &.-size {
+      &-liquid {
+        display: inline-block;
+      }
+
+      &-sm {
+        @include dialog_sizeVariant(400px);
+      }
+
+      &-md {
+        @include dialog_sizeVariant(600px);
+      }
+
+      &-lg {
+        @include dialog_sizeVariant(800px);
+      }
+
+      &-xl {
+        @include dialog_sizeVariant(1000px);
+      }
+
+      &-full {
+        width: 100%;
+        max-width: calc(100% - #{$modal-margins} * 2);
+      }
+
+      &-bookings {
+        max-width: 100%;
+        @include forMobile {
+          // HACK random number,
+          // covered by flow summary, we don't have an height
+          padding-bottom: 60px;
+        }
+      }
+    }
+  }
+  &_header {
+    @extend %paddedContent;
+    display: flex;
+    align-items: center;
+    background-color: $color-primary;
+    color: $color-primary-alt;
+    &_heading {
+      flex: 1;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        // HACK need an important here to override the style injected with NextBar in Helix.
+        // the :global .nph importing hte defaults is more specific than this, so adding !important
+        color: $color-primary-alt !important;
+      }
+    }
+  }
+  &_body {
+    @extend %paddedContent;
+    background-color: $modal-body-background-color;
+    overflow-y: auto;
+    min-height: $modal-body-min-height;
+  }
+  &_footer {
+    @extend %paddedContent;
+    background-color: $modal-footer-background-color;
+    border-top: 1px solid $color-gray-lighter;
+    box-shadow: inset 0px 1px 0px $color-gray-lightest;
+  }
+  &_close {
+    margin-left: $spacing-base;
+    display: flex;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

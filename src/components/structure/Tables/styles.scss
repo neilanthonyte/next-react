@@ -1,0 +1,40 @@
+$column-header-font-size: 1.3em;
+
+.table {
+  table-layout: fixed;
+
+  // @media (min-width: $screen-sm-min) {
+  //   table-layout: auto;
+  // }
+
+  td {
+    text-align: center;
+    &:first-child {
+      text-align: left;
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+  &.-simple {
+    td {
+      padding-bottom: $spacing-xs;
+    }
+  }
+
+  &.-styled {
+    border-collapse: collapse;
+    thead td {
+      color: $color-primary;
+      font-size: $column-header-font-size;
+    }
+
+    td {
+      border-bottom: 1px solid $color-gray-light;
+      padding: $spacing-base;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,321 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+@import "../../../scss/variables-icons.scss";
+@import "../../../scss/mixins/contentLayout.scss";
+@import "../../../scss/mixins/schemes.scss";
+@import "../../../scss/mixins/stdColors.scss";
+
+.Card {
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  border: $card-border;
+  box-shadow: $card-boxShadow;
+  background-color: $card-backgroundColor;
+
+  // reset default colours
+  // cards can be embedded within components that mess with primary colours
+  // e.g. Screen & MainViewDecoration
+  color: $defaults-textColor;
+  p {
+    color: $defaults-textColor;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: $headings-textColor;
+  }
+
+  &_label {
+    font-size: $font-size * 1.5;
+    position: absolute;
+    left: -$spacing-base;
+    top: -$spacing-base;
+  }
+
+  &_body_inner,
+  &_secondaryContent {
+    padding: $card-base-padding;
+
+    @include forMobile {
+      padding: math.div($card-base-padding, 3);
+    }
+  }
+
+  &_secondaryContent {
+    @include stdColors();
+  }
+
+  // for smaller layouts
+  &.-compact {
+    font-size: 70%;
+  }
+
+  &.-compact &_body_inner,
+  &.-compact &_secondaryContent {
+    padding: $card-base-padding * 0.7;
+  }
+
+  &.-variant-narrow &_body {
+    display: block;
+  }
+  &.-variant-narrow &_body_decoration {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+  }
+
+  // minimal style for non boxed card style
+  // e.g. no padded boby/sections
+  // need to space elements
+  &_header ~ &_body,
+  &_body ~ &_footer {
+    margin-top: $card-base-element-spacing;
+  }
+
+  &_body_decoration + &_body_inner {
+    margin-left: $card-base-element-spacing;
+  }
+
+  &.-variant-narrow {
+    .Card_body_decoration + .Card_body_inner {
+      margin-top: $card-base-element-spacing;
+      margin-left: 0px;
+    }
+  }
+
+  max-height: 100%;
+
+  &_body {
+    flex: 1;
+    display: flex;
+    max-height: 100%;
+    // HACK causes scrolling
+    // overflow-y: auto;
+
+    &_decoration {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 30%;
+      min-height: 150px;
+    }
+
+    &_inner {
+      flex-grow: 1;
+    }
+  }
+
+  &_secondaryContent {
+    margin-top: $card-base-element-spacing;
+  }
+
+  &_footer {
+    padding: math.div($card-base-padding, 3);
+  }
+
+  &_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: $card-base-padding;
+
+    &.-metric {
+      /**
+      * In the event that cards are being used in a grid fashion (with multiple on the page), and one has
+      * a data-set attributed to it (a number or status in the right hand corner of the card), and another card does not,
+      * this would cause the height to differ between the headers, and if they are lined up together, this doesn't look nice.
+      * 60px covers the height of the metric.
+      */
+      min-height: 60px;
+    }
+  }
+
+  &_footer {
+    &.-isNote {
+      padding: 1em;
+      font-size: 80%;
+      text-align: center;
+      background-color: $color-gray-light;
+      border-top: 1px solid $color-gray;
+    }
+
+    // TODO honour the full standard colour set
+    &.-status {
+      &-success {
+        background-color: lighten($color-success, 30%);
+      }
+
+      &-fail,
+      &-error {
+        background-color: lighten($color-error, 30%);
+      }
+
+      &-danger {
+        background-color: lighten($color-danger, 30%);
+      }
+
+      &-info {
+        background-color: lighten($color-info, 30%);
+      }
+
+      &-warning {
+        background-color: lighten($color-warning, 30%);
+      }
+
+      &-disabled {
+        background-color: lighten($color-disabled, 30%);
+      }
+    }
+  }
+
+  // TODO honour the full standard colour set
+  &.-status {
+    &-success {
+      background-color: lighten($color-success, 30%);
+    }
+
+    &-fail,
+    &-error {
+      background-color: lighten($color-error, 30%);
+    }
+
+    &-danger {
+      background-color: $color-danger;
+    }
+
+    &-info {
+      background-color: lighten($color-info, 30%);
+    }
+
+    &-warning {
+      background-color: lighten($color-warning, 30%);
+    }
+
+    &-disabled {
+      background-color: lighten($color-disabled, 30%);
+    }
+  }
+
+  &_body,
+  &_secondaryContent,
+  &_footer {
+    position: relative;
+  }
+
+  &.-state-highlight {
+    box-shadow: 0 0 6px $color-warning;
+  }
+
+  &.-state {
+    &-highlight {
+      box-shadow: 0 0 20px rgba(#000, 0.2);
+      border: 2px solid $color-active;
+    }
+
+    &-pending {
+      border: 2px dashed $color-gray;
+    }
+
+    &-selected {
+      @include selectedScheme;
+    }
+
+    &-deleted {
+      border: 1px solid $color-gray;
+      background-color: $color-gray-lighter;
+      color: $color-gray-darker;
+      box-shadow: none;
+
+      .Card_body {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &.-clickable {
+    cursor: pointer;
+  }
+
+  &.-link {
+    color: $color-primary-alt;
+    padding-right: $spacing-lg;
+    transition: box-shadow 0.3s ease;
+
+    &:after {
+      transition: right 0.2s ease;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: $defaults-boxShadow-hover;
+
+      &:after {
+        right: 0;
+      }
+    }
+
+    &:active {
+      box-shadow: $defaults-boxShadow-active;
+    }
+
+    // &:after {
+    //   @include icon;
+
+    //   font-size: 2em;
+    //   content: unicode($icon-chevron-small-right);
+    //   display: block;
+    //   color: $color-primary;
+    //   position: absolute;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   right: $spacing-xs;
+    // }
+  }
+
+  &_actions {
+    $action-size: 32px;
+
+    position: absolute;
+    top: $spacing-base;
+    right: math.div($action-size, -2);
+    font-size: $action-size;
+
+    &_icon {
+      display: block;
+      margin-bottom: $spacing-xs;
+
+      @if $theme== "svc" {
+        box-shadow: none;
+      } @else {
+        box-shadow: $defaults-boxShadow-base;
+      }
+    }
+  }
+
+  &_action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $color-gray-light;
+    color: $color-gray-dark;
+    text-align: center;
+    width: 100%;
+  }
+
+  &.-selectable:hover {
+    cursor: pointer;
+    box-shadow: 0 0 1px 1px $color-active, 0 0 0 1px $color-active;
+  }
+
+  &.-selected {
+    box-shadow: 0 0 16px 4px $color-active, 0 0 0 2px $color-active;
+    background-color: white;
+  }
+
+  &.-noPadding {
+    padding: 0;
+  }
+}

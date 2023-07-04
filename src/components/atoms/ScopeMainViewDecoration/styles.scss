@@ -1,0 +1,28 @@
+@import "../../mixins/schemes";
+
+.sessionSummary {
+  @include primaryScheme;
+
+  padding: $spacing-sm * 2;
+  font-size: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_subtitle {
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  .sessionActions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Pad each action by 5px;
+  .sessionActions > * {
+    padding: 5px;
+  }
+}

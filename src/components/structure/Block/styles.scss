@@ -1,0 +1,16 @@
+@import "../../../scss/variables.scss";
+
+.block {
+  &_urgent {
+    display: flex;
+    align-items: center;
+  }
+
+  &_circle {
+    border-radius: 50%;
+    background-color: $color-danger;
+    min-width: 12px;
+    min-height: 12px;
+    margin-right: $spacing-sm;
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../../scss/variables.scss";
+
+@each $colorName, $color in $colors {
+  .#{$colorName} {
+    background-color: rgba($color, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    margin-right: $spacing-base;
+    margin-bottom: $spacing-sm;
+    & + p {
+      margin-bottom: $spacing-lg;
+    }
+  }
+}

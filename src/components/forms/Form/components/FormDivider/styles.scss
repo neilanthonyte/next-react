@@ -1,0 +1,7 @@
+@import "../../../../../scss/variables.scss";
+
+.FormDivider {
+  margin: $spacing-md auto;
+  border-bottom: 1px solid $color-gray;
+  max-width: 400px;
+}

@@ -1,0 +1,426 @@
+@mixin fadeIn($duration: 500ms) {
+  &Enter {
+    opacity: 0;
+  }
+
+  &EnterActive {
+    opacity: 1;
+    transition: all $duration ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    opacity: 1;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    opacity: 0;
+    transition: all $duration ease-in-out;
+  }
+}
+
+@mixin fadeInAbsolute($duration: 500ms) {
+  &Enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &EnterActive {
+    opacity: 1;
+    transition: all $duration ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    opacity: 1;
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    opacity: 0;
+    transition: all $duration ease-in-out;
+  }
+}
+
+@mixin pushUp {
+  &Enter {
+    transform: translateY(100%);
+    z-index: 10;
+  }
+
+  &EnterActive {
+    transform: translateY(0%);
+    transition: all 250ms ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    transform: translateY(0%);
+    z-index: 1;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    transform: translateY(-100%);
+    transition: all 250ms ease-in-out;
+  }
+}
+
+@keyframes slideInOutFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@mixin slideInOutFromBottom {
+  // HACK - resolves an animation issue with FlowSummary
+  &Enter,
+  &Appear {
+    &Active {
+      animation: slideInOutFromBottom;
+      animation-fill-mode: forwards;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+    }
+  }
+
+  &Leave,
+  &Exit {
+    transform: translateY(0%);
+    z-index: 1;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    transform: translateY(100%);
+    transition: transform 250ms ease-in-out;
+  }
+}
+
+@mixin pushDown {
+  &Enter {
+    transform: translateY(-100%);
+    z-index: 10;
+  }
+
+  &EnterActive {
+    transform: translateY(0%);
+    transition: all 250ms ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    transform: translateY(0%);
+    z-index: 1;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    transform: translateY(100%);
+    transition: all 250ms ease-in-out;
+  }
+}
+
+@mixin pushInFromLeft {
+  &Enter {
+    transform: translateX(-100%);
+  }
+
+  &EnterActive {
+    transform: translateX(0%);
+    transition: all 500ms ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    transform: translateX(0%);
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    transform: translateX(100%);
+    transition: all 500ms ease-in-out;
+  }
+}
+
+@mixin pushInFromRight {
+  &Enter {
+    transform: translateX(100%);
+  }
+
+  &EnterActive {
+    transform: translateX(0%);
+    transition: all 500ms ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    transform: translateX(0%);
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    transform: translateX(-100%);
+    transition: all 500ms ease-in-out;
+  }
+}
+
+@mixin popInFromRight {
+  &Enter {
+    transform: translateX(100%);
+    z-index: 1000;
+  }
+
+  &EnterActive {
+    transform: translateX(0%);
+    transition: all 500ms ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    transform: translateX(0%);
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    transform: translateX(100%);
+    transition: all 500ms ease-in-out;
+  }
+}
+
+@mixin transitionBottomToTop {
+  &Leave,
+  &Exit {
+    z-index: 3000;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    transform: translateY(-300px);
+    opacity: 0;
+    transition: all 800ms ease-in-out;
+  }
+}
+
+@mixin slideOverFromTop {
+  &Enter,
+  &Leave,
+  &Exit {
+    z-index: 100;
+  }
+
+  &Enter {
+    transform: translateY(-100%);
+  }
+
+  &EnterActive {
+    transform: translateY(0%);
+    transition: all 500ms ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    transform: translateY(0%);
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    transform: translateY(-100%);
+    transition: all 500ms ease-in-out;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@mixin slideInOutFromLeft {
+  // HACK - resolves an animation issue with FlowSummary
+  &Enter,
+  &Appear {
+    &Active {
+      animation: slideInFromLeft;
+      animation-fill-mode: forwards;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+    }
+  }
+
+  &Leave,
+  &Exit {
+    transform: translateX(0%);
+    transition: all 500ms ease-in-out;
+    &Active {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+// HACK assumes a height
+@mixin collapseExtraSmall {
+  &Enter {
+    max-height: 0px;
+    overflow: hidden;
+  }
+
+  &EnterActive {
+    max-height: 10px;
+    transition: max-height 500ms ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    max-height: 10px;
+    overflow: hidden;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    max-height: 0;
+    transition: max-height 500ms ease-in-out;
+  }
+}
+
+@mixin collapseSmall {
+  &Enter {
+    max-height: 0px;
+    overflow: hidden;
+  }
+
+  &EnterActive {
+    max-height: 100px;
+    transition: max-height 500ms ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    max-height: 100px;
+    overflow: hidden;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    max-height: 0;
+    transition: max-height 500ms ease-in-out;
+  }
+}
+
+// HACK assumes a height
+@mixin collapseMedium {
+  &Enter {
+    max-height: 0px;
+    overflow: hidden;
+  }
+
+  &EnterActive {
+    max-height: 200px;
+    transition: max-height 500ms ease-in-out;
+  }
+
+  &Leave,
+  &Exit {
+    max-height: 200px;
+    overflow: hidden;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    max-height: 0;
+    transition: max-height 500ms ease-in-out;
+  }
+}
+
+@mixin collapseLarge {
+  &Enter {
+    max-height: 0px;
+    overflow: hidden;
+  }
+
+  &EnterActive {
+    max-height: 1000px;
+    transition: max-height 500ms ease-out;
+  }
+
+  &Leave,
+  &Exit {
+    max-height: 1000px;
+    overflow: hidden;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    max-height: 0;
+    transition: max-height 500ms ease-out;
+  }
+}
+
+@mixin disappearFromLeftToRight {
+  &Exit {
+    opacity: 1;
+  }
+
+  &LeaveActive,
+  &ExitActive {
+    opacity: 0.3;
+    transform: translateX(80%);
+    transition: opacity 400ms, transform 600ms ease-out;
+  }
+}
+
+.defaultTransition {
+  @include fadeIn;
+}
+
+.assetTransition {
+  @include fadeIn;
+}
+
+.tabSwitchTransitionForward {
+  @include pushUp;
+}
+
+.tabSwitchTransitionBack {
+  @include pushDown;
+}
+
+.panelSwitchTransitionForward {
+  @include pushInFromRight;
+}
+
+.panelSwitchTransitionBack {
+  @include pushInFromLeft;
+}
+
+.sidePanelSwitchTransition {
+  @include popInFromRight;
+}
+
+.coverTransition {
+  @include slideOverFromTop;
+}
+
+.navTransition {
+  @include slideInOutFromLeft;
+}
+
+.transitionBottomToTop {
+  @include transitionBottomToTop;
+}
+
+.taskTransition {
+  @include collapseMedium;
+}

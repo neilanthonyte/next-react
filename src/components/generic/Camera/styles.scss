@@ -1,0 +1,23 @@
+.Camera {
+  // display: inline-block; // we want the buttons to fit in the middle.
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &_wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+  &_options {
+    width: 100%;
+    max-width: 300px;
+
+    > * {
+      margin: 5px;
+    }
+  }
+}

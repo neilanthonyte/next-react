@@ -1,0 +1,263 @@
+@import "../../../scss/variables.scss";
+
+.Table {
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: $spacing-base;
+  }
+
+  thead {
+    th {
+      text-align: left;
+    }
+    tr th {
+      color: $color-active;
+      // text-transform: uppercase;
+      font-weight: normal;
+      font-size: 80%;
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid $color-gray-lighter;
+    }
+
+    td {
+      padding: $spacing-sm;
+    }
+
+    tr:nth-child(odd) {
+      background-color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: $color-gray-lightest;
+    }
+  }
+
+  tbody {
+    td {
+      .-urgent {
+        border-radius: 50%;
+        background-color: red;
+        margin-right: 8px;
+        width: 12px;
+        height: 12px;
+        float: left;
+        margin-top: 6px;
+      }
+    }
+    tr.-isDeleted {
+      color: $color-gray;
+    }
+    tr.-isFooter {
+      font-weight: bold;
+
+      td {
+        position: sticky;
+        bottom: 0;
+        background: $color-gray-lighter;
+      }
+    }
+    tr.-isGroup {
+      font-weight: bold;
+
+      td:last-child {
+        position: sticky;
+        top: 0;
+        background: $color-gray-lighter;
+        text-align: left;
+        z-index: 10;
+      }
+    }
+  }
+
+  &.-preset {
+    &-standard {
+      th,
+      td {
+        text-align: left;
+      }
+      th:last-child,
+      td:last-child {
+        text-align: right;
+      }
+    }
+    &-allRight {
+      th,
+      td {
+        text-align: right;
+      }
+    }
+    &-centred {
+      th,
+      td {
+        text-align: center;
+      }
+    }
+    &-finance {
+      th,
+      td {
+        text-align: center;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      th:last-child,
+      td:last-child {
+        text-align: right;
+      }
+    }
+    &-scopes {
+      tr td {
+        padding: 1px 0;
+      }
+    }
+  }
+
+  &.-pinStripe {
+    tbody {
+      tr {
+        border-bottom: 1px solid lighten($separators-color, 15%);
+      }
+      tr:nth-child(odd),
+      tr:nth-child(even) {
+        &.-multiRow {
+          border-bottom: none;
+        }
+        &.-override-odd {
+          background-color: #fff;
+        }
+        &.-override-even {
+          background-color: $color-gray-lightest;
+        }
+      }
+
+      tr:nth-child(odd) {
+        background-color: #fff;
+      }
+
+      tr:nth-child(even) {
+        background-color: $color-gray-lightest;
+      }
+    }
+  }
+
+  &.-candyCane {
+    tbody {
+      tr {
+        border-bottom: 1px solid lighten($separators-color, 15%);
+      }
+
+      tr:nth-child(odd) {
+        background-color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: red;
+        td {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &.-block {
+    thead {
+      th {
+        border: 1px solid $separators-color;
+      }
+    }
+    thead,
+    tbody,
+    tfoot {
+      td {
+        border: 1px solid $separators-color;
+      }
+    }
+  }
+
+  &.-compact {
+    thead {
+      tr {
+        th {
+          padding: 5px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid $separators-color;
+        td {
+          padding: 5px;
+          &.-compact {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  tr {
+    &.-success {
+      background-color: $color-success-alt !important;
+    }
+    &.-warning {
+      background-color: $color-warning-alt !important;
+    }
+    &.-danger {
+      background-color: $color-danger-alt !important;
+    }
+  }
+
+  th.-left,
+  td.-left {
+    text-align: left;
+  }
+
+  th.-center,
+  td.-center {
+    text-align: center;
+  }
+
+  th.-right,
+  td.-right {
+    text-align: right;
+  }
+
+  td.-success {
+    color: $color-success;
+  }
+
+  td.-warning {
+    color: $color-warning;
+  }
+
+  td.-danger {
+    color: $color-danger;
+  }
+
+  &.-left {
+    th,
+    td {
+      text-align: left;
+    }
+  }
+
+  &.-center {
+    th,
+    td {
+      text-align: center;
+    }
+  }
+
+  &.-right {
+    th,
+    td {
+      text-align: right;
+    }
+  }
+}

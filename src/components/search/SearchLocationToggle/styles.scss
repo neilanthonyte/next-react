@@ -1,0 +1,32 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins/pill.scss";
+@import "../../../scss/mixins/stdColors.scss";
+
+.SearchLocation {
+  cursor: pointer;
+  @include pill();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 $spacing-sm;
+
+  @include stdColorSchemes;
+
+  // stdColorSchemes doesn't set the border-color for the active state,
+  // probably for legacy reasons.
+  &.-color-active {
+    border-color: $color-active;
+  }
+
+  &_text {
+    padding: 0 5px;
+    white-space: nowrap;
+  }
+
+  &_icon {
+    &.-color-active {
+      color: white;
+      box-shadow: none;
+    }
+  }
+}

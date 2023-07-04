@@ -1,0 +1,5 @@
+src/types/braintree.d.ts
+
+# Redactor files are copied verbatim from the redactor project, and should be used as-is
+src/components/generic/RichContentEditor/redactor.js
+src/components/generic/RichContentEditor/redactor.scss

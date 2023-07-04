@@ -1,0 +1,20 @@
+{
+  "../../atoms/Camera/_tests/intg/",
+  "tests": [
+    {
+      "file": "desktop-chrome/camera-permission-block.intg.ts",
+      "environment": {
+        "browser": "chrome:headless"
+      },
+      "description": "Chrome’s security policy will only allow you to access your device’s microphone/camera when a site’s has a secure origin, i.e. on https or localhost. When not provided with a hostname or port numbers, testcafe will use the current machine's local network IP address with a random port. Given the above rules, we can simulate camera permission block by not setting hostname and letting testcafe use the insecure local IP address."
+    },
+    {
+      "file": "desktop-chrome/camera-permission-allow.intg.ts",
+      "environment": {
+        "hostname": "localhost",
+        "browser": "chrome:headless --use-fake-ui-for-media-stream --use-fake-device-for-media-stream"
+      },
+      "description": "Camera permission allow is simulated by setting hostname to localhost (which is considered secure by Chrome) and using --use-fake-ui-for-media-stream flag"
+    }
+  ]
+}

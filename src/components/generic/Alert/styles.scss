@@ -1,0 +1,60 @@
+@import "../../../scss/variables.scss";
+
+.alert {
+  background-color: $color-gray-lighter;
+  padding: $spacing-md;
+
+  &.-variant-warning {
+    background-color: $color-warning-alt;
+    color: $color-warning;
+
+    h3 {
+      color: $color-warning;
+    }
+  }
+
+  &.-variant-danger {
+    background-color: $color-danger-alt;
+    color: $color-danger;
+
+    h3 {
+      color: $color-danger;
+    }
+  }
+
+  &.-variant-info {
+    background-color: $color-info-alt;
+    color: $color-info;
+
+    h3 {
+      color: $color-info;
+    }
+  }
+
+  &.-variant-success {
+    background-color: $color-success-alt;
+    color: $color-success;
+
+    h3 {
+      color: $color-success;
+    }
+  }
+
+  &_title {
+    padding-bottom: $spacing-sm;
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_content:first-child {
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,38 @@
+@import "../../../scss/variables.scss";
+
+.buttonToolbar,
+.buttonToolbar_left,
+.buttonToolbar_right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.buttonToolbar {
+  align-items: center;
+
+  &.-noPadding {
+    padding: 0;
+  }
+
+  &_left,
+  &_right {
+    flex-grow: 1;
+  }
+
+  &_left {
+    justify-content: flex-start;
+
+    button {
+      margin-right: $spacing-sm;
+    }
+  }
+
+  &_right {
+    justify-content: flex-end;
+
+    button {
+      margin-left: $spacing-sm;
+    }
+  }
+}

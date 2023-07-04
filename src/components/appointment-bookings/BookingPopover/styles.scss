@@ -1,0 +1,44 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+@mixin variant($width) {
+  width: calc(100% - #{$width});
+  left: $width;
+}
+
+.BookingPopover {
+  &_overlay {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.8);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $zIndex-bookingPopover;
+  }
+  &_popover {
+    position: fixed;
+    z-index: $zIndex-bookingPopover + 1;
+    overflow-y: auto;
+    height: 100%;
+    top: 0;
+
+    // HACK needs to match FlowSummary
+
+    @include aboveTabletLandscape {
+      @include variant($sideNav-desktop-open);
+      padding: $spacing-md;
+    }
+
+    @include belowTabletLandscape {
+      @include variant($sideNav-tablet-open);
+      padding: $spacing-sm;
+    }
+
+    @include belowTabletPortrait {
+      padding: $spacing-sm;
+      width: 100%;
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../../scss/variables.scss";
+
+.detailsPanel {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.-current &_background {
+    background-color: $color-active;
+  }
+
+  &.-other &_background {
+    background-color: $color-gray-lighter;
+  }
+
+  &.-ready &_background {
+    background-color: $color-secondary;
+  }
+
+  &.-none &_background {
+    background-color: transparent;
+  }
+
+  &_header,
+  &_body,
+  &_footer {
+    position: relative;
+  }
+
+  &_body {
+    display: flex;
+    flex-grow: 1;
+    padding: $spacing-base;
+    overflow: auto;
+    flex-direction: column;
+  }
+
+  &_header {
+    padding: $spacing-base $spacing-base 0 $spacing-base;
+  }
+
+  &_footer {
+    padding: 0 $spacing-base $spacing-base $spacing-base;
+  }
+}

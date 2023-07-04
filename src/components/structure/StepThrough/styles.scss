@@ -1,0 +1,19 @@
+.StepThrough {
+  height: 400px;
+  // text-align: center;
+
+  &_step {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  &_body {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+  }
+  &_actions {
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+}

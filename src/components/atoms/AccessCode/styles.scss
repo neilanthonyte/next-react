@@ -1,0 +1,38 @@
+@import "../../../scss/variables.scss";
+
+.inviteCode {
+  text-align: center;
+
+  &_code {
+    &.-size-lg {
+      font-size: $font-size-h1;
+    }
+    &.-size-sm {
+      font-size: $font-size-h3;
+    }
+    display: inline-block;
+    background: #000;
+    border-radius: 20px;
+    color: #fff;
+    padding: 0 0.6em;
+    font-family: "Courier New";
+  }
+
+  &_discovery {
+    display: flex;
+    flex-direction: row;
+    opacity: 0.4;
+    padding-top: $spacing-sm;
+    max-width: 300px;
+    margin: 0 auto;
+
+    > a {
+      display: block;
+      flex-grow: 1;
+      width: 50%;
+      > img {
+        max-width: 100%;
+      }
+    }
+  }
+}

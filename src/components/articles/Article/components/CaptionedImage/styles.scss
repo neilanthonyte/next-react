@@ -1,0 +1,31 @@
+@import "../../../../../scss/variables.scss";
+
+.articleImage {
+  width: 100%;
+  margin: $spacing-md auto;
+
+  img {
+    max-width: 100%;
+    margin: 0 auto $spacing-sm;
+    display: block;
+  }
+
+  &.-left,
+  &.-right {
+    display: inline-block;
+  }
+
+  &.-left {
+    float: left;
+    margin: 0 $spacing-md $spacing-md 0;
+  }
+
+  &.-right {
+    float: right;
+    margin: 0 0 $spacing-md $spacing-md;
+  }
+
+  &.-small {
+    max-width: 400px;
+  }
+}

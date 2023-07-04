@@ -1,0 +1,44 @@
+@import "../../../scss/mixins/schemes";
+@import "../../../scss/variables.scss";
+
+.mainViewDecoration {
+  font-size: 80%;
+
+  &_inner {
+    @include primaryScheme;
+    padding: $spacing-sm $spacing-sm * 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_information {
+    display: flex;
+    align-items: center;
+
+    &_leftDecoration {
+      margin-right: $spacing-sm;
+    }
+  }
+
+  &_subtitle {
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  &_actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    > * {
+      padding: 5px;
+    }
+  }
+
+  &_content {
+    padding: $spacing-sm;
+    background: $color-gray-light;
+  }
+}

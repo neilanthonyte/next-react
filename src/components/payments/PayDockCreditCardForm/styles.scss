@@ -1,0 +1,40 @@
+@import "../../structure/Dialog/styles";
+@import "../../../scss/mixins/input";
+
+.payDockForm {
+  max-width: 600px;
+  margin: 0px auto;
+
+  iframe {
+    width: 100%;
+    height: $paydockFormHeight;
+    border: none;
+  }
+  &.-loading {
+    iframe {
+      height: 0;
+    }
+  }
+
+  &_disclaimer {
+    margin: $spacing-md 0;
+    font-size: 90%;
+    font-weight: bold;
+  }
+
+  &_input {
+    @include inputField;
+    // TODO - use height for the inputs by default
+    height: 32px;
+  }
+
+  &_footer {
+    // HACK - this is an anti pattern, but required to ensure the element types don't change
+    @extend .Dialog_footer;
+  }
+
+  &_submit {
+    // HACK - this is an anti pattern, but required to ensure the element types don't change
+    @extend %button;
+  }
+}

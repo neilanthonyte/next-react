@@ -1,0 +1,14 @@
+@import "../../../scss/variables.scss";
+
+.imageTextPair {
+  display: flex;
+  align-items: center;
+
+  > * {
+    padding-left: $spacing-sm;
+  }
+
+  > *:first-child {
+    padding-left: 0;
+  }
+}

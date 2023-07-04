@@ -1,0 +1,22 @@
+@import "../../../scss/variables.scss";
+
+.StreamView {
+  position: relative;
+  &_childStream {
+    position: absolute;
+    bottom: $spacing-base;
+    left: $spacing-base;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 25%;
+    height: 25%;
+  }
+
+  &_controls {
+    display: flex;
+    position: absolute;
+    bottom: $spacing-base;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

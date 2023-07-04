@@ -1,0 +1,434 @@
+@import "../variables.scss";
+
+@mixin stdColors() {
+  &.-color {
+    &-primary {
+      color: $color-primary;
+    }
+    &-secondary {
+      color: $color-secondary;
+    }
+
+    // STATUS
+    &-success {
+      color: $color-success;
+    }
+    &-warning {
+      color: $color-warning;
+    }
+    &-danger {
+      color: $color-danger;
+    }
+    &-error {
+      color: $color-error;
+    }
+    &-info {
+      color: $color-info;
+    }
+
+    // STATES
+    &-active {
+      color: $color-active;
+    }
+    &-disabled {
+      color: $color-disabled;
+    }
+
+    // COLOR SCHEME
+    &-optionA {
+      color: $color-optionA;
+    }
+    &-optionB {
+      color: $color-optionB;
+    }
+    &-optionC {
+      color: $color-optionC;
+    }
+    &-optionD {
+      color: $color-optionD;
+    }
+    &-optionE {
+      color: $color-optionE;
+    }
+    &-optionF {
+      color: $color-optionF;
+    }
+  }
+}
+
+@mixin _setColoursPrimary($primary, $complementary, $backgroundColor: false) {
+  @if ($backgroundColor == false) {
+    $backgroundColor: $primary;
+  }
+  color: $complementary !important;
+  border-color: $primary;
+  background-color: $backgroundColor;
+  > * {
+    color: $complementary !important;
+  }
+}
+
+@mixin _setColoursTabbedNav($color, $backgroundColor: false) {
+  @if ($backgroundColor == false) {
+    $backgroundColor: transparent;
+  }
+  color: $color !important;
+  background-color: $backgroundColor;
+  > * {
+    color: $color !important;
+  }
+}
+
+@mixin stdColorSchemes($backgroundColor: false) {
+  &.-color {
+    &-primary {
+      @include _setColoursPrimary(
+        $color-primary,
+        $color-primary-alt,
+        $backgroundColor
+      );
+    }
+    &-secondary {
+      @include _setColoursPrimary(
+        $color-secondary,
+        $color-secondary-alt,
+        $backgroundColor
+      );
+    }
+
+    // STATUS
+    &-success {
+      @include _setColoursPrimary(
+        $color-success,
+        $color-success-alt,
+        $backgroundColor
+      );
+    }
+    &-warning {
+      @include _setColoursPrimary(
+        $color-warning,
+        $color-warning-alt,
+        $backgroundColor
+      );
+    }
+    &-danger {
+      @include _setColoursPrimary(
+        $color-danger,
+        $color-danger-alt,
+        $backgroundColor
+      );
+    }
+    &-error {
+      @include _setColoursPrimary(
+        $color-error,
+        $color-error-alt,
+        $backgroundColor
+      );
+    }
+    &-info {
+      @include _setColoursPrimary(
+        $color-info,
+        $color-info-alt,
+        $backgroundColor
+      );
+    }
+
+    // STATES
+    &-active {
+      @include _setColoursPrimary(
+        $color-active,
+        $color-active-alt,
+        $backgroundColor
+      );
+    }
+    &-disabled {
+      @include _setColoursPrimary(
+        $color-disabled,
+        $color-disabled-alt,
+        $backgroundColor
+      );
+    }
+
+    // COLOR SCHEME
+    &-optionA {
+      @include _setColoursPrimary(
+        $color-optionA,
+        $color-optionA-alt,
+        $backgroundColor
+      );
+    }
+    &-optionB {
+      @include _setColoursPrimary(
+        $color-optionB,
+        $color-optionB-alt,
+        $backgroundColor
+      );
+    }
+    &-optionC {
+      @include _setColoursPrimary(
+        $color-optionC,
+        $color-optionC-alt,
+        $backgroundColor
+      );
+    }
+    &-optionD {
+      @include _setColoursPrimary(
+        $color-optionD,
+        $color-optionD-alt,
+        $backgroundColor
+      );
+    }
+    &-optionE {
+      @include _setColoursPrimary(
+        $color-optionE,
+        $color-optionE-alt,
+        $backgroundColor
+      );
+    }
+    &-optionF {
+      @include _setColoursPrimary(
+        $color-optionF,
+        $color-optionF-alt,
+        $backgroundColor
+      );
+    }
+  }
+}
+
+@mixin _setColoursSubtle($primary, $complementary, $backgroundColor: false) {
+  @if ($backgroundColor == false) {
+    $backgroundColor: $complementary;
+  }
+  color: $primary !important;
+  border-color: $primary;
+  background-color: $backgroundColor;
+  > * {
+    color: $primary !important;
+  }
+}
+
+@mixin stdColorSchemesSubtle($backgroundColor: false) {
+  &.-color {
+    &-primary {
+      @include _setColoursSubtle(
+        $color-primary,
+        $color-primary-alt,
+        $backgroundColor
+      );
+    }
+    &-secondary {
+      @include _setColoursSubtle(
+        $color-secondary,
+        $color-secondary-alt,
+        $backgroundColor
+      );
+    }
+
+    // STATUS
+    &-success {
+      @include _setColoursSubtle(
+        $color-success,
+        $color-success-alt,
+        $backgroundColor
+      );
+    }
+    &-warning {
+      @include _setColoursSubtle(
+        $color-warning,
+        $color-warning-alt,
+        $backgroundColor
+      );
+    }
+    &-danger {
+      @include _setColoursSubtle(
+        $color-danger,
+        $color-danger-alt,
+        $backgroundColor
+      );
+    }
+    &-error {
+      @include _setColoursSubtle(
+        $color-error,
+        $color-error-alt,
+        $backgroundColor
+      );
+    }
+    &-info {
+      @include _setColoursSubtle(
+        $color-info,
+        $color-info-alt,
+        $backgroundColor
+      );
+    }
+
+    // STATES
+    &-active {
+      @include _setColoursSubtle(
+        $color-active-alt,
+        $color-active,
+        $backgroundColor
+      );
+    }
+    &-disabled {
+      @include _setColoursSubtle(
+        $color-disabled-alt,
+        $color-disabled,
+        $backgroundColor
+      );
+    }
+
+    // COLOR SCHEME
+    &-optionA {
+      @include _setColoursSubtle(
+        $color-optionA,
+        $color-optionA-alt,
+        $backgroundColor
+      );
+    }
+    &-optionB {
+      @include _setColoursSubtle(
+        $color-optionB,
+        $color-optionB-alt,
+        $backgroundColor
+      );
+    }
+    &-optionC {
+      @include _setColoursSubtle(
+        $color-optionC,
+        $color-optionC-alt,
+        $backgroundColor
+      );
+    }
+    &-optionD {
+      @include _setColoursSubtle(
+        $color-optionD,
+        $color-optionD-alt,
+        $backgroundColor
+      );
+    }
+    &-optionE {
+      @include _setColoursSubtle(
+        $color-optionE,
+        $color-optionE-alt,
+        $backgroundColor
+      );
+    }
+    &-optionF {
+      @include _setColoursSubtle(
+        $color-optionF,
+        $color-optionF-alt,
+        $backgroundColor
+      );
+    }
+  }
+}
+
+@mixin stdColorSchemesTabbedNav() {
+  &.-scheme {
+    &-dark {
+      @include _setColoursTabbedNav(
+        $tabbed-nav-dark-color,
+        $tabbed-nav-dark-background
+      );
+      // STATES
+      .-active {
+        @include _setColoursTabbedNav(
+          $tabbed-nav-dark-active-alt,
+          $tabbed-nav-dark-active
+        );
+      }
+      .-disabled {
+        @include _setColoursTabbedNav($color-disabled-alt);
+      }
+    }
+    &-light {
+      @include _setColoursTabbedNav(
+        $tabbed-nav-light-color,
+        $tabbed-nav-light-background
+      );
+      // STATES
+      .-active {
+        @include _setColoursTabbedNav(
+          $tabbed-nav-light-active-alt,
+          $tabbed-nav-light-active
+        );
+      }
+      .-disabled {
+        @include _setColoursTabbedNav($tabbed-nav-light-color);
+      }
+    }
+  }
+}
+
+@mixin stdColorSchemesSvg {
+  &.-color {
+    &-primary {
+      fill: $color-primary;
+      stroke: $color-primary-alt;
+    }
+    &-secondary {
+      fill: $color-secondary;
+      stroke: $color-secondary-alt;
+    }
+    // states
+    &-success {
+      fill: $color-success;
+      stroke: $color-success-alt;
+    }
+    &-info {
+      fill: $color-info;
+      stroke: $color-info-alt;
+    }
+    &-warning {
+      fill: $color-warning;
+      stroke: $color-warning-alt;
+    }
+    &-danger {
+      fill: $color-danger;
+      stroke: $color-danger-alt;
+    }
+    &-error {
+      fill: $color-error;
+      stroke: $color-error-alt;
+    }
+
+    // special
+    &-active {
+      fill: $color-active;
+    }
+    &-subtle {
+      fill: $color-gray;
+      stroke: $color-gray;
+    }
+    &-disabled {
+      fill: #eee !important;
+      stroke: #999 !important;
+    }
+
+    // color palette
+    &-optionA {
+      fill: $color-optionA;
+      stroke: $color-optionA;
+    }
+    &-optionB {
+      fill: $color-optionB;
+      stroke: $color-optionB;
+    }
+    &-optionC {
+      fill: $color-optionC;
+      stroke: $color-optionC;
+    }
+    &-optionD {
+      fill: $color-optionD;
+      stroke: $color-optionD;
+    }
+    &-optionE {
+      fill: $color-optionE;
+      stroke: $color-optionE;
+    }
+    &-optionF {
+      fill: $color-optionF;
+      stroke: $color-optionF;
+    }
+  }
+}

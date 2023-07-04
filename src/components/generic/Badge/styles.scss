@@ -1,0 +1,52 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdColors.scss";
+
+.Badge {
+  @include stdColorSchemes();
+  display: inline-block;
+  font-family: $badge-font-family;
+  text-align: center;
+  padding: 0.2em 0.4em;
+  font-weight: bold;
+  border-radius: 0.6em;
+  white-space: nowrap;
+  border-width: 1px;
+  border-style: solid;
+
+  > span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &.-size {
+    &-xs {
+      font-size: 50%;
+    }
+    &-sm {
+      font-size: 80%;
+    }
+    &-md {
+      font-size: 120%;
+    }
+    &-lg {
+      font-size: 160%;
+    }
+  }
+
+  &.-text {
+    &-light * {
+      color: #fff;
+    }
+    &-dark * {
+      color: #000;
+    }
+  }
+
+  &_label {
+    display: relative;
+    &.-withIcon {
+      margin-left: 5px;
+    }
+  }
+}

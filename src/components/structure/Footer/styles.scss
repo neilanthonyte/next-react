@@ -1,0 +1,47 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/listless";
+
+.siteFooter {
+  background: linear-gradient(
+    to top,
+    $color-gray-lighter 0%,
+    $color-gray-lightest 100%
+  );
+  padding: $spacing-lg;
+
+  a {
+    font-weight: bold;
+    // color: $color-primary-alt;
+  }
+
+  &_copyright {
+    font-size: 60%;
+    text-align: center;
+  }
+
+  &_legals {
+    @include listless;
+
+    text-align: right;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    &_contactIcons,
+    &_copyright,
+    &_legals {
+      margin: 20px 0;
+      text-align: left;
+    }
+  }
+}
+
+.socialIcons {
+  @include listless;
+
+  font-size: 2em;
+
+  li {
+    margin-right: $spacing-xs;
+    display: inline-block;
+  }
+}

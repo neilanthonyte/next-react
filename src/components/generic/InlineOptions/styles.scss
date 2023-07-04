@@ -1,0 +1,82 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdActionSizes.scss";
+
+$border-width: 2px;
+
+.inlineOptions {
+  @include stdActionSizesSubelement(
+    ".inlineOptions_option",
+    0.45,
+    $border-width
+  );
+  display: inline-block;
+  text-align: left;
+  padding-left: -1px;
+  padding-right: -1px;
+
+  > label {
+    margin-left: -1px;
+    margin-right: -1px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  // HACK - if using divs
+  &_option {
+    text-align: center;
+    border: $border-width solid $color-primary;
+    border-radius: $input-border-radius;
+    outline-width: 0;
+    font-family: $font-body;
+    font-size: $input-font-size;
+    line-height: $input-line-height * 0.9;
+    letter-spacing: $letter-spacing-sm;
+    font-weight: normal;
+    padding: 0 $spacing-sm * 2;
+    background: #fff;
+    color: $color-primary;
+    margin-bottom: $spacing-xs;
+    cursor: pointer;
+
+    // Fix a spacing issue with textarea where extra space appears below
+    vertical-align: top;
+    margin-left: -1px;
+    margin-right: -1px;
+    display: inline-block;
+
+    &:focus {
+      box-shadow: $defaults-boxShadow-active;
+      border-color: $color-secondary;
+    }
+
+    &.selected {
+      background-color: $color-active;
+      color: white;
+      box-shadow: $defaults-boxShadow-active;
+    }
+
+    &.disabled {
+      color: $inline-options-disabled;
+      cursor: initial;
+    }
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  &.-alt &_option {
+    border: 2px solid $color-gray-dark;
+    font-size: $input-font-size;
+    line-height: $input-font-size * 1.5;
+    color: $color-gray-dark;
+
+    &.selected {
+      background-color: $color-gray-dark;
+      box-shadow: none;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import "../../../scss/variables.scss";
+
+.CollapsibleBlock {
+  &_header {
+    display: flex;
+    align-items: center;
+    &:not(.-isDisabled) {
+      cursor: pointer;
+    }
+    &_chevron {
+      margin-right: $spacing-sm;
+      transform: rotate(0deg);
+    }
+
+    &.-isCollapsed &_chevron {
+      transform: rotate(90deg);
+    }
+
+    &.-isDisabled {
+      .CollapsibleBlock_header_chevron {
+        color: $color-disabled;
+      }
+    }
+  }
+
+  &_body {
+    margin: $spacing-xs 0;
+    padding-left: $spacing-base + $spacing-sm;
+  }
+}

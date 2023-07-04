@@ -1,0 +1,41 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/core/transitions.scss";
+
+.FoyerLogoView {
+  position: fixed;
+  pointer-events: none;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // avoid giving this component height - it should not block the layers below
+
+  &.-demo {
+    position: relative;
+    height: 600px;
+    width: 100%;
+  }
+
+  &.-demo &_content {
+    // height to test the scrolling behaviour
+    width: 200px;
+    height: 200px;
+  }
+
+  &_content {
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > img {
+      flex-grow: 1;
+    }
+  }
+}
+
+.foyerLogo {
+  @include fadeIn(4000ms);
+}

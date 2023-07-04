@@ -1,0 +1,107 @@
+@import "../../../scss/variables.scss";
+
+// use em to adapt compact style
+$message-bubble-v-padding: 0.5em;
+$message-bubble-h-padding: 1em;
+$message-bubble-default-background: #fff;
+$message-bubble-active-user-background: $color-primary;
+$message-bubble-active-user-color: $color-primary-alt;
+$message-indentation-standard: 7em;
+$message-indentation-compact: 4em;
+
+@mixin chatMessageLayoutVariant($size, $spacing) {
+  font-size: $size;
+  padding-right: $spacing;
+  &.-active-user {
+    padding-right: 0;
+    padding-left: $spacing;
+  }
+}
+
+$className: "ChatMessage";
+
+.#{$className} {
+  display: inline-flex;
+  width: 100%;
+
+  &.-compact {
+    @include chatMessageLayoutVariant(
+      $messaging-compact-size,
+      $message-indentation-compact
+    );
+  }
+
+  &.-standard {
+    @include chatMessageLayoutVariant(
+      $messaging-standard-size,
+      $message-indentation-standard
+    );
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &_avatar {
+    &.-hidden {
+      opacity: 0;
+    }
+  }
+
+  &_avatar + &_content {
+    margin-left: 0.4em;
+  }
+
+  &_bubble {
+    padding: $message-bubble-v-padding $message-bubble-h-padding;
+    border-radius: 8px;
+    border-top-left-radius: 0px;
+    box-shadow: $defaults-boxShadow-base;
+    background-color: $message-bubble-default-background;
+    min-height: $standard-size-sm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &.-system {
+    .#{$className}_bubble {
+      width: 100%;
+      background-color: transparent;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+
+  &.-active-user {
+    flex-direction: row-reverse;
+
+    .#{$className}_bubble {
+      background-color: $message-bubble-active-user-background;
+      color: $message-bubble-active-user-color;
+      border-radius: 8px;
+      border-top-right-radius: 0px;
+    }
+    .#{$className}_avatar + .#{$className}_content {
+      margin-left: 0px;
+      margin-right: $spacing-xs;
+    }
+  }
+
+  &_respondent {
+    color: $color-accent;
+  }
+
+  &_attachment {
+    margin-top: $spacing-xs;
+  }
+
+  &_timestamp {
+    font-size: 0.75em;
+    text-align: right;
+    margin-top: 0.5em;
+    color: $color-gray-darker;
+  }
+}

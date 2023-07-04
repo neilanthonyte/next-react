@@ -1,0 +1,17 @@
+@import "../../../../../scss/variables.scss";
+@import "../../../../../scss/mixins/breakpoints.scss";
+
+.formFieldLayout {
+  &.-inline {
+    @include forLargerThanMobile {
+      $grid-spacing: 12px;
+      display: flex;
+      margin-right: -$grid-spacing;
+
+      > .formFieldLayout_field {
+        flex-grow: 1;
+        padding-right: $grid-spacing;
+      }
+    }
+  }
+}

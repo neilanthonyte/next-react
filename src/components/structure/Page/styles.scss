@@ -1,0 +1,21 @@
+@import "../../../scss/variables.scss";
+
+.Page {
+  $page-background: $defaults-backgroundColor;
+
+  &.-transparent &_body,
+  &.-transparent &_header {
+    background-color: transparent;
+  }
+
+  &_header {
+    background: $page-header-background;
+    border-bottom: 1px solid $separators-color;
+  }
+
+  &_body {
+    background: $page-body-background;
+    // padding for the support button
+    padding-bottom: 80px;
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../../scss/variables.scss";
+
+.goalEditor {
+  text-align: center;
+
+  &_header + &_slider {
+    margin-top: $spacing-md;
+  }
+
+  &_slider + .goalEditor_slider {
+    margin-top: $spacing-lg;
+  }
+}

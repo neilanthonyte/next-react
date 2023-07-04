@@ -1,0 +1,30 @@
+@use "sass:math";
+@import "../../../../../scss/variables.scss";
+
+.OrChoice {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  column-gap: 15px;
+
+  > * {
+    flex: 50%;
+  }
+
+  &::after {
+    $size: 40px;
+    display: block;
+    content: "OR";
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    color: #fff;
+    background: $color-primary;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    margin-left: math.div(-$size, 2);
+    text-align: center;
+    line-height: $size;
+  }
+}

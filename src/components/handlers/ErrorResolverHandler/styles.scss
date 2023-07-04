@@ -1,0 +1,8 @@
+.ErrorResolverHandler {
+  // HACK to ensure the app sits within a full height window
+  height: 100%;
+
+  &.-hide {
+    display: none;
+  }
+}

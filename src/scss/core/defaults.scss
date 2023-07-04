@@ -1,0 +1,241 @@
+@import "../variables.scss";
+@import "../mixins/breakpoints";
+@import "../mixins/altText";
+@import "../mixins/cells";
+
+// Update to the base HTML elements.
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+div[class^="rsg--preview-"] {
+  font-family: $font-body;
+  font-weight: normal;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing-sm;
+  color: $defaults-textColor;
+  background-color: $defaults-backgroundColor;
+}
+
+body,
+div[class^="rsg--preview-"],
+p {
+  font-size: $font-size;
+
+  @include belowTabletPortrait {
+    font-size: $font-size * 0.9;
+  }
+
+  @include forMobile {
+    font-size: $font-size * 0.8;
+  }
+}
+
+small {
+  font-size: 80%;
+}
+
+table {
+  width: 100%;
+}
+
+header {
+  p {
+    margin-bottom: $spacing-sm;
+    color: $color-gray;
+  }
+
+  &.-center {
+    text-align: center;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: $hyperlink-textColor;
+  text-decoration: none;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $hyperlink-textColor;
+  }
+
+  &:visited {
+    color: $hyperlink-visited-textColor;
+  }
+
+  &.btn:not(.-secondary):visited {
+    color: white;
+  }
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 $spacing-md 0;
+}
+
+form {
+  margin: $spacing-md 0;
+}
+
+label {
+  font-weight: $labels-weight;
+  color: $label-textColor;
+  font-family: $font-primary;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  word-spacing: $word-spacing-body;
+}
+
+%h1 + p,
+h1 + p,
+%h2 + p,
+h2 + p,
+%h3 + p,
+h3 + p,
+%h4 + p,
+h4 + p,
+%h5 + p,
+h5 + p,
+%h6 + p,
+h6 + p {
+  margin-top: $spacing-md * 0.8;
+}
+
+h1 + hr,
+h2 + hr,
+h3 + hr,
+h4 + hr,
+h5 + hr,
+h6 + hr {
+  display: inline-block;
+  width: 100px;
+  height: 3px;
+  background-color: $color-active;
+  margin-top: $spacing-base;
+  position: absolute;
+
+  @if $theme== "zam" {
+    position: relative;
+  }
+
+  border: 0;
+}
+
+%h1,
+h1,
+%h2,
+h2,
+%h3,
+h3,
+%h4,
+h4,
+%h5,
+h5,
+%h6,
+h6,
+%heading {
+  font-family: $font-primary;
+  color: $headings-textColor;
+  line-height: $line-height-headings;
+  font-weight: normal;
+  margin: 0;
+
+  &.-sub {
+    @include altText;
+  }
+}
+
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+  margin-top: $spacing-sm;
+}
+
+h1,
+%h1 {
+  font-size: $font-size-h1;
+  letter-spacing: $letter-spacing-lg;
+
+  &.-sub {
+    font-size: $font-size-h1 * 0.8;
+  }
+}
+
+h2,
+%h2 {
+  font-size: $font-size-h2;
+  letter-spacing: $letter-spacing-lg;
+
+  &.-sub {
+    font-size: $font-size-h2 * 0.8;
+  }
+}
+
+h3,
+%h3 {
+  font-size: $font-size-h3;
+  letter-spacing: $letter-spacing-sm;
+
+  &.-sub {
+    font-size: $font-size-h3 * 0.8;
+  }
+}
+
+h4,
+%h4 {
+  font-size: $font-size-h4;
+  letter-spacing: $letter-spacing-sm;
+
+  &.-sub {
+    font-size: $font-size-h4 * 0.8;
+  }
+}
+
+h5,
+%h5 {
+  font-size: $font-size-h5;
+  letter-spacing: $letter-spacing-sm;
+
+  &.-sub {
+    font-size: $font-size-h5 * 0.8;
+  }
+}
+
+h6 {
+  font-size: $font-size-h6;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing-sm;
+
+  &.-sub {
+    font-size: $font-size-h6 * 0.8;
+  }
+}
+
+textarea {
+  line-height: 1.5em;
+}

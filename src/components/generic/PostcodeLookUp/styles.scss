@@ -1,0 +1,19 @@
+@import "../../../scss/variables.scss";
+
+.PostcodeLookUp {
+  padding: $spacing-sm 0px;
+  display: flex;
+  align-items: center;
+
+  input {
+    border: none;
+    width: 100%;
+    color: $color-gray;
+    font-size: 14px;
+    padding-bottom: $spacing-sm;
+    border-bottom: 1px solid;
+    border-bottom-color: $color-gray-light;
+    margin-left: $spacing-sm;
+    padding-left: $spacing-sm;
+  }
+}

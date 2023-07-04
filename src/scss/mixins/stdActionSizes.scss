@@ -1,0 +1,122 @@
+@use "sass:math";
+@import "../variables.scss";
+
+@mixin stdActionSizesVariant(
+  $size,
+  $font-scale: 1,
+  $border-width: 0px,
+  $isSquare: false
+) {
+  $font-base: $size * $font-scale - 2 * $border-width;
+
+  height: $size;
+  // required to combat the styling used by inputField() - see CalendarInput
+  // as an example, just ensure you have DEBUG_ORIGINAL_CSS_CLASSES disabled
+  min-height: $size;
+  @if ($isSquare) {
+    width: $size;
+  }
+  line-height: $size - 2 * $border-width;
+  font-size: $font-base; // natually smaller than the line height
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+@mixin stdActionSizes($font-scale: 1, $border-width: 0px, $isSquare: false) {
+  &.-stdSize-xs {
+    @include stdActionSizesVariant(
+      $standard-size-xs,
+      $font-scale,
+      $border-width,
+      $isSquare
+    );
+  }
+  &.-stdSize-sm {
+    @include stdActionSizesVariant(
+      $standard-size-sm,
+      $font-scale,
+      $border-width,
+      $isSquare
+    );
+  }
+  &.-stdSize-md {
+    @include stdActionSizesVariant(
+      $standard-size-md,
+      $font-scale,
+      $border-width,
+      $isSquare
+    );
+  }
+  &.-stdSize-lg {
+    @include stdActionSizesVariant(
+      $standard-size-lg,
+      $font-scale,
+      $border-width,
+      $isSquare
+    );
+  }
+}
+
+/** Apply standard sizing to a sub-element, rather than the root. */
+@mixin stdActionSizesSubelement(
+  $selector,
+  $font-scale: 1,
+  $border-width: 0px,
+  $isSquare: false
+) {
+  &.-stdSize-xs #{$selector} {
+    @include stdActionSizesVariant(
+      $standard-size-xs,
+      $font-scale,
+      $border-width,
+      $isSquare
+    );
+  }
+  &.-stdSize-sm #{$selector} {
+    @include stdActionSizesVariant(
+      $standard-size-sm,
+      $font-scale,
+      $border-width,
+      $isSquare
+    );
+  }
+  &.-stdSize-md #{$selector} {
+    @include stdActionSizesVariant(
+      $standard-size-md,
+      $font-scale,
+      $border-width,
+      $isSquare
+    );
+  }
+  &.-stdSize-lg #{$selector} {
+    @include stdActionSizesVariant(
+      $standard-size-lg,
+      $font-scale,
+      $border-width,
+      $isSquare
+    );
+  }
+}
+
+@mixin stdHeight($size, $rounded: false) {
+  height: $size;
+  @if ($rounded) {
+    border-radius: math.div($size, 2);
+  }
+}
+
+@mixin stdHeights($rounded: false) {
+  &.-stdSize-xs {
+    @include stdHeight($standard-size-xs, $rounded);
+  }
+  &.-stdSize-sm {
+    @include stdHeight($standard-size-sm, $rounded);
+  }
+  &.-stdSize-md {
+    @include stdHeight($standard-size-md, $rounded);
+  }
+  &.-stdSize-lg {
+    @include stdHeight($standard-size-lg, $rounded);
+  }
+}

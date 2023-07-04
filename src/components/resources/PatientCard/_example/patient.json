@@ -1,0 +1,112 @@
+{
+  "resourceType": "Patient",
+  "id": "MD00001",
+  "name": [
+    {
+      "use": "usual",
+      "family": "Morin",
+      "given": [
+        "Pierre"
+      ],
+      "prefix": [
+        "Mr"
+      ]
+    }
+  ],
+  "photo": [
+    {
+      "url": "test"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0400000000"
+    },
+    {
+      "system": "email",
+      "value": "morin@example.com"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1993-02-23",
+  "address": [
+    {
+      "line": [
+        "Wentworth"
+      ],
+      "city": "Sydney",
+      "state": "NSW",
+      "postalCode": "2000",
+      "country": "Australia"
+    }
+  ],
+  "contact": [
+    {
+      "relationship": [
+        {
+          "text": "Mate"
+        }
+      ],
+      "name": {
+        "text": "James"
+      },
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+61400000000"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/v2/0203",
+            "code": "MC",
+            "display": "Patient's Medicare Number"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-number",
+      "value": "24756126583",
+      "period": {
+        "end": "2019-04"
+      }
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org.au/fhir/v2/0203",
+            "code": "DVG",
+            "display": "DVA Card - Gold"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/dva",
+      "value": "N 908031D",
+      "period": {
+        "end": "2022-09-26"
+      }
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org.au/fhir/v2/0203",
+            "code": "HC",
+            "display": "Health Care Card"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/centrelink-customer-reference-number",
+      "value": "203-605-711B",
+      "period": {
+        "end": "2021-07-26"
+      }
+    }
+  ]
+}

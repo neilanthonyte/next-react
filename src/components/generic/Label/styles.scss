@@ -1,0 +1,19 @@
+@import "../../../scss/variables.scss";
+
+.Label {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  &_text {
+    flex-grow: 1;
+    font-weight: bold;
+    margin-right: $spacing-sm;
+  }
+
+  &_description {
+    color: $color-gray-dark;
+    font-size: 80%;
+    font-weight: normal;
+  }
+}

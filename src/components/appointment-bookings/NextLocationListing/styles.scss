@@ -1,0 +1,18 @@
+@import "../../../scss/variables.scss";
+
+.NextLocationListing {
+  // TODO move into base components
+  &_heading {
+    margin-bottom: $spacing-xs;
+  }
+  &_header {
+    margin-bottom: $spacing-sm;
+  }
+  &_description {
+    color: $color-gray;
+  }
+  &_label {
+    color: $color-active;
+    text-transform: uppercase;
+  }
+}

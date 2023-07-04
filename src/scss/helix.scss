@@ -1,0 +1,15 @@
+// TODO change by environment
+$font-path: "https://np-helix-extension.s3-ap-southeast-2.amazonaws.com/dev";
+
+@import "./variables";
+
+:global .nph {
+  @import "./core/defaults";
+  @import "./core/animations";
+  // @import "./core/inputs";
+  @import "./core/patterns";
+  @import "./core/transitions";
+}
+
+@import "./core/fonts";
+@import "./core/icons";

@@ -1,0 +1,48 @@
+@import "../../../scss/variables.scss";
+
+.ScrollableBar {
+  white-space: nowrap;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  /*
+    We want the children of the ScrollableBar to behave as if the
+    scrollbar had 'justify-content: center' set.
+    Unfortunately, when this is set, if the bar overflows, it is not possible
+    to see the first elements in the bar (they are pushed past where they can
+    be scrolled into view).
+    The fix for this is:
+      justify-content: safe center;
+    which is supposed to fix this issue, but it has not been implemented in all browsers yet.
+    It may be worth revisiting this later to use that approach.
+
+    However, by using:
+      justify-content: flex-start;
+    in combination with the below rules, you achieve a similar effect.
+  */
+  & > *:first-child {
+    margin-left: auto !important;
+  }
+  & > *:last-child {
+    margin-right: auto !important;
+  }
+
+  &.-dynamic {
+    overflow-x: auto;
+  }
+  &.-never {
+    overflow-x: scroll;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  &.-always {
+    overflow-x: scroll;
+  }
+}

@@ -1,0 +1,72 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/listless";
+@import "../../../scss/mixins/schemes";
+
+.List {
+  @include listless;
+  background: $list-li-background;
+  position: relative;
+  line-height: 1.1;
+  font-size: 110%;
+
+  // scales
+  &.-scale-compact &_item {
+    padding: 0 $spacing-sm;
+    font-size: 90%;
+  }
+
+  // variations
+  &.-variant-separator &_item {
+    border-top: 1px solid $separators-color;
+    border-bottom: 1px solid $separators-color;
+    margin-bottom: -1px;
+  }
+
+  &_number {
+    width: 2.2em;
+    font-size: 130%;
+    flex-shrink: 0;
+    font-weight: bold;
+    color: $color-primary;
+    padding-right: 0.4em;
+    text-align: right;
+    line-height: 1.5;
+
+    &::after {
+      content: ".";
+    }
+  }
+
+  &_item {
+    display: flex;
+    flex-grow: 1;
+    padding: $spacing-sm;
+
+    &_content {
+      flex-grow: 1;
+      margin: auto;
+      padding: $spacing-sm 0;
+      color: $defaults-textColor;
+    }
+
+    &_extras {
+      padding-left: $spacing-sm;
+      display: flex;
+      align-items: center;
+    }
+
+    &.-disabled {
+      background-color: $color-disabled;
+      color: $color-gray-dark;
+    }
+
+    &.-clickable {
+      cursor: pointer;
+    }
+
+    &.-active {
+      @include selectedScheme;
+      border-radius: 4px;
+    }
+  }
+}

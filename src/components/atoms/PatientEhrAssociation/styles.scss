@@ -1,0 +1,32 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdColors.scss";
+
+$horizontal-spacing: $spacing-sm;
+
+.PatientEhrAssociation {
+  display: inline-block;
+  text-align: center;
+  &_label {
+    @include stdColorSchemes();
+    font-size: 1em;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: 1em;
+    margin-bottom: $spacing-sm;
+  }
+  &_icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &_location {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: $horizontal-spacing;
+  }
+  &_next {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: $horizontal-spacing;
+    width: $standard-size-lg;
+    height: $standard-size-lg;
+  }
+}

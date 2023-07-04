@@ -1,0 +1,63 @@
+{
+  "type": "anatomy",
+  "title": "Eye: Sagittal Cross Section",
+  "slug": "eye-sagittal-cross-section",
+  "sceneName": "m=eye_cross_section_sagittal",
+  "description": "Located at the front of the skull, the eyes are complex sensory organs responsible for vision. Light passes through the layers of the eye and is translated into visual information by the brain. \nThe choroid is a spongy membrane full of vessels located underneath the sclera, the protective outer layer of the eye.\nFilling the space inside the globe of the eye is the vitreous body, a transparent gel-like substance that maintains eye shape. \nLight rays pass through the vitreous gel to the retina, the innermost layer of the eye. It contains photoreceptor cells (rods and cones) that detect light. Near the back of the retina, the fovea centralis, a small area with a high density of cone photoreceptor cells, allows for sharpness of vision.",
+  "posterImage": "https://d1qr34qzhiwpdo.cloudfront.net/education/anatomy/_previewCard/2Qcng_zahpc4ts_v1-0.jpg?mtime=20170930193500",
+  "placeholderImage": null,
+  "cameraPositions": {
+    "default": {
+      "position": {
+        "x": -0.91600000000000004,
+        "y": 166.80799999999999,
+        "z": -1.54
+      },
+      "target": {
+        "x": 3.7240000000000002,
+        "y": 166.18899999999999,
+        "z": -0.55700000000000005
+      },
+      "up": {
+        "x": 0.127,
+        "y": 0.99199999999999999,
+        "z": 0.027
+      }
+    },
+    "primary": {
+      "position": {
+        "x": 0.47399999999999998,
+        "y": 166.399,
+        "z": -3.1760000000000002
+      },
+      "target": {
+        "x": 3.8860000000000001,
+        "y": 166.21600000000001,
+        "z": -1.3080000000000001
+      },
+      "up": {
+        "x": 0.041000000000000002,
+        "y": 0.999,
+        "z": 0.023
+      }
+    },
+    "secondary": {
+      "position": {
+        "x": 0.024,
+        "y": 166.703,
+        "z": -1.2030000000000001
+      },
+      "target": {
+        "x": 3.8860000000000001,
+        "y": 166.21600000000001,
+        "z": -1.3080000000000001
+      },
+      "up": {
+        "x": 0.125,
+        "y": 0.99199999999999999,
+        "z": -0.0030000000000000001
+      }
+    }
+  },
+  "category": "Regional anatomy"
+}

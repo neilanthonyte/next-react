@@ -1,0 +1,55 @@
+@import "../../../scss/variables.scss";
+
+.placeholderView {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+  padding: $spacing-sm;
+  text-align: center;
+
+  > div {
+    max-width: 400px;
+
+    * {
+      color: $color-gray;
+
+      @if $theme== "zam" {
+        color: $color-gray-dark;
+      }
+    }
+  }
+
+  &.-sizing-xs {
+    font-size: $font-size;
+
+    .icon {
+      font-size: 30px;
+    }
+  }
+
+  &.-sizing-sm {
+    font-size: $font-size-h4;
+
+    .icon {
+      font-size: 42px;
+    }
+  }
+
+  &.-sizing-md {
+    font-size: $font-size-h3;
+
+    .icon {
+      font-size: 50px;
+    }
+  }
+
+  &.-sizing-lg {
+    font-size: $font-size-h3;
+
+    .icon {
+      font-size: 58px;
+    }
+  }
+}

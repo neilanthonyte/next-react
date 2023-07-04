@@ -1,0 +1,17 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+.Well {
+  border: 1px solid $well-border-color;
+  border-radius: $well-border-radius;
+
+  &_options {
+    padding: $spacing-sm $spacing-base;
+    background-color: $well-options-background-color;
+    border-bottom: 1px solid $well-border-color;
+  }
+
+  &_content {
+    padding: $spacing-base;
+  }
+}

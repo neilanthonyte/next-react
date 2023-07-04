@@ -1,0 +1,78 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+.datesSelector {
+  display: flex;
+  flex-direction: column;
+
+  &.-position-left {
+    justify-content: flex-start;
+  }
+
+  &.-position-right {
+    justify-content: flex-end;
+  }
+
+  &_frequencies {
+    display: flex;
+
+    &.-position-left {
+      justify-content: flex-start;
+    }
+
+    &.-position-right {
+      justify-content: flex-end;
+    }
+  }
+
+  &_frequency {
+    text-transform: capitalize;
+    padding: $spacing-sm;
+    border: 1px solid $color-primary;
+    border-right: none;
+    cursor: pointer;
+    margin-bottom: $spacing-sm;
+
+    &.-selected {
+      background-color: $color-primary;
+      color: #fff;
+    }
+  }
+
+  &_frequency:last-child {
+    border-right: 1px solid $color-primary;
+  }
+
+  &_dates {
+    display: flex;
+    align-items: center;
+
+    > * {
+      // HACK removes small vertical alignment issue
+      line-height: 0;
+    }
+
+    &.-position-left {
+      justify-content: flex-start;
+    }
+
+    &.-position-right {
+      justify-content: flex-end;
+    }
+  }
+
+  &_displayDate {
+    margin: 0 $spacing-sm;
+    min-width: 12em;
+
+    @include forMobile {
+      min-width: 8em;
+    }
+
+    // &.-frequency {
+    //   &-day {
+    //     // customise me...
+    //   }
+    // }
+  }
+}

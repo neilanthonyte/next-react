@@ -1,0 +1,29 @@
+@import "../../../scss/variables.scss";
+
+.IconProgress {
+  padding: $spacing-sm $spacing-sm * 1.5;
+
+  &_stage {
+    font-size: 25px;
+    * {
+      color: rgba(#fff, 0.3);
+    }
+    &.-complete {
+      * {
+        color: rgba(#fff, 0.75);
+      }
+    }
+    &.-active {
+      * {
+        color: #fff;
+        text-shadow: 0 0 2px #fff;
+      }
+    }
+  }
+  &_separator {
+    font-size: 20px;
+    * {
+      color: rgba(#fff, 0.3);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../../scss/variables.scss";
+
+.clock {
+  padding: 16px;
+  text-align: center;
+  background-color: $color-active;
+
+  @if $theme == "svc" {
+    border-top: 1px solid $color-gray;
+    border-right: 1px solid $color-gray;
+  }
+
+  &_label,
+  &_time {
+    color: $color-secondary-alt;
+  }
+}

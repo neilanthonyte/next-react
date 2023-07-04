@@ -1,0 +1,45 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdColors.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+$tabs-min-height: 80px;
+$tab-min-width: 100px;
+
+.TabbedNav {
+  display: flex;
+  height: $tabs-min-height;
+  @include stdColorSchemesTabbedNav();
+
+  &_icon {
+    position: relative;
+  }
+
+  &_item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: $tab-min-width;
+    line-height: 1em;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.-disabled {
+      opacity: 0.4;
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &_notifications,
+  &_badge {
+    position: absolute;
+    top: -$spacing-xs;
+    left: calc(50% + #{$spacing-xs});
+  }
+}

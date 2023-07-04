@@ -1,0 +1,41 @@
+@import "../../../scss/variables.scss";
+
+.supplementedContent {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  &_supplement {
+    height: 100%;
+    overflow-y: auto;
+    border-right: 1px solid $color-gray-light;
+
+    h4 {
+      @if $theme == "svc" {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &_supplement.-size-xs {
+    width: 250px;
+  }
+
+  &_supplement.-size-sm {
+    width: 300px;
+  }
+
+  &_supplement.-size-md {
+    width: 350px;
+  }
+
+  &_supplement.-size-lg {
+    width: 400px;
+  }
+
+  &_body {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+  }
+}

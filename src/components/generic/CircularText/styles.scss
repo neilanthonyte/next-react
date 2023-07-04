@@ -1,0 +1,31 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdActionSizes.scss";
+@import "../../../scss/mixins/stdColors.scss";
+@import "../../../scss/mixins/pill.scss";
+
+$border-width: 2px;
+
+.CircularText {
+  @include stdActionSizes(0.6, $border-width);
+  @include stdColorSchemesSubtle;
+  @include pill();
+
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: normal !important;
+  transition: border-color 0.5s, color 0.5s, box-shadow 0.5s, transform 0.5s,
+    background-position 0.5s;
+  position: relative;
+  background: white;
+  color: $icons-textColor;
+
+  &.-isBlock {
+    width: 100%;
+  }
+
+  // adaptive
+  font-size: 1em;
+  height: 1.7em;
+  line-height: calc(1.7em - #{$border-width * 2});
+}

@@ -1,0 +1,101 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/cards";
+@import "../../../scss/mixins/breakpoints";
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  &_goals {
+    margin: $spacing-lg 0;
+    .goal {
+      width: 100%;
+      text-align: center;
+      .icon {
+        display: block;
+        margin-bottom: $spacing-sm;
+      }
+    }
+  }
+
+  &_content {
+    flex-grow: 1;
+
+    display: flex;
+
+    @include belowTabletPortrait {
+      flex-direction: column;
+    }
+
+    .link {
+      display: block;
+      position: relative;
+      width: 50%;
+      overflow: hidden;
+
+      &:hover {
+        // Scale background image
+        .link_background {
+          transform: scale(1.05);
+        }
+        // Animate line
+        .link_body header > hr {
+          width: 80px;
+        }
+        .link_body p {
+          transition: opacity 0.5s 0.15s ease-in-out,
+            bottom 0.3s 0.15s ease-in-out;
+          opacity: 1;
+          bottom: 30%;
+        }
+      }
+
+      &_background {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s ease-in-out;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.6) 20%,
+            rgba(0, 0, 0, 0) 100%
+          );
+        }
+      }
+
+      &_body {
+        position: absolute;
+        color: white;
+        text-align: center;
+        width: 100%;
+        bottom: 0;
+        padding-bottom: 30%;
+        font-size: 1.5em;
+        header h2 {
+          color: white;
+        }
+        header hr {
+          width: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: width 0.3s 0.15s ease-in-out;
+        }
+        p {
+          position: absolute;
+          width: 100%;
+          bottom: 20%;
+          opacity: 0;
+          transition: opacity 0.3s 0.15s ease-in-out, bottom 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+}

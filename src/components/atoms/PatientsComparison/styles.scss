@@ -1,0 +1,81 @@
+@import "../../../scss/variables.scss";
+
+$field-horizontal-spacing: $spacing-xs;
+
+.PatientsComparison {
+  &_sources {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $color-secondary;
+    color: $color-secondary-alt;
+    padding: $spacing-sm;
+    text-align: center;
+  }
+  &_source {
+    flex-basis: 100%;
+    &_label {
+      @extend %label;
+      color: $color-secondary-alt !important;
+    }
+  }
+  &_sections {
+    margin-top: $spacing-base;
+  }
+  &_section {
+    position: relative;
+    &_content {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-around;
+    }
+    &_match {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &_replace {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-90%, -50%);
+    }
+    & + & {
+      margin-top: $spacing-sm;
+    }
+  }
+  &_section .-matching {
+    opacity: 40%;
+    .PatientsComparison_field {
+      border-color: transparent;
+    }
+  }
+  &_field {
+    padding: $spacing-sm;
+    border: 1px solid $color-gray;
+    background-color: $color-gray-lightest;
+    border-radius: $border-radius-size;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    margin-left: $field-horizontal-spacing;
+    transform: scale(98%);
+    transition: transform 300ms;
+    word-break: break-all;
+
+    &.-selected {
+      transform: scale(100%);
+      transition: transform 300ms;
+      border-color: $color-active;
+      background-color: $color-active-light;
+    }
+    &:first-child {
+      margin-left: 0;
+      margin-right: $field-horizontal-spacing;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

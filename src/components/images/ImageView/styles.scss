@@ -1,0 +1,22 @@
+@import "../../../scss/variables.scss";
+
+.imageView {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  &_image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  &_details {
+    width: 400px;
+    max-width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: $spacing-md;
+  }
+}

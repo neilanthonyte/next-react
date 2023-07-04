@@ -1,0 +1,23 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+
+.Footer {
+  display: flex;
+  align-items: center;
+  &_content {
+    flex: 1;
+  }
+  &_actions {
+    margin-left: $spacing-md;
+    flex-shrink: 0;
+  }
+  &_actions,
+  &_custom-actions {
+    display: inline-flex;
+    column-gap: $spacing-sm;
+    @include forMobile {
+      margin-left: $spacing-sm;
+      column-gap: $spacing-xs;
+    }
+  }
+}

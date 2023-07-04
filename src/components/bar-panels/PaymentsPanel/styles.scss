@@ -1,0 +1,5 @@
+// make sure the panel is scrollable if content overflows
+.CreditCards {
+  height: 100%;
+  overflow-y: auto;
+}

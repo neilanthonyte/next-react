@@ -1,0 +1,53 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+// need to set the component the same height and width such that it's a circle and not an oval
+// set the font size half the given size so it fits inside the button
+@mixin setSize($baseClass, $sizeName, $sizeValue) {
+  .-size {
+    &-#{$sizeName} {
+      width: $sizeValue;
+      height: $sizeValue;
+    }
+
+    &-#{$sizeName} #{$baseClass}_icon {
+      font-size: math.div($sizeValue, 2);
+    }
+  }
+}
+
+.iconButton {
+  // make sure container doesn't take up full space
+  width: fit-content;
+
+  &_btn {
+    padding: unset !important; // need to remove these properties otherwise the icon will never be centered
+    font-size: unset !important; // we override the font-size
+  }
+
+  // icon is shown for some reason when in these states so just hide it
+  &_btn.-pending &_icon,
+  &_btn.-success &_icon,
+  &_btn.-error &_icon {
+    display: none;
+  }
+
+  // this fixes centering of link buttons
+  // don't know why they aren't normally centered
+  & {
+    a, // hack: can't do a&_btn
+    a &_icon {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @for $i from 0 to length($standard-sizes) {
+    @include setSize(
+      &,
+      nth($standard-size-names, $i + 1),
+      nth($standard-sizes, $i + 1)
+    );
+  }
+}

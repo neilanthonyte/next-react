@@ -1,0 +1,20 @@
+@import "../../../scss/variables.scss";
+
+.LocationCard {
+  &_body {
+    display: flex;
+  }
+  &_content {
+    flex: 1;
+  }
+  &_buttons {
+    flex-shrink: 0;
+  }
+  // Hack class passed to Button component to keep same width when stacked
+  &_button_content {
+    width: 100%;
+  }
+  &_button + &_button {
+    margin-top: $spacing-xs;
+  }
+}

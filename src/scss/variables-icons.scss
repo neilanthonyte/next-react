@@ -1,0 +1,527 @@
+@import "./variables.scss";
+
+/**
+ * To be copied from the variables file produced by Icomoon.
+ *
+ * To create the icon set:
+ *
+ * FIND: \$icon-([\w-]+): "([^"]+)";
+ * REPLACE: icon-$1: $icon-$1,
+ */
+
+// default icons that each theme needs to provide
+$icon-chevron-small-right: "chevron-small-right" !default;
+$icon-close: "close" !default;
+$icon-spinner: "spinner" !default;
+$icon-tick: "tick" !default;
+$icon-close-hollow: "close-hollow" !default;
+$icon-search: "search" !default;
+$icon-minus: "minus" !default;
+$icon-plus: "plus" !default;
+$icon-chevron-thin-down: "chevron-thin-down" !default;
+$icon-chevron-thin-up: "chevron-thin-up" !default;
+
+$icons: (
+  icon-chevron-small-right: $icon-chevron-small-right,
+  icon-close: $icon-close,
+  icon-spinner: $icon-spinner,
+  icon-tick: $icon-tick,
+  icon-close-hollow: $icon-close-hollow,
+  icon-search: $icon-search,
+  icon-minus: $icon-minus,
+  icon-plus: $icon-plus,
+  icon-chevron-thin-down: $icon-chevron-thin-down,
+  icon-chevron-thin-up: $icon-chevron-thin-up,
+) !default;
+
+// find / replace:
+// \$(icon-[^:]+).*
+// $1: $$$1,
+
+$icon-task-image: "\f030";
+$icon-task-image-success: "\f030";
+$icon-tablet: "\f10a";
+$icon-task-numeric: "\f1ec";
+$icon-task-numeric-success: "\f1ec";
+$icon-credit-card-alt: "\e926";
+$icon-ban: "\e928";
+$icon-mail: "\e942";
+$icon-email: "\e942";
+$icon-alert-email-in-use: "\e942";
+$icon-action-close: "\e93a";
+$icon-close-hollow: "\e93a";
+$icon-action-remove: "\e943";
+$icon-circle-minus: "\e943";
+$icon-action-add: "\e945";
+$icon-circle-plus: "\e945";
+$icon-action-export: "\e998";
+$icon-document-download: "\e91b";
+$icon-document: "\e9ac";
+$icon-action-erase: "\e902";
+$icon-zoom-in: "\e90e";
+$icon-zoom-out: "\e916";
+$icon-search: "\e924";
+$icon-action-more: "\e99d";
+$icon-more_2: "\e99d";
+$icon-action-edit: "\e927";
+$icon-nav-content: "\e927";
+$icon-edit: "\e927";
+$icon-write: "\e927";
+$icon-pencil: "\e927";
+$icon-action-chart: "\e9b1";
+$icon-chart_1_2: "\e9b1";
+$icon-nav-training: "\e92a";
+$icon-action-refresh: "\e93c";
+$icon-share_2: "\e929";
+$icon-nav-issues: "\e92d";
+$icon-task-reportIssue: "\e92d";
+$icon-alert-not-signed-latest-terms: "\e92d";
+$icon-warning: "\e92d";
+$icon-task-moreInfo: "\e92e";
+$icon-nav-opsResources: "\e930";
+$icon-inbox: "\e95d";
+$icon-drawer: "\e95d";
+$icon-user: "\e9ad";
+$icon-manage: "\e9ad";
+$icon-alert-reason-for-visit-available: "\e9ad";
+$icon-user-plus: "\e9ae";
+$icon-user-minus: "\e9af";
+$icon-action-remove-user: "\e9af";
+$icon-nav-performance: "\e99e";
+$icon-plus: "\ea0a";
+$icon-minus: "\ea0b";
+$icon-task-boolean: "\ea10";
+$icon-task-boolean-success: "\ea10";
+$icon-nav-opsTasks: "\ea10";
+$icon-check: "\ea10";
+$icon-tick: "\ea10";
+$icon-instagram: "\ea92";
+$icon-vimeo: "\eaa0";
+$icon-info: "\e941";
+$icon-info1: "\e941";
+$icon-nav-support: "\e941";
+$icon-life-bouy: "\e941";
+$icon-life-buoy: "\e941";
+$icon-life-ring: "\e941";
+$icon-life-saver: "\e941";
+$icon-support: "\e941";
+$icon-lifebuoy: "\e941";
+$icon-bubbles: "\e940";
+$icon-comments: "\e940";
+$icon-chat: "\e940";
+$icon-talk: "\e940";
+$icon-linkedin: "\e93f";
+$icon-facebook: "\e93e";
+$icon-action-pdf-document: "\e936";
+$icon-action-review: "\e937";
+$icon-status-success: "\e934";
+$icon-status-fail: "\e935";
+$icon-action: "\e9aa";
+$icon-video: "\e9a1";
+$icon-video-off: "\e9a2";
+$icon-volume-off: "\e9ab";
+$icon-volume: "\e9a3";
+$icon-microphone-off: "\e9a4";
+$icon-microphone: "\e9a5";
+$icon-maximise: "\e9a6";
+$icon-expand: "\e9a6";
+$icon-fullscreen: "\e9a6";
+$icon-enlarge: "\e9a6";
+$icon-enlarge2: "\e9a6";
+$icon-full-screen: "\e9a6";
+$icon-minimise: "\e9a7";
+$icon-share-screen-off: "\e9a8";
+$icon-share-screen: "\e9a9";
+$icon-ehr-record-link: "\e9a0";
+$icon-app-invite-code: "\e99f";
+$icon-alert-app-code: "\e99f";
+$icon-position: "\e99c";
+$icon-filters: "\e99b";
+$icon-action-color-fill: "\e99a";
+$icon-action-clear: "\e999";
+$icon-bin: "\e999";
+$icon-action-delete: "\e999";
+$icon-delete: "\e999";
+$icon-nav-doodle: "\e997";
+$icon-action-undo: "\e92b";
+$icon-nav-anatomy: "\e92c";
+$icon-anatomy-heart: "\e92f";
+$icon-anatomy-muscles: "\e995";
+$icon-anatomy-skeleton: "\e996";
+$icon-subscription: "\e923";
+$icon-alert-subscription-active: "\e923";
+$icon-credit-card: "\e925";
+$icon-alert-credit-card-available: "\e925";
+$icon-switch-camera: "\e994";
+$icon-photo-solid: "\e991";
+$icon-photo: "\e992";
+$icon-skin: "\e993";
+$icon-tools-solid: "\e98c";
+$icon-nav-admin: "\e98c";
+$icon-task-unchecked: "\e909";
+$icon-obs-height: "\e988";
+$icon-play: "\e95b";
+$icon-obs-steps: "\e985";
+$icon-obs-waist: "\e986";
+$icon-obs-weight: "\e987";
+$icon-medical-cards: "\e983";
+$icon-credit-card-o: "\e983";
+$icon-maintenance-solid: "\e984";
+$icon-nav-system: "\e984";
+$icon-download-solid: "\e97d";
+$icon-file: "\e97e";
+$icon-games-solid: "\e97f";
+$icon-games: "\e980";
+$icon-room: "\e981";
+$icon-task-solid: "\e982";
+$icon-calendar: "\e953";
+$icon-notification: "\e98e";
+$icon-notification-off-solid: "\e98b";
+$icon-notification-solid: "\e93d";
+$icon-location: "\e97b";
+$icon-location-solid: "\e97c";
+$icon-fax: "\e98f";
+$icon-contact-email: "\e979";
+$icon-contact-phone: "\e97a";
+$icon-security: "\e978";
+$icon-about-us: "\e977";
+$icon-bluetooth: "\e974";
+$icon-cancel: "\e975";
+$icon-close: "\e975";
+$icon-error: "\e975";
+$icon-actions: "\e973";
+$icon-nav-actions: "\e973";
+$icon-trend: "\e96b";
+$icon-goal: "\e96c";
+$icon-allergies: "\e96d";
+$icon-family-history: "\e96e";
+$icon-contact-info: "\e96f";
+$icon-emergency-contact: "\e970";
+$icon-address: "\e971";
+$icon-resources: "\e972";
+$icon-nav-opsArticles: "\e972";
+$icon-faqs: "\e962";
+$icon-legals: "\e963";
+$icon-contact-us: "\e964";
+$icon-education-topics: "\e965";
+$icon-nav-ops-articles: "\e965";
+$icon-education-topics-solid: "\e98d";
+$icon-clinics: "\e966";
+$icon-avatar-female: "\e968";
+$icon-avatar-genderless: "\e969";
+$icon-avatar-male: "\e96a";
+$icon-appointments-solid: "\e95e";
+$icon-appointments: "\e95f";
+$icon-recalls: "\e960";
+$icon-metrics-solid: "\e990";
+$icon-metrics: "\e961";
+$icon-conditions: "\e90a";
+$icon-obs-blood-pressure: "\e95c";
+$icon-lock: "\e959";
+$icon-vaccination: "\e958";
+$icon-checkup: "\e951";
+$icon-health: "\e952";
+$icon-certificate: "\e954";
+$icon-procedure: "\e955";
+$icon-lab: "\e957";
+$icon-medications: "\e950";
+$icon-smoking: "\e94b";
+$icon-spinner: "\e94f";
+$icon-nav-news: "\e94e";
+$icon-posts: "\e94d";
+$icon-logout: "\e94c";
+$icon-advocate: "\e90d";
+$icon-advocate-solid: "\e90d";
+$icon-nav-staff: "\e90d";
+$icon-coffee: "\e90f";
+$icon-computer: "\e910";
+$icon-doctor-solid: "\e911";
+$icon-specialist: "\e911";
+$icon-handshake: "\e912";
+$icon-ipad-2: "\e914";
+$icon-iphone: "\e915";
+$icon-lotus: "\e917";
+$icon-man: "\e918";
+$icon-otoscope: "\e919";
+$icon-parcel: "\e91a";
+$icon-plant: "\e91d";
+$icon-screen: "\e91e";
+$icon-skull: "\e91f";
+$icon-tablet-profile: "\e920";
+$icon-technology: "\e921";
+$icon-weights: "\e922";
+$icon-image: "\e90c";
+$icon-florey-plus: "\e90b";
+$icon-heart: "\e906";
+$icon-stethoscope: "\e907";
+$icon-blood-drop: "\e908";
+$icon-blood-pressure: "\e905";
+$icon-education: "\e904";
+$icon-compare: "\e900";
+$icon-ear: "\e901";
+$icon-eye: "\e903";
+$icon-chevron-up: "\e91c";
+$icon-chevron-small-up: "\e91c";
+$icon-caret-up: "\e91c";
+$icon-chevron-right: "\e931";
+$icon-chevron-small-right: "\e931";
+$icon-caret-right: "\e931";
+$icon-chevron-left: "\e932";
+$icon-chevron-small-left: "\e932";
+$icon-caret-left: "\e932";
+$icon-chevron-down: "\e933";
+$icon-chevron-small-down: "\e933";
+$icon-caret-down: "\e933";
+$icon-alcohol: "\e948";
+$icon-nutrition: "\e949";
+$icon-physical: "\e94a";
+$icon-package: "\e947";
+$icon-services: "\e946";
+$icon-house-solid: "\e913";
+$icon-home: "\e913";
+$icon-nav-home: "\e913";
+
+$icons: (
+  icon-task-image: $icon-task-image,
+  icon-task-image-success: $icon-task-image-success,
+  icon-tablet: $icon-tablet,
+  icon-task-numeric: $icon-task-numeric,
+  icon-task-numeric-success: $icon-task-numeric-success,
+  icon-credit-card-alt: $icon-credit-card-alt,
+  icon-ban: $icon-ban,
+  icon-mail: $icon-mail,
+  icon-email: $icon-email,
+  icon-alert-email-in-use: $icon-alert-email-in-use,
+  icon-action-close: $icon-action-close,
+  icon-close-hollow: $icon-close-hollow,
+  icon-action-remove: $icon-action-remove,
+  icon-circle-minus: $icon-circle-minus,
+  icon-action-add: $icon-action-add,
+  icon-circle-plus: $icon-circle-plus,
+  icon-action-export: $icon-action-export,
+  icon-document-download: $icon-document-download,
+  icon-document: $icon-document,
+  icon-action-erase: $icon-action-erase,
+  icon-zoom-in: $icon-zoom-in,
+  icon-zoom-out: $icon-zoom-out,
+  icon-search: $icon-search,
+  icon-action-more: $icon-action-more,
+  icon-more_2: $icon-more_2,
+  icon-action-edit: $icon-action-edit,
+  icon-nav-content: $icon-nav-content,
+  icon-edit: $icon-edit,
+  icon-write: $icon-write,
+  icon-pencil: $icon-pencil,
+  icon-action-chart: $icon-action-chart,
+  icon-chart_1_2: $icon-chart_1_2,
+  icon-nav-training: $icon-nav-training,
+  icon-action-refresh: $icon-action-refresh,
+  icon-share_2: $icon-share_2,
+  icon-nav-issues: $icon-nav-issues,
+  icon-task-reportIssue: $icon-task-reportIssue,
+  icon-alert-not-signed-latest-terms: $icon-alert-not-signed-latest-terms,
+  icon-warning: $icon-warning,
+  icon-task-moreInfo: $icon-task-moreInfo,
+  icon-nav-opsResources: $icon-nav-opsResources,
+  icon-inbox: $icon-inbox,
+  icon-drawer: $icon-drawer,
+  icon-user: $icon-user,
+  icon-manage: $icon-manage,
+  icon-alert-reason-for-visit-available: $icon-alert-reason-for-visit-available,
+  icon-user-plus: $icon-user-plus,
+  icon-user-minus: $icon-user-minus,
+  icon-action-remove-user: $icon-action-remove-user,
+  icon-nav-performance: $icon-nav-performance,
+  icon-plus: $icon-plus,
+  icon-minus: $icon-minus,
+  icon-task-boolean: $icon-task-boolean,
+  icon-task-boolean-success: $icon-task-boolean-success,
+  icon-nav-opsTasks: $icon-nav-opsTasks,
+  icon-check: $icon-check,
+  icon-tick: $icon-tick,
+  icon-instagram: $icon-instagram,
+  icon-vimeo: $icon-vimeo,
+  icon-info: $icon-info,
+  icon-info1: $icon-info1,
+  icon-nav-support: $icon-nav-support,
+  icon-life-bouy: $icon-life-bouy,
+  icon-life-buoy: $icon-life-buoy,
+  icon-life-ring: $icon-life-ring,
+  icon-life-saver: $icon-life-saver,
+  icon-support: $icon-support,
+  icon-lifebuoy: $icon-lifebuoy,
+  icon-bubbles: $icon-bubbles,
+  icon-comments: $icon-comments,
+  icon-chat: $icon-chat,
+  icon-talk: $icon-talk,
+  icon-linkedin: $icon-linkedin,
+  icon-facebook: $icon-facebook,
+  icon-action-pdf-document: $icon-action-pdf-document,
+  icon-action-review: $icon-action-review,
+  icon-status-success: $icon-status-success,
+  icon-status-fail: $icon-status-fail,
+  icon-action: $icon-action,
+  icon-video: $icon-video,
+  icon-video-off: $icon-video-off,
+  icon-volume-off: $icon-volume-off,
+  icon-volume: $icon-volume,
+  icon-microphone-off: $icon-microphone-off,
+  icon-microphone: $icon-microphone,
+  icon-maximise: $icon-maximise,
+  icon-expand: $icon-expand,
+  icon-fullscreen: $icon-fullscreen,
+  icon-enlarge: $icon-enlarge,
+  icon-enlarge2: $icon-enlarge2,
+  icon-full-screen: $icon-full-screen,
+  icon-minimise: $icon-minimise,
+  icon-share-screen-off: $icon-share-screen-off,
+  icon-share-screen: $icon-share-screen,
+  icon-ehr-record-link: $icon-ehr-record-link,
+  icon-app-invite-code: $icon-app-invite-code,
+  icon-alert-app-code: $icon-alert-app-code,
+  icon-position: $icon-position,
+  icon-filters: $icon-filters,
+  icon-action-color-fill: $icon-action-color-fill,
+  icon-action-clear: $icon-action-clear,
+  icon-bin: $icon-bin,
+  icon-action-delete: $icon-action-delete,
+  icon-delete: $icon-delete,
+  icon-nav-doodle: $icon-nav-doodle,
+  icon-action-undo: $icon-action-undo,
+  icon-nav-anatomy: $icon-nav-anatomy,
+  icon-anatomy-heart: $icon-anatomy-heart,
+  icon-anatomy-muscles: $icon-anatomy-muscles,
+  icon-anatomy-skeleton: $icon-anatomy-skeleton,
+  icon-subscription: $icon-subscription,
+  icon-alert-subscription-active: $icon-alert-subscription-active,
+  icon-credit-card: $icon-credit-card,
+  icon-alert-credit-card-available: $icon-alert-credit-card-available,
+  icon-switch-camera: $icon-switch-camera,
+  icon-photo-solid: $icon-photo-solid,
+  icon-photo: $icon-photo,
+  icon-skin: $icon-skin,
+  icon-tools-solid: $icon-tools-solid,
+  icon-nav-admin: $icon-nav-admin,
+  icon-task-unchecked: $icon-task-unchecked,
+  icon-obs-height: $icon-obs-height,
+  icon-play: $icon-play,
+  icon-obs-steps: $icon-obs-steps,
+  icon-obs-waist: $icon-obs-waist,
+  icon-obs-weight: $icon-obs-weight,
+  icon-medical-cards: $icon-medical-cards,
+  icon-credit-card-o: $icon-credit-card-o,
+  icon-maintenance-solid: $icon-maintenance-solid,
+  icon-nav-system: $icon-nav-system,
+  icon-download-solid: $icon-download-solid,
+  icon-file: $icon-file,
+  icon-games-solid: $icon-games-solid,
+  icon-games: $icon-games,
+  icon-room: $icon-room,
+  icon-task-solid: $icon-task-solid,
+  icon-calendar: $icon-calendar,
+  icon-notification: $icon-notification,
+  icon-notification-off-solid: $icon-notification-off-solid,
+  icon-notification-solid: $icon-notification-solid,
+  icon-location: $icon-location,
+  icon-location-solid: $icon-location-solid,
+  icon-fax: $icon-fax,
+  icon-contact-email: $icon-contact-email,
+  icon-contact-phone: $icon-contact-phone,
+  icon-security: $icon-security,
+  icon-about-us: $icon-about-us,
+  icon-bluetooth: $icon-bluetooth,
+  icon-cancel: $icon-cancel,
+  icon-close: $icon-close,
+  icon-error: $icon-error,
+  icon-actions: $icon-actions,
+  icon-nav-actions: $icon-nav-actions,
+  icon-trend: $icon-trend,
+  icon-goal: $icon-goal,
+  icon-allergies: $icon-allergies,
+  icon-family-history: $icon-family-history,
+  icon-contact-info: $icon-contact-info,
+  icon-emergency-contact: $icon-emergency-contact,
+  icon-address: $icon-address,
+  icon-resources: $icon-resources,
+  icon-nav-opsArticles: $icon-nav-opsArticles,
+  icon-faqs: $icon-faqs,
+  icon-legals: $icon-legals,
+  icon-contact-us: $icon-contact-us,
+  icon-education-topics: $icon-education-topics,
+  icon-nav-ops-articles: $icon-nav-ops-articles,
+  icon-education-topics-solid: $icon-education-topics-solid,
+  icon-clinics: $icon-clinics,
+  icon-avatar-female: $icon-avatar-female,
+  icon-avatar-genderless: $icon-avatar-genderless,
+  icon-avatar-male: $icon-avatar-male,
+  icon-appointments-solid: $icon-appointments-solid,
+  icon-appointments: $icon-appointments,
+  icon-recalls: $icon-recalls,
+  icon-metrics-solid: $icon-metrics-solid,
+  icon-metrics: $icon-metrics,
+  icon-conditions: $icon-conditions,
+  icon-obs-blood-pressure: $icon-obs-blood-pressure,
+  icon-lock: $icon-lock,
+  icon-vaccination: $icon-vaccination,
+  icon-checkup: $icon-checkup,
+  icon-health: $icon-health,
+  icon-certificate: $icon-certificate,
+  icon-procedure: $icon-procedure,
+  icon-lab: $icon-lab,
+  icon-medications: $icon-medications,
+  icon-smoking: $icon-smoking,
+  icon-spinner: $icon-spinner,
+  icon-nav-news: $icon-nav-news,
+  icon-posts: $icon-posts,
+  icon-logout: $icon-logout,
+  icon-advocate: $icon-advocate,
+  icon-advocate-solid: $icon-advocate-solid,
+  icon-nav-staff: $icon-nav-staff,
+  icon-coffee: $icon-coffee,
+  icon-computer: $icon-computer,
+  icon-doctor-solid: $icon-doctor-solid,
+  icon-specialist: $icon-specialist,
+  icon-handshake: $icon-handshake,
+  icon-ipad-2: $icon-ipad-2,
+  icon-iphone: $icon-iphone,
+  icon-lotus: $icon-lotus,
+  icon-man: $icon-man,
+  icon-otoscope: $icon-otoscope,
+  icon-parcel: $icon-parcel,
+  icon-plant: $icon-plant,
+  icon-screen: $icon-screen,
+  icon-skull: $icon-skull,
+  icon-tablet-profile: $icon-tablet-profile,
+  icon-technology: $icon-technology,
+  icon-weights: $icon-weights,
+  icon-image: $icon-image,
+  icon-florey-plus: $icon-florey-plus,
+  icon-heart: $icon-heart,
+  icon-stethoscope: $icon-stethoscope,
+  icon-blood-drop: $icon-blood-drop,
+  icon-blood-pressure: $icon-blood-pressure,
+  icon-education: $icon-education,
+  icon-compare: $icon-compare,
+  icon-ear: $icon-ear,
+  icon-eye: $icon-eye,
+  icon-chevron-up: $icon-chevron-up,
+  icon-chevron-small-up: $icon-chevron-small-up,
+  icon-caret-up: $icon-caret-up,
+  icon-chevron-right: $icon-chevron-right,
+  icon-chevron-small-right: $icon-chevron-small-right,
+  icon-caret-right: $icon-caret-right,
+  icon-chevron-left: $icon-chevron-left,
+  icon-chevron-small-left: $icon-chevron-small-left,
+  icon-caret-left: $icon-caret-left,
+  icon-chevron-down: $icon-chevron-down,
+  icon-chevron-small-down: $icon-chevron-small-down,
+  icon-caret-down: $icon-caret-down,
+  icon-alcohol: $icon-alcohol,
+  icon-nutrition: $icon-nutrition,
+  icon-physical: $icon-physical,
+  icon-package: $icon-package,
+  icon-services: $icon-services,
+  icon-house-solid: $icon-house-solid,
+  icon-home: $icon-home,
+  icon-nav-home: $icon-nav-home,
+);

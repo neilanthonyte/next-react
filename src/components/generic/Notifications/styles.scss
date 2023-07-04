@@ -1,0 +1,47 @@
+@import "../../../scss/variables.scss";
+
+$label-font-size: 12px;
+
+.Notifications {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $label-font-size;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background-color: $color-danger;
+  color: white;
+
+  &_label {
+    font-weight: bold;
+    // HACK the transform on the pulsate animation creates a new stack context always putting the circle on top
+    // by putting a transform on the label as well, they are now on the same z stack context and follow DOM order
+    // this avoids messing with z-indexes
+    transform: scale(1);
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 2.5em;
+    width: 2.5em;
+    background-color: $color-danger;
+    animation: pulsate 1s infinite;
+    border-radius: 50%;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    transform-origin: center;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    transform-origin: center;
+    opacity: 0;
+  }
+}

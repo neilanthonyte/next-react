@@ -1,0 +1,23 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/flexGrid";
+
+.keypad {
+  .btn {
+    margin-right: 5px;
+  }
+  &_2 {
+    @include flexGrid($spacing-sm, 2);
+  }
+  &_3 {
+    @include flexGrid($spacing-sm, 3);
+  }
+  &_4 {
+    @include flexGrid($spacing-sm, 4);
+  }
+  &_5 {
+    @include flexGrid($spacing-sm, 5);
+  }
+  &_6 {
+    @include flexGrid($spacing-sm, 6);
+  }
+}

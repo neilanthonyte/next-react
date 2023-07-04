@@ -1,0 +1,18 @@
+@import "../../../scss/variables.scss";
+
+.PaginatedContent {
+  &_container {
+    display: flex;
+    flex-direction: row;
+  }
+  &_item {
+    flex: 1;
+    justify-content: stretch;
+  }
+  &_item + &_item {
+    margin-left: $spacing-sm;
+  }
+  &_pagination {
+    margin-top: $spacing-base;
+  }
+}

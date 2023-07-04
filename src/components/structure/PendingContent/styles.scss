@@ -1,0 +1,28 @@
+@import "../../../scss/variables.scss";
+
+.protectedArea {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  // overflow: hidden;
+
+  &_container {
+    height: 100%;
+  }
+
+  &_localised {
+    position: relative;
+    min-height: 100px;
+    height: 100%;
+  }
+
+  &_fallback {
+    // HACK: ensures the content is shown correctly
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    // z-index: 2;
+  }
+}

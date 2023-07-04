@@ -1,0 +1,39 @@
+@import "../../../scss/variables.scss";
+
+.Popover {
+  // by default, the popover would transition in from the top-left, and exit
+  // from the top. this rule ensures the transition is from the top only.
+  transition-property: top, opacity, transform !important;
+  z-index: $zIndex-popover;
+  min-width: 200px;
+
+  &_body {
+    padding: 0.5em;
+    box-shadow: $defaults-boxShadow-base;
+    border: $border-primary;
+    background-color: white;
+    border-radius: 8px;
+  }
+
+  // needed to ensure color of 'tip' of popover matches the rest of the popover
+  // this classname comes from the 'react-popover' library.
+  .Popover-tipShape {
+    fill: white;
+    stroke: $color-gray-lighter;
+    box-shadow: $defaults-boxShadow-base;
+  }
+
+  &.-filters {
+    .Popover_body {
+      // need this to absolute position close button in the FiltersPopover
+      position: relative;
+      padding: $spacing-md;
+      background-color: $filters-popup-background;
+    }
+    .Popover-tipShape {
+      fill: $filters-popup-background;
+      stroke: $color-gray-lighter;
+      box-shadow: $defaults-boxShadow-base;
+    }
+  }
+}

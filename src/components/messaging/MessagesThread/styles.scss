@@ -1,0 +1,100 @@
+@import "../../../scss/variables.scss";
+
+@mixin pill() {
+  font-size: 0.8em;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 1em;
+}
+
+$v-spacing: 1em;
+
+.MessagesThread {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &.-compact {
+    font-size: $messaging-compact-size;
+  }
+
+  &_no-messages {
+    height: 100%;
+  }
+
+  &_messages-container {
+    height: 100%;
+    overflow-y: hidden;
+    position: relative;
+    &_content {
+      height: 100%;
+      overflow-y: scroll;
+      padding: $spacing-base;
+      &_body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &_message + &_message {
+    margin-top: $spacing-xs;
+  }
+
+  &_message + &_message:not(.-no-gap),
+  &_messages-section + &_messages-section,
+  &_date-group + &_date-group {
+    margin-top: $v-spacing;
+  }
+
+  &_date-group {
+    position: relative;
+  }
+
+  &_date-group-header {
+    margin-bottom: $v-spacing;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+
+    &_date {
+      @include pill();
+      background-color: $color-active-light;
+      color: $color-active;
+    }
+
+    & + &_date-group-header {
+      margin-top: $spacing-base;
+    }
+  }
+  &_input {
+    margin-top: $spacing-base;
+  }
+
+  &_updates {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    &_body {
+      @include pill();
+      background-color: $color-secondary;
+      color: $color-secondary-alt;
+      display: inline-flex;
+      align-items: center;
+    }
+    &_label {
+      margin-left: $spacing-xs;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &.-hidden {
+      opacity: 0;
+    }
+  }
+}

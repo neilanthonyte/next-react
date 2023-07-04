@@ -1,0 +1,16 @@
+@import "../../../../../scss/variables.scss";
+
+.FormHeading {
+  margin: $spacing-md * 2 0;
+
+  h4 {
+    padding: $spacing-sm 0;
+    border-bottom: 1px solid $color-gray;
+    color: $color-gray-dark;
+  }
+  &_description {
+    font-size: 80%;
+    color: $color-gray-dark;
+    margin-top: $spacing-sm;
+  }
+}

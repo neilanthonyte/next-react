@@ -1,0 +1,43 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdActionSizes.scss";
+@import "../../../scss/mixins/stdColors.scss";
+
+$border-width: 2px;
+
+.circularIcon {
+  @include stdActionSizes(1, $border-width, true);
+  @include stdColorSchemesSubtle;
+
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  font-weight: normal !important;
+  transition: border-color 0.5s, color 0.5s, box-shadow 0.5s, transform 0.5s,
+    background-position 0.5s, background-color 0.5s;
+  position: relative;
+
+  color: $icons-textColor;
+  border: $border-width solid $icons-textColor;
+
+  &::before,
+  &::after {
+    font-size: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+    line-height: normal;
+  }
+
+  &.-disabled {
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}

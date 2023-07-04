@@ -1,0 +1,149 @@
+@if $theme== "next" {
+  $_purple-light: rgb(181, 98, 240);
+  $_purple: rgb(120, 30, 148);
+  $_pistachio: rgb(182, 204, 195);
+  $_pistachio-light: rgb(234, 242, 240);
+  $_charcoal: rgb(35, 32, 33);
+  $_jade: rgb(0, 110, 99);
+  $_emerald: rgb(0, 141, 113);
+  $_living-coral: rgb(232, 146, 124);
+  $_coral-reef: rgb(255, 190, 159);
+
+  // tints
+  $_coral-reef-50: rgb(255, 222, 207);
+  $_coral-reef-25: rgb(255, 239, 231);
+  $_pistachio-light-50: rgb(244, 247, 246);
+
+  $defaults-backgroundColor: #fff;
+  $defaults-backgroundColor-alt: $_pistachio-light-50;
+  $defaults-textColor: $_charcoal;
+
+  $border-radius-size: 8px;
+
+  $color-gray-lightest: #fafafa;
+  $color-gray-lighter: rgb(240, 240, 240);
+  $color-gray-light: rgba(230, 230, 230, 1);
+  $color-gray: rgba(200, 200, 200, 1);
+  $color-gray-dark: rgba(155, 155, 155, 1);
+  $color-gray-darker: rgba(70, 70, 70, 1);
+
+  $color-primary: $_jade;
+  $color-primary-alt: #fff;
+
+  $color-secondary: $_charcoal;
+  $color-secondary-alt: #fff;
+
+  $color-dark: $color-primary;
+  $color-light: #fff;
+  $color-text-on-dark: #fff;
+  $color-text-on-light: $color-primary;
+
+  $color-text-on-dark: #fff;
+  $color-text-on-light: $color-primary;
+
+  $color-active: $_emerald;
+  $color-active-light: $_pistachio-light;
+  $color-active-alt: #fff;
+
+  $color-highlight: $_emerald;
+  $color-accent: $_living-coral;
+  $color-accent-alt: #fff;
+
+  $color-disabled: $color-gray-light;
+  $color-disabled-alt: $color-gray;
+
+  $inputs-textColor: $_charcoal;
+  $headings-textColor: $color-primary;
+
+  $hyperlink-textColor: $_jade;
+  $hyperlink-visited-textColor: $_emerald;
+
+  // nav
+  $sideNav-link-color: $color-primary;
+  $sideNav-link-color-active: $color-primary;
+  $sideNav-link-color-hover: $color-primary;
+  $nav-color-primary: $_pistachio-light;
+  $nav-color-collapsed: $_pistachio;
+  $sideNavRow-color-active: $_pistachio-light;
+
+  // tabbed nav
+  $tabbed-nav-light-color: $color-primary;
+  $tabbed-nav-light-background: $_pistachio;
+  $tabbed-nav-light-active: $_pistachio-light;
+  $tabbed-nav-light-active-alt: $color-primary;
+  $tabbed-nav-dark-color: #fff;
+  $tabbed-nav-dark-background: $_charcoal;
+  $tabbed-nav-dark-active: #fff;
+  $tabbed-nav-dark-active-alt: $color-active;
+
+  // sidebar
+  $sidebar-backgroundColor: $nav-color-primary;
+  $sidebar-header-background: $nav-color-primary;
+  $sidebar-header-text: $color-primary;
+  $sidebar-section-background: $nav-color-primary;
+  $sidebar-section-header-background: $nav-color-primary;
+  $sidebar-section-body-background: $nav-color-primary;
+
+  $icons-textColor: $color-primary;
+  $label-textColor: $color-primary;
+
+  // modals
+  $modal-overlay-backgroundColor: rgba($defaults-backgroundColor, 0.5);
+  $modal-header-background-color: $color-primary;
+  $modal-header-background-color-alt: $color-primary-alt;
+  $modal-footer-background-color: #fff;
+  $modal-body-background-color: $_pistachio-light-50;
+  $modal-border-radius: 12px;
+  $modal-box-shadow: $defaults-boxShadow-base;
+
+  // goals
+  $color-goal: $_purple;
+  $color-goal-alt: #fff;
+  $gradient-goal: linear-gradient(to right, $_purple 0%, $_purple-light 100%);
+
+  $border-primary: 1px solid $color-gray-lighter;
+
+  // dialogs
+  $dialog-border-radius: 12px;
+  $dialog-box-shadow: 0 0 35px rgba(0, 0, 0, 0.2);
+  $dialog-border: $border-primary;
+
+  // cards
+  $card-border: none;
+  $card-boxShadow: none;
+  $card-backgroundColor: transparent;
+  $card-base-padding: 0px;
+  $card-base-element-spacing: $spacing-base;
+
+  // buttons
+  $button-color-primary: $color-primary;
+  $button-radius: 0.5em;
+  $button-boxShadow-base: none;
+  $button-boxShadow-active: none;
+  $button-boxShadow-hover: none;
+  $button-font-weight: 600;
+
+  // page sections
+  $decoration-page-section-color: $_pistachio;
+
+  // flow summary
+  $flowSummary-backgroundColor: $color-active;
+  $flowSummary-inlineSummary-backgroundColor: $color-active;
+  $flowSummary-chevron-color: $color-active-alt;
+
+  // well
+  $well-border-color: $_pistachio;
+  $well-border-radius: $border-radius-size * 2;
+  $well-options-background-color: $_pistachio-light;
+
+  // filters
+  $filters-color: $_coral-reef-50;
+  $filters-color-accent: $_living-coral;
+  $filters-color-alt: white;
+  $filters-popup-background: $_coral-reef-25;
+
+  // decorations
+  $decoration-background-color: $_pistachio-light-50;
+  $decoration-border-color: $_pistachio;
+  $decoration-border-radius: $border-radius-size;
+}

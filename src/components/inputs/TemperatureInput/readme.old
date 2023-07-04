@@ -1,0 +1,109 @@
+### Standard usage
+
+```jsx harmony
+import { TemperatureInput } from "./";
+import { MockZamApiClient } from "../../handlers/MockZamApiClient";
+import { ZamLocation } from "next-shared/src/models/ZamLocation";
+
+const location = ZamLocation.unserialize({
+  region: "Australia",
+  id: "2345",
+});
+
+const initialState = { value: null };
+
+<MockZamApiClient location={location}>
+  <div data-test="TemperatureInput-scenario-standardUsage">
+    <div data-test="temperature-input">
+      <TemperatureInput
+        onInputChange={(value) => {
+          setState({ value });
+        }}
+        value={state.value}
+      />
+    </div>
+    <p>
+      Selected: "<span data-test="output">{state.value}</span>"<br />
+      <a onClick={() => setState({ value: "" })}>Clear</a>
+      {" | "}
+      <a onClick={() => setState({ value: 3 })}>Set to 3</a>
+      {" | "}
+      <a onClick={() => setState({ value: _.random(0, 100) })}>Random</a>
+    </p>
+  </div>
+</MockZamApiClient>;
+```
+
+### Show Field on Temp Fail usage
+
+```jsx harmony
+import { TemperatureInput } from "./";
+import { MockZamApiClient } from "../../handlers/MockZamApiClient";
+import { ZamLocation } from "next-shared/src/models/ZamLocation";
+import { Form } from "../../forms/Form";
+
+const location = ZamLocation.unserialize({
+  region: "Australia",
+  id: "2345",
+});
+const initialState = { value: null };
+const formSchema = [
+  {
+    label: "Temperature",
+    type: "temperature",
+    map: "temperature",
+    required: true,
+  },
+  {
+    label: "Reason Why",
+    type: "text",
+    map: "reasonWhy",
+    conditional: {
+      maxValue: 50,
+      minValue: 30,
+      path: "../temperature",
+      type: "visible",
+    },
+  },
+];
+
+<MockZamApiClient location={location}>
+  <Form schema={formSchema} />
+</MockZamApiClient>;
+```
+
+### Imperial usage
+
+```jsx harmony
+import { TemperatureInput } from "./";
+import { MockZamApiClient } from "../../handlers/MockZamApiClient";
+import { ZamLocation } from "next-shared/src/models/ZamLocation";
+
+const location = ZamLocation.unserialize({
+  id: "2345",
+  region: "United States",
+});
+
+const initialState = { value: null };
+
+<MockZamApiClient location={location}>
+  <div data-test="TemperatureInput-scenario-imperial">
+    <div data-test="temperature-input">
+      <TemperatureInput
+        onInputChange={(value) => {
+          setState({ value });
+        }}
+        value={state.value}
+      />
+    </div>
+    <p>
+      Selected: "<span data-test="output">{state.value}</span>"<br />
+      <a onClick={() => setState({ value: "" })}>Clear</a>
+      {" | "}
+      <a onClick={() => setState({ value: 3 })}>Set to 3</a>
+      {" | "}
+      <a onClick={() => setState({ value: _.random(0, 100) })}>Random</a>
+    </p>
+  </div>
+</MockZamApiClient>;
+```

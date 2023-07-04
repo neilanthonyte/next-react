@@ -1,0 +1,8 @@
+@import "../../../scss/variables.scss";
+
+.tableOfContents {
+  &_item {
+    @if $theme == "zam" {
+    }
+  }
+}

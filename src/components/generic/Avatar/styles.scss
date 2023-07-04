@@ -1,0 +1,37 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdActionSizes";
+
+.Avatar {
+  display: flex;
+  flex-direction: column;
+
+  &_row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &_image {
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(#000, 0.1);
+    @include stdActionSizes($isSquare: true);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &.-column {
+      margin-bottom: $spacing-xs;
+    }
+    &.-row {
+      margin-right: $spacing-xs;
+    }
+  }
+
+  &_label {
+    display: block;
+
+    @if $theme == "svc" {
+      font-weight: bold;
+    }
+
+    @include stdActionSizes();
+  }
+}

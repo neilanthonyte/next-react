@@ -1,0 +1,16 @@
+@import "../variables.scss";
+
+// Based on: https://github.com/FontFaceKit/roboto
+@mixin fontdef-woff($fontPath, $fontName, $fontType: "Regular") {
+  src: url("#{$fontPath}/#{$fontName}-#{$fontType}.woff2") format("woff2"),
+    url("#{$fontPath}/#{$fontName}-#{$fontType}.woff") format("woff");
+}
+
+@import url("https://use.typekit.net/dqf6jjr.css");
+
+@font-face {
+  @include fontdef-woff($font-path, "Sarabun", "Semibold");
+  font-family: $font-name-button;
+  font-weight: 600;
+  font-style: normal;
+}

@@ -1,0 +1,242 @@
+@use "sass:math";
+@import "../../../../../scss/variables.scss";
+@import "../../../../../scss/mixins/breakpoints";
+
+// Logo size:
+// 1292.93
+// 357.986
+
+@mixin sideNavVariation($width-open, $width-closed) {
+  width: $width-open;
+
+  // Full name needed for the size variations
+  .sideNav_nav {
+    width: $width-closed;
+
+    > .inner {
+      // Causcp5s7p8ncolores the content to be cropped
+      width: $width-open;
+    }
+  }
+
+  .sideNav_menu {
+    padding-left: $width-closed;
+
+    @if $theme== "svc" {
+      border-right: 1px solid $color-gray-light;
+
+      ul {
+        border: none;
+      }
+    }
+  }
+
+  .sideNav_brand {
+    // HACK - magic numbers
+    height: $width-open * 0.3;
+    width: $width-open * 0.5;
+
+    @include forLargerThanTabletLandscape {
+      width: $width-open * 0.4;
+    }
+  }
+
+  &.-open {
+    .sideNav_nav {
+      background-color: $nav-color-primary;
+      transition: width 0.5s, background-color 0.5s;
+      width: $width-open;
+    }
+
+    .sideNav_brand {
+      // HACK - magic numbers
+      width: $width-open * 0.9;
+    }
+
+    .sideNavRow.-active,
+    .sideNavRow:hover {
+      background-color: $nav-color-collapsed;
+      transition: background-color 0.5s;
+    }
+  }
+
+  .sideNav_supplement {
+    width: $width-open;
+    z-index: 9;
+  }
+
+  .sideNavRow {
+    padding-left: $width-closed;
+    width: $width-open;
+
+    &_lead {
+      $size: $width-closed * 0.6;
+
+      width: $width-closed;
+      margin-top: math.div(-$size, 2);
+      height: $size;
+      font-size: $size;
+    }
+  }
+}
+
+//  sideNav
+//    sideNav_menu
+//    sideNav_nav
+//      inner
+
+// The side navigation bar
+.sideNav {
+  height: 100vh;
+  transition: transform 0.5s;
+  position: relative;
+  overflow: hidden;
+
+  // top level nav, which can open and closed
+  &_nav {
+    // background-color: $nav-color-primary;
+    background-color: $nav-color-collapsed;
+    transition: width 0.5s, background-color 0.5s 0.5s;
+    overflow-x: hidden;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    a {
+      color: $sideNav-link-color;
+      text-decoration: none;
+    }
+  }
+
+  // The page-specific menu
+  &_menu {
+    background-color: $sidebar-backgroundColor;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    // font-size: 70%;
+  }
+
+  // Holds the logo
+  &_brand {
+    padding-top: $spacing-sm;
+    padding-left: $spacing-sm;
+    transition: width 0.5s;
+
+    > img {
+      max-width: 100%;
+    }
+  }
+
+  // Holds an additional piece of information, e.g. appointment details
+  &_supplement {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: none;
+    transition: transform 0.5s;
+
+    &.-hide {
+      transform: translateY(100%);
+    }
+  }
+
+  &.-hasSupplement &_menu {
+    // Put in some extra space to avoid having content hidden by the supplement
+    padding-bottom: 300px;
+  }
+
+  &_disabled {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-disabled;
+
+    &_logo {
+      width: 50%;
+    }
+  }
+
+  ul.stackedSiteItems {
+    margin-bottom: 10px;
+  }
+
+  @if $theme== "zam" {
+    padding-right: $spacing-md;
+    color: $color-primary;
+  }
+
+  // auto-size
+  @include aboveTabletLandscape {
+    @include sideNavVariation($sideNav-desktop-open, $sideNav-desktop-closed);
+  }
+  @include belowTabletLandscape {
+    @include sideNavVariation($sideNav-tablet-open, $sideNav-tablet-closed);
+  }
+  // manual size
+  &.-sm {
+    @include sideNavVariation($sideNav-tablet-open, $sideNav-tablet-closed);
+  }
+}
+
+ul.stackedSiteItems {
+  list-style: none;
+  padding: 0;
+
+  > li {
+    display: inline;
+  }
+}
+
+// An entry in the nav, with an item to the left and the details
+// hidden to the right when the menu is collapsed.
+$navRow-top: math.div(
+  $sideNavRow-height - $sideNavRow-fontSize * $sideNavRow-lineHeight,
+  2
+);
+
+.sideNavRow {
+  position: relative;
+  display: block;
+  font-size: $sideNavRow-fontSize;
+  line-height: $sideNavRow-lineHeight;
+  color: $sideNav-link-color;
+  min-height: $sideNavRow-height;
+  padding-top: $navRow-top;
+  font-weight: normal;
+
+  &_lead {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  &.-active,
+  &:hover {
+    background-color: $sideNavRow-color-active;
+    transition: background-color 0.5s 0.5s;
+  }
+
+  &:visited {
+    color: $sideNav-link-color;
+  }
+  &:hover {
+    color: $sideNav-link-color-hover;
+  }
+  &.-active {
+    color: $sideNav-link-color-active;
+  }
+}

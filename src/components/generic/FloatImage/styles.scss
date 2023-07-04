@@ -1,0 +1,20 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/clearfix";
+
+.floatImage {
+  @include clearfix;
+
+  &_image {
+    width: 300px;
+    max-width: 50%;
+
+    &.-right {
+      float: right;
+      margin: 0 0 $spacing-md $spacing-md;
+    }
+    &.-left {
+      float: left;
+      margin: 0 $spacing-md $spacing-md 0;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import "../variables.scss";
+
+@mixin reversedScheme {
+  background: $color-secondary;
+  color: $color-secondary-alt;
+
+  * {
+    color: $color-secondary-alt;
+  }
+}
+
+@mixin selectedScheme {
+  background: $color-active;
+  color: $color-active-alt !important;
+
+  * {
+    color: $color-active-alt !important;
+  }
+}
+
+@mixin primaryScheme {
+  background: $color-primary;
+  color: $color-primary-alt;
+
+  * {
+    color: $color-primary-alt;
+  }
+}
+
+@mixin secondaryScheme {
+  background: $color-secondary;
+  color: $color-secondary-alt;
+
+  * {
+    color: $color-secondary-alt;
+  }
+}
+
+@mixin infoScheme {
+  background: $color-info;
+  color: $color-info-alt;
+
+  * {
+    color: $color-info-alt;
+  }
+}
+
+@mixin subtleTheme {
+  background: $color-gray-light;
+}

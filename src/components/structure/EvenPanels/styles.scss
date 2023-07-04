@@ -1,0 +1,21 @@
+@import "../../../scss/variables.scss";
+
+.evenPanels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-column-gap: $spacing-sm;
+
+  &_panel {
+    position: relative;
+    border: 1px solid $color-gray;
+    padding: $spacing-sm;
+  }
+
+  &.-fixedHeight {
+    height: 500px;
+  }
+  &.-fixedHeight &_panel {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+}

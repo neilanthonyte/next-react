@@ -1,0 +1,404 @@
+{
+  "data": {
+    "Patient": {
+      "resourceType": "Patient",
+      "id": "MD11344",
+      "meta": {
+        "versionId": "MD127110",
+        "lastUpdated": "2018-08-15T02:44:27.923+00:00"
+      },
+      "extension": [
+        {
+          "url": "http://medicaldirector.com/Patient/extension/Status",
+          "valueString": "2"
+        }
+      ],
+      "identifier": [
+        {
+          "system": "http://medicaldirector.com/hub/identifier/app-id",
+          "value": "77699511-0600-4ecc-8097-bf4d93998349"
+        },
+        {
+          "system": "http://medicaldirector.com/hub/identifier/tenant-id",
+          "value": "next-demo.helix.medicaldirector.com"
+        },
+        {
+          "system": "http://medicaldirector.com/hub/identifier/external/resource/object-id",
+          "value": "22"
+        }
+      ],
+      "name": [
+        {
+          "use": "usual",
+          "family": "Lewis",
+          "given": [
+            "Jye"
+          ],
+          "prefix": [
+            "Ms"
+          ]
+        }
+      ],
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "0449699812",
+          "use": "mobile"
+        },
+        {
+          "system": "phone",
+          "value": "0449699811",
+          "use": "mobile"
+        },
+        {
+          "system": "phone",
+          "value": "0449699811",
+          "use": "mobile"
+        },
+        {
+          "system": "phone",
+          "value": "0449699811",
+          "use": "mobile"
+        },
+        {
+          "system": "phone",
+          "value": "0267037184"
+        },
+        {
+          "system": "email",
+          "value": "dev.team+test2@nextpracticehealth.com"
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1991-05-26",
+      "address": [
+        {
+          "line": [
+            "1/230 Attunga Rd Yowie bay"
+          ],
+          "city": "Sydney",
+          "state": "NSW",
+          "postalCode": "2228",
+          "country": "Australia"
+        }
+      ]
+    },
+    "observation:ReasonForVisit": {
+      "resourceType": "Observation",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ValueSet/observation-category",
+              "code": "survey"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org/",
+            "code": "51855-5"
+          }
+        ],
+        "text": "Reason for visit"
+      },
+      "effectiveDateTime": "2018-08-13T13:00:24+10:00",
+      "issued": "2018-08-13T13:00:24+10:00",
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org/",
+                "code": "51855-5"
+              }
+            ]
+          },
+          "valueString": "{\"reasonForVisit\":\"Test reason\",\"referred\":{\"referer\":\"Friends/family\",\"details\":{\"name\":\"Tristan\",\"refererContactDetails\":\"0441226644\"},\"MYCAW\":{\"problem\":\"Hellooo\",\"levelOfConcern\":\"3\"}},\"otherPractitioner\":{\"occurred\":false},\"lengthOfTimeDealingWithIssue\":\"Months\",\"objectives\":{\"shortTerm\":\"Steal underpants\",\"mediumTerm\":\"?\",\"longTerm\":\"Learn to ride a unicycle\",\"otherGoals\":\"Profit\"},\"pathologyResults\":false}"
+        }
+      ]
+    },
+    "observation:Symptoms": {
+      "component": [
+        {
+          "valueString": "{\"symptomComplaints\":{\"_symptomComplaints\":\"Symptom Complaints\",\"symptomComplaints\":\"\",\"_skinProblems\":\"Skin Problems\",\"skinProblems\":[\"Bumps Back Of Arms\",\"Changes In Moles\"],\"_digestion\":\"Digestion\",\"digestion\":[\"Heartburn (Reflux)\"],\"_lactoseIntolerance\":\"Intolerance to: Lactose\",\"lactoseIntolerance\":[\"Gluten\"],\"_headEyesEars\":\"Head, Eyes, & Ears\",\"headEyesEars\":[\"Headache\"],\"_nails\":\"Nails\",\"nails\":[],\"_muscleBones\":\"Muscle/Bone\",\"muscleBones\":[\"Joint Pain Or Swelling\",\"Joint Stiffness\"],\"_moodNerves\":\"Mood/Nerves\",\"moodNerves\":[\"Difficulty With Judgement\",\"Suicidal Thoughts\",\"Hallucinations\"],\"_cardiovascular\":\"Cardiovascular\",\"cardiovascular\":[],\"_respiratory\":\"Respiratory\",\"respiratory\":[\"Shortness Of Breath At Rest\"],\"_endocrineImmune\":\"Endocrine/Immune\",\"endocrineImmune\":[\"Weight Gain\"],\"_urinary\":\"Urinary\",\"urinary\":[],\"_maleReproductive\":\"Male Reproductive\",\"maleReproductive\":[],\"_???\":\"???\",\"???\":[\"Unintentional Weight Loss\"],\"_femaleReproductive\":\"Female Reproductive\",\"femaleReproductive\":[\"Vaginal Discharge\"],\"_premenstrual\":\"Premenstrual\",\"premenstrual\":[],\"_menopause\":\"Menopause\",\"menopause\":[\"Concentration\"],\"_menstrual\":\"Mentrual\",\"menstrual\":[\"Change In Bowel Habit With Menses\"]}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:MedicalHistory": {
+      "component": [
+        {
+          "valueString": "{\"medications\":{\"_currentMedications\":\"Current medications\",\"currentMedications\":true,\"_text\":\"Name of current medications\",\"text\":\"Panadol\",\"_reason\":\"Reason for current medications\",\"reason\":\"Sore thumb\",\"id\":\"\"},\"supplements\":{\"_supplements\":\"Current supplements\",\"supplements\":true,\"_name\":\"Name of current supplements\",\"name\":\"Protein\",\"_reason\":\"Reason for current supplements\",\"reason\":\"Get swol\"},\"allergies\":{\"foodAndSupplementAllergies\":{\"_occur\":\"Food/supplement allergies\",\"occur\":true,\"_allergies\":\"List of allergies\",\"allergies\":\"Pollen\"},\"drugAllergies\":{\"_occur\":\"Drug allergies\",\"occur\":true,\"_allergies\":\"List of allergies\",\"allergies\":\"Heroin\"}},\"_foodSensitivities\":\"Food sensitivities\",\"foodSensitivities\":\"Glutard\",\"_chemicalSensitivities\":\"Chemical sensitivities\",\"chemicalSensitivities\":\"Smokes give me cancer\",\"alcoholIntolerance\":{\"_occurs\":\"Alcohol intolerance\",\"occurs\":true,\"_yearsIntolerant\":\"Years intolerance\",\"yearsIntolerant\":\"6\"},\"_nsaidsUse\":\"Prolonged Or Regular Use Of NSAIDS (eg Nurofen, Advil etc)\",\"nsaidsUse\":true,\"_acidBlockingDrugsUse\":\"Prolonged Or Regular Use Of Acid Blocking Drugs (eg Pariet, Nexum)\",\"acidBlockingDrugsUse\":true,\"_steroidUse\":\"Prolonged Or Regular Use Of Steroids (eg Predisone)\",\"steroidUse\":false,\"_antibioticUse\":\"Prolonged Or Regular Use Of antibiotics\",\"antibioticUse\":true,\"_antidepressantUse\":\"Prolonged Or Regular Use Of antidepressants\",\"antidepressantUse\":false,\"_gastrointestinal\":\"Gastrointestinal\",\"gastrointestinal\":[\"Peptic Ulcer\",\"Coeliac Disease\"],\"_cancer\":\"Cancer\",\"cancer\":[\"Ovarian Cancer\"],\"_genitalAndUrinary\":\"Genital And Urinary\",\"genitalAndUrinary\":[\"Frequent Urinary Tract Infections\",\"Fibromyalgia\"],\"_cardiovascular\":\"Cardiovascular\",\"cardiovascular\":[\"Rheumatic Fever\"],\"_inflammatoryAutoimmune\":\"Inflammatory/Autoimmune\",\"inflammatoryAutoimmune\":[\"Food Allergies\",\"Multiple Chemical Sensitivities\"],\"_metabolicEndocrine\":\"Metabolic/Endocrine\",\"metabolicEndocrine\":[\"Hyperthyroidism (Overactive)\",\"Bulimia\"],\"_skinDisease\":\"Skin Disease\",\"skinDisease\":[\"Acne\"],\"_respiratoryDisease\":\"Respiratory Diseases\",\"respiratoryDisease\":[\"Pneumonia\"],\"_NeurologicalMood\":\"Neurological/Mood\",\"NeurologicalMood\":[\"Schizophrenia\"],\"Surgical history\":{\"date\":\"2015\",\"_operation\":\"Surgical History - Operation\",\"operation\":\"Labotomoy\",\"_reason\":\"Surgical History - Reason for operation\",\"reason\":\"Too smart\"}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:ChildhoodMedicalHistory": {
+      "component": [
+        {
+          "valueString": "{\"_cesareanSection\":\"Were you born by cesarean section?\",\"cesareanSection\":\"Yes\",\"_childhoodAntibiotics\":\"Did you take regular antibiotics as a child?\",\"childhoodAntibiotics\":\"Yes\",\"_breastfed\":\"Were you breastfed\",\"breastfed\":\"Yes\",\"_difficultChildhood\":\"Did you have a difficult childhood (divorce, family mental health issues, trauma etc)?\",\"difficultChildhood\":false,\"childhoodIllness\":{\"_didOccur\":\"Did you suffer from other recurring childhood illnesses?\",\"didOccur\":true,\"_illnessList\":\"Please provide the illnesses\",\"illnessList\":\"Polio\"}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:DentalHistory": {
+      "component": [
+        {
+          "valueString": "{\"dentalHistory\":{\"fillings\":{\"_occur\":\"Silver amalgam fillings?\",\"occur\":true,\"_quantity\":\"Quantity\",\"quantity\":\"5\"},\"rootCanals\":{\"_occur\":\"Root canals?\",\"occur\":true,\"_quantity\":\"Quantity\",\"quantity\":\"4\"},\"implants\":{\"_occur\":\"Implants?\",\"occur\":true,\"_typeOfMetal\":\"Type of metal\",\"typeOfMetal\":\"3\"},\"_faceOrJawPain\":\"Face or jaw pain?\",\"faceOrJawPain\":false,\"_bleedingOrSensitiveGums\":\"Bleeding or sensitive gums?\",\"bleedingOrSensitiveGums\":false,\"_regularDentalCheck\":\"Regular dental checks?\",\"regularDentalCheck\":true}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:femaleHealth": {
+      "component": [
+        {
+          "valueString": "{\"femaleHealth\":{\"menopause\":{\"_occurred\":\"Menopause?\",\"occurred\":true,\"_lastPeriod\":\"When was your last period?\",\"lastPeriod\":\"54\"},\"pregnancy\":{\"_pregnancies\":\"Pregnancies?\",\"pregnancies\":true,\"_postpartumDepression\":\"Did you suffer post-partum depression?\",\"postpartumDepression\":true,\"_gestationalDiabetes\":\"Did you suffer from gestational diabetes?\",\"gestationalDiabetes\":true,\"_assistedContraception\":\"Have you had an assisted conception?\",\"assistedContraception\":true},\"miscarriages\":{\"_occurred\":\"Miscarriages?\",\"occurred\":true,\"_numberOfMiscarriages\":\"How many?\",\"numberOfMiscarriages\":\"534\"},\"hormones\":{\"_hormonesTaken\":\"Have you taken hormones?\",\"hormonesTaken\":true,\"oralContraceptive\":{\"_taken\":\"Oral contraceptive pill\",\"taken\":true,\"_numberOfYears\":\"Number of years\",\"numberOfYears\":\"654\"},\"hormoneReplacementTherapy\":{\"_taken\":\"Hormone Replacement Therapy\",\"taken\":true,\"_NumberOfYears\":\"Number of years\",\"NumberOfYears\":\"654\"},\"invitroFertilisation\":{\"_taken\":\"In-vitro fertilisation\",\"taken\":true,\"_numberOfCycles\":\"Number of cycles\",\"numberOfCycles\":\"654654\"}}}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:SocialHistory": {
+      "component": [
+        {
+          "valueString": "{\"socialHistory\":{\"_ethnicity\":\"Ethnicity\",\"ethnicity\":\"Whitest of white\",\"_translationRequired\":\"Do you require translation services?\",\"translationRequired\":false,\"_education\":\"Education\",\"education\":\"Bachelor\",\"employment\":{\"_employmentStatus\":\"Employment status\",\"employmentStatus\":\"Working part-time\"},\"_maritalStatus\":\"Marital status\",\"maritalStatus\":\"Widowed\",\"children\":{\"_occurs\":\"Do you have children?\",\"occurs\":true,\"_name\":\"Name\",\"name\":\"Steve Perryq\",\"_yearOfBirth\":\"Year of birth\",\"yearOfBirth\":\"2018\",\"_gender\":\"Gender\",\"gender\":\"Male\"}}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:stressManagement": {
+      "component": [
+        {
+          "valueString": "{\"stressManagement\":{\"dailyStressors\":{\"work\":\"5\",\"_family\":\"Family\",\"family\":\"6\",\"_social\":\"Social\",\"social\":\"7\",\"_finances\":\"Finances\",\"finances\":\"6\",\"_health\":\"Health\",\"health\":\"7\",\"_other\":\"Other\",\"other\":\"8\"},\"_troubleHandlingStress\":\"I have trouble handling the stress in my life\",\"troubleHandlingStress\":false,\"_excessiveStress\":\"I have an excessive amount of stress in my life\",\"excessiveStress\":false,\"relaxation\":{\"_practiced\":\"Do you practice meditation or relaxation techniques\",\"practiced\":true,\"_techniques\":\"Meditation or relaxation techniques\",\"techniques\":[\"Prayer\",\"Breathing\",\"Imagery\"]},\"senseOfSafety\":{\"_safeGrowingUp\":\"Did you feel safe growing up?\",\"safeGrowingUp\":true,\"_abusiveRelationship\":\"Have you been involved in an abusive relationship in your life?\",\"abusiveRelationship\":false,\"_alcoholSubstanceAbuse\":\"Was alcoholism/substance abuse present in your childhood home, or is it present now in your relationships?\",\"alcoholSubstanceAbuse\":true,\"_safeInOwnHome\":\"Do you currently feel safe in your home?\",\"safeInOwnHome\":false,\"_safeCurrentRelationship\":\"Do you feel safe, respected, and valued in your current relationship?\",\"safeCurrentRelationship\":true,\"_violenceAndTrauma\":\"Have you ever had any violent or otherwise traumatic life experiences, or have you witnessed any violence or abuse?\",\"violenceAndTrauma\":false,\"_discussPrivately\":\"Would you feel safer discussing any of these issues privately?\",\"discussPrivately\":false}}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:lifestyle": {
+      "component": [
+        {
+          "valueString": "{\"lifestyle\":{\"_drugs\":\"Do you use recreational drugs?\",\"drugs\":true,\"physicalActivity\":{\"stretching\":{\"_occurs\":\"Stretching\",\"occurs\":true,\"_frequency\":\"Frequency\",\"frequency\":\"5\",\"_duration\":\"Duration\",\"duration\":\"5\"},\"cardio\":{\"_occurs\":\"Cardio\",\"occurs\":true,\"_frequency\":\"Frequency\",\"frequency\":\"5\",\"_duration\":\"Duration\",\"duration\":\"5\"},\"strength\":{\"_occurs\":\"Strength\",\"occurs\":true,\"_frequency\":\"Duration\",\"frequency\":\"5\",\"_duration\":\"Frequency\",\"duration\":\"5\"},\"other\":{\"_occurs\":\"Other\",\"occurs\":true,\"_frequency\":\"Frequency\",\"frequency\":\"65\",\"_duration\":\"Duration\",\"duration\":\"6\"}},\"sleep\":{\"_hoursOfSleep\":\"Average hours of sleep per night\",\"hoursOfSleep\":\"8-10\",\"sleepTimes\":{\"_sleepTime\":\"Time to sleep\",\"sleepTime\":\"9\",\"_wakeupTime\":\"Wakeup time\",\"wakeupTime\":\"6\"},\"_troubleFallingAsleep\":\"Trouble falling asleep?\",\"troubleFallingAsleep\":false,\"_stillFeelTiredInTheMorning\":\"Still feel tired in the morning?\",\"stillFeelTiredInTheMorning\":true,\"_wakeUpDuringTheNight\":\"Wake up during the night and can't fall back to sleep?\",\"wakeUpDuringTheNight\":false,\"snoringIsAnIssue\":{\"_occurs\":\"Is snoring an issue?\",\"occurs\":true,\"_youOrYourPartner\":\"Patient or partner\",\"youOrYourPartner\":\"You\"},\"_relyOnSleepingPills\":\"Rely on sleeping pills?\",\"relyOnSleepingPills\":false,\"getUpToToilet\":{\"_occurs\":\"Do you get up during the night to use the toilet?\",\"occurs\":true,\"_numberOfTimes\":\"Number of times\",\"numberOfTimes\":\"6\"}},\"chemicals\":{\"exposure\":{\"_exposedTo\":\"Work place and home exposure\",\"exposedTo\":[\"Mould\",\"Chemicals\"],\"_chemicalName\":\"Chemical names\",\"chemicalName\":\"Domestos\",\"_dateOfExposure\":\"Date of exposure\",\"dateOfExposure\":\"03/05/2018\",\"_LengthOfExposure\":\"Length of exposure\",\"LengthOfExposure\":\"5\"},\"effectedBy\":{\"_chemicals\":\"Effected by\",\"chemicals\":[\"Cigarette Smoke\",\"Perfumes/Cologne\",\"Other\"],\"_otherChemicals\":\"Other chemicals\",\"otherChemicals\":\"sunshine\"},\"_chemicalsUsed\":\"Chemicals used\",\"chemicalsUsed\":[\"Garden fungicides/weed killers\",\"Bleach/Detergent type household products\"]},\"_screenHours\":\"Hours per day spent in front of TV or computer\",\"screenHours\":\"10000000000\",\"_screenOffTime\":\"Time screen is turned off\",\"screenOffTime\":\"Just before bed time\",\"emfExposure\":{\"_mobileOff\":\"Does patient turn off mobile off or to flight mode\",\"mobileOff\":false,\"_wifiOff\":\"Wifi off at night\",\"wifiOff\":false}}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:homeAndOccupationalEnvironment": {
+      "component": [
+        {
+          "valueString": "{\"homeAndOccupationalEnvironment\":{\"waterDamage\":{\"_occurred\":\"Water damage\",\"occurred\":true,\"_when\":\"When?\",\"when\":\"yesterday\",\"_description\":\"Description\",\"description\":\"It was gushing\"},\"_dampOrHumidHome\":\"Damp humid or flood prone area\",\"dampOrHumidHome\":false,\"petsInside\":{\"_occurs\":\"Pets inside?\",\"occurs\":true,\"_type\":\"Type of pets\",\"type\":\"Heaps of fishies\"},\"carpets\":{\"_occurs\":\"Carpets in house\",\"occurs\":true,\"_rooms\":\"Rooms\",\"rooms\":[\"Bedroom\",\"Lounge Room\",\"Office\"]},\"smartMeter\":{\"_occurs\":\"Smart meter\",\"occurs\":true,\"_distanceFromBedroom\":\"How far is it from the bedroom?\",\"distanceFromBedroom\":\"meters\"},\"powerStationOrHighVoltageLines\":{\"_occurs\":\"Do you live near a power sub-station, or high voltage power line?\",\"occurs\":\"Yes\",\"_distance\":\"Approximate how far away is it?\",\"distance\":\"7kms\"},\"livedOrWorkedOnFarm\":{\"_occurred\":\"Do you, or have you, worked on a farm?\",\"occurred\":true,\"_chemicalUse\":\"Were chemicals used on the crops or animals\",\"chemicalUse\":false,\"_dateFrom\":\"Date lived/worked there - from\",\"dateFrom\":\"2017\",\"_dateTo\":\"Date lived/worked there - to\",\"dateTo\":\"2018\"},\"workedInChemicalMiningBuildingIndustries\":{\"_occurred\":\"Worked in chemical/mining/building\",\"occurred\":true,\"_industries\":\"Which industry\",\"industries\":\"diggin\",\"_timePeriod\":\"Time period\",\"timePeriod\":\"6\",\"_dateFrom\":\"Date from\",\"dateFrom\":\"2017\",\"_dateTo\":\"Date to\",\"dateTo\":\"2018\"},\"hobbyExposure\":{\"_occurs\":\"Hobbies that expose to heavy metals or solvents\",\"occurs\":true,\"_description\":\"Description\",\"description\":\"I play in a Korn cover band\"}}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:nutrition": {
+      "component": [
+        {
+          "valueString": "{\"nutrition\":{\"_nutritionConsultation\":\"Have you ever had a nutrition consultation\",\"nutritionConsultation\":false,\"nutritionChanges\":{\"_occurred\":\"Have you made any changes in your eating habits because of your health?\",\"occurred\":true,\"_changesMade\":\"Please describe your changes\",\"changesMade\":\"stopped eating\"},\"diets\":{\"_occurs\":\"Do you currently follow a special diet or nutritional program?\",\"occurs\":true,\"_dietsSelected\":\"Please select all diets that apply - Need to change to allow multiple to be conditional\",\"dietsSelected\":[\"Specific program for weight loss/maintenance\",\"Other\"],\"_otherDiets\":\"Please list any other diets\",\"otherDiets\":\"Atkins\"},\"_frequencyWeighed\":\"How often do you weigh yourself\",\"frequencyWeighed\":\"Monthly\",\"foodsAvoided\":{\"_avoidFoods\":\"Do you avoid any particular foods\",\"avoidFoods\":true,\"_reasons\":\"Please list your reasons\",\"reasons\":\"Im a glutard\"},\"groceryShopping\":{\"_doYouGroceryShop\":\"Do you grocery shop?\",\"doYouGroceryShop\":false,\"_whoShops\":\"Who does the grocery shopping?\",\"whoShops\":\"Doug `Sir Swish` Remer\"},\"_readFoodLabels\":\"Do you read food labels?\",\"readFoodLabels\":false,\"cooking\":{\"_doYouCook\":\"Do you cook?\",\"doYouCook\":false,\"_whoCooks\":\"Who does the cooking?\",\"whoCooks\":\"My mum usually\"},\"_eatOutMealsPerWeek\":\"How many meals do you eat out per week?\",\"eatOutMealsPerWeek\":\"2-3\",\"_lifestyleEatingHabits\":\"Select all the factors that apply to your current lifestyle and eating habits\",\"lifestyleEatingHabits\":[\"Reliance on convenience items\",\"Significant other or family members have special dietary needs or food preferences\",\"Emotional eater (eat when sad, lonely, or depressed)\"],\"_foodCravings\":\"Do you have food cravings?\",\"foodCravings\":false,\"_whichFoodsAtWhichTime\":\"Which foods at which time of day?\",\"whichFoodsAtWhichTime\":\"\"}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:ReadinessForChange": {
+      "component": [
+        {
+          "valueString": "{\"readinessForChange\":{\"readinessForChange\":{\"_modifyDiet\":\"Significantly modify your diet\",\"modifyDiet\":\"3\",\"_foodRecord\":\"Keep a record of everything you eat each day\",\"foodRecord\":\"3\",\"_modifyLifestyle\":\"Modify your lifestyle (eg work demands, sleep habits)\",\"modifyLifestyle\":\"2\",\"_regularExercise\":\"Engage in regular exercise\",\"regularExercise\":\"4\",\"_nutritionalSupplements\":\"Take several nutritional supplements each day\",\"nutritionalSupplements\":\"5\",\"_relaxationTechnique\":\"Practice a relaxation technique\",\"relaxationTechnique\":\"1\"},\"_confidenceToFollowThrough\":\"How confident are you of your ability to organise and follow through on the above health related activities?\",\"confidenceToFollowThrough\":\"2\",\"_modifyDiet\":\"How interested are you in exploring the psychological aspects of health?\",\"modifyDiet\":\"5\"}}",
+          "code": {
+            "coding": [
+              {
+                "code": "51855-5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "observation:Smoking": {
+      "resourceType": "Observation",
+      "id": "MD7156-observation:Smoking",
+      "meta": {
+        "versionId": "MD14424",
+        "lastUpdated": "2018-08-15T02:29:42.808+00:00"
+      },
+      "identifier": [
+        {
+          "system": "http://medicaldirector.com/hub/identifier/app-id",
+          "value": "77699511-0600-4ecc-8097-bf4d93998349"
+        },
+        {
+          "system": "http://medicaldirector.com/hub/identifier/tenant-id",
+          "value": "next-demo.helix.medicaldirector.com"
+        },
+        {
+          "system": "http://medicaldirector.com/hub/identifier/external/resource/object-id",
+          "value": "CLN.Smoking-36"
+        }
+      ],
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ValueSet/observation-category",
+              "code": "social-history"
+            }
+          ],
+          "text": "Social History"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org/",
+            "code": "72166-2"
+          }
+        ],
+        "text": "Tobacco smoking status NHIS"
+      },
+      "subject": {
+        "reference": "https://api.hub.medicaldirector.com/fhir/Patient/MD11344",
+        "display": ""
+      },
+      "issued": "2018-08-15T02:29:40.747+00:00",
+      "comments": "Test note 3",
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org/",
+                "code": "72166-2"
+              }
+            ]
+          },
+          "valueString": "Smoker, current status unknown",
+          "extension": [
+            {
+              "url": "http://nextpracticehealth.com/extension/observation/component-raw-code",
+              "valueString": "LL2201-3"
+            },
+            {
+              "url": "http://nextpracticehealth.com/extension/observation/component-display-name",
+              "valueString": "Status"
+            }
+          ]
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org/",
+                "code": "63582-1"
+              }
+            ]
+          },
+          "valueString": "Every day",
+          "extension": [
+            {
+              "url": "http://nextpracticehealth.com/extension/observation/component-raw-code",
+              "valueString": "63582-1"
+            },
+            {
+              "url": "http://nextpracticehealth.com/extension/observation/component-display-name",
+              "valueString": "Frequency"
+            }
+          ]
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org/",
+                "code": "64218-1"
+              }
+            ]
+          },
+          "valueString": "9",
+          "extension": [
+            {
+              "url": "http://nextpracticehealth.com/extension/observation/component-raw-code",
+              "valueString": "64218-1"
+            },
+            {
+              "url": "http://nextpracticehealth.com/extension/observation/component-display-name",
+              "valueString": "Number of cigarettes"
+            }
+          ]
+        }
+      ],
+      "comment": "Test note 3",
+      "extension": [
+        {
+          "url": "http://nextpracticehealth.com/extension/observation/medical-resource-type",
+          "valueString": "observation:Smoking"
+        },
+        {
+          "url": "http://nextpracticehealth.com/extension/observation/display-name",
+          "valueString": "Smoking"
+        }
+      ]
+    }
+  }
+}

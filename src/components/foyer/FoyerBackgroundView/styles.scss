@@ -1,0 +1,40 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/core/transitions.scss";
+
+.FoyerBackgroundView {
+  position: fixed;
+  // avoid giving this component height - it should not block the layers below
+
+  &.-demo {
+    position: relative;
+    height: 600px;
+    background-color: lightblue;
+  }
+
+  &.-demo &_content {
+    // height to test the scrolling behaviour
+    width: 100%;
+    height: 100%;
+  }
+
+  &_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: $spacing-md;
+
+    > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.foyerImage {
+  @include fadeIn(3000ms);
+}

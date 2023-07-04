@@ -1,0 +1,7 @@
+.CourseArticleView {
+  display: flex;
+
+  &_article {
+    flex-grow: 1;
+  }
+}

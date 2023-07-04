@@ -1,0 +1,54 @@
+@import "../variables.scss";
+
+@mixin inputsSelector {
+  input[type="date"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="search"],
+  select,
+  textarea {
+    @content;
+  }
+}
+
+// Default input style for both text and buttons
+@mixin inputField($setHeight: true) {
+  border: 1px solid $color-gray-dark;
+  border-radius: $input-border-radius;
+  outline-width: 0;
+  font-family: $font-body;
+  font-size: $input-font-size;
+  letter-spacing: $letter-spacing-sm;
+  font-weight: normal;
+  padding: 0 $input-padding;
+  background: #fff;
+  line-height: $input-line-height;
+  min-height: $input-line-height;
+
+  // Fix a spacing issue with textarea where extra space appears below
+  vertical-align: top;
+  color: $inputs-textColor;
+
+  &::placeholder {
+    color: $color-gray;
+    text-align: left;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: $inputs-boxShadow-focus-color;
+    border-color: $inputs-borderColor-focus-color !important;
+  }
+
+  &[disabled] {
+    border: 1px solid $color-gray-light;
+    color: $color-gray-dark;
+    -webkit-text-fill-color: $color-gray-dark;
+    -webkit-opacity: 1;
+    -webkit-appearance: none;
+    // background-color: $color-gray-lighter;
+  }
+}

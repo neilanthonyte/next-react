@@ -1,0 +1,29 @@
+.bulletChart {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  &_container.-vertical {
+    flex-direction: row;
+  }
+
+  &_labelBox {
+    stroke: #999;
+    stroke-width: 1px;
+  }
+
+  &_labelText {
+    text-anchor: start;
+    alignment-baseline: middle;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+}

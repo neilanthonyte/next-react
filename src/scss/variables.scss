@@ -1,0 +1,463 @@
+@use "sass:math";
+$theme: "next" !default;
+
+// Spacing
+$spacing-base: 16px !default;
+$spacing-xs: math.div($spacing-base, 4) !default;
+$spacing-sm: math.div($spacing-base, 2) !default;
+$spacing-md: $spacing-base * 1.5 !default;
+$spacing-lg: $spacing-base * 2 !default;
+$spacing-xl: $spacing-base * 4 !default;
+$spacing-xxl: $spacing-base * 8 !default;
+
+// Sizes for elements placed together, e.g. icons, inputs
+$standard-size-xs: 30px;
+$standard-size-sm: 40px;
+$standard-size-md: 66px;
+$standard-size-lg: 86px;
+
+$standard-size-names: "xs", "sm", "md", "lg";
+$standard-sizes: $standard-size-xs, $standard-size-sm, $standard-size-md,
+  $standard-size-lg;
+
+// Structure
+$padding-cell: $spacing-base;
+$padding-block: $spacing-md;
+$padding-page-section: $spacing-xl;
+$padding-page-section-mobile: $spacing-md;
+// used for website page sections (decoration element separating different sections - replaces candy style)
+$decoration-page-section-color: rgb(255, 54, 54) !default;
+$padding-sidebar-section: $spacing-base;
+
+$margin-header-h1: $spacing-xl;
+$margin-header-h2: $spacing-xl;
+$margin-header-h3: $spacing-md;
+$margin-header-h4: $spacing-base;
+$v-spacing-field: $spacing-lg;
+
+$indent-base: 40px !default;
+$indent-sm: math.div($indent-base, 2) !default;
+$indent-lg: $indent-base * 2 !default;
+
+// FONTS PATH:
+// $font-path: "/src/assets/fonts/#{$theme}" !default;
+$font-path: "../assets/fonts/#{$theme}" !default;
+$images-path: "../assets/images" !default;
+$icomoon-font-path: $font-path !default;
+
+// z-index - try to avoid and use DOM structure instead
+$zIndex-website-pageNav: 5;
+// must be below modals
+$zIndex-website-nav: 600;
+// holds the booking widget
+$zIndex-bookingPopover: $zIndex-website-nav + 10;
+// a bottom navigation bar e.g. booking progress summary
+$zIndex-flowSummary: $zIndex-bookingPopover + 10;
+// next bar in Helix - must be high enough to cover Helix
+$zIndex-next-bar: 5000;
+// modals, screens - higher than Next bar and other pop over
+$zIndex-overlays: 6000;
+// UI elements that hover over everything (including stuff in a overlay)
+$zIndex-popover: 10000;
+// sticky modal header most be over modal body
+$zIndex-sticky-modal-header: 1;
+
+// GRAYSCALE
+$color-gray-lightest: #fafafa !default;
+$color-gray-lighter: rgba(240, 240, 240, 1) !default;
+$color-gray-light: rgba(230, 230, 230, 1) !default;
+$color-gray: rgba(200, 200, 200, 1) !default;
+$color-gray-dark: rgba(155, 155, 155, 1) !default;
+$color-gray-darker: rgba(70, 70, 70, 1) !default;
+
+// GOALS
+$color-goal: purple !default;
+$color-goal-alt: #fff !default;
+
+// VARIANTS
+$color-primary: rgba(95, 194, 123, 1) !default;
+$color-primary-alt: lighten($color-primary, 35%) !default;
+
+$color-secondary: rgba(95, 194, 123, 1) !default;
+$color-secondary-alt: lighten($color-secondary, 35%) !default;
+
+$color-tertiary: rgba(95, 194, 123, 1) !default;
+$color-tertiary-alt: lighten($color-tertiary, 35%) !default;
+
+$color-highlight: inherit !default;
+$color-accent: #ff00b3 !default;
+$color-accent-alt: #fff !default;
+
+// used as defaults whenever automatically assigning colors
+$color-dark: #000 !default;
+$color-light: #fff !default;
+$color-text-on-dark: #fff !default;
+$color-text-on-light: #000 !default;
+
+// STATUS
+// success
+$color-success: rgba(95, 194, 123, 1) !default;
+$color-success-alt: lighten($color-success, 35%) !default;
+// info
+$color-info: rgba(78, 171, 230, 1) !default;
+$color-info-alt: lighten($color-info, 35%) !default;
+// warning
+$color-warning: rgb(249, 176, 88) !default;
+$color-warning-alt: lighten($color-warning, 25%) !default;
+// danger
+$color-danger: rgb(254, 128, 100) !default;
+$color-danger-alt: lighten($color-danger, 25%) !default;
+// error
+$color-error: rgb(255, 54, 54) !default;
+$color-error-alt: lighten($color-error, 32%) !default;
+// active
+$color-active: rgb(255, 54, 54) !default;
+$color-active-light: rgba(255, 54, 54, 0.5) !default;
+$color-active-alt: lighten($color-active, 30%) !default;
+// disabled
+$color-disabled: $color-gray-lighter !default;
+$color-disabled-alt: $color-gray !default;
+// hover
+$color-hover: $color-primary-alt;
+// focus
+$color-focus: $color-info;
+
+// SCHEME
+$color-optionA: #80206d !default;
+$color-optionA-alt: lighten($color-optionA, 60%) !default;
+$color-optionB: #8e4585 !default;
+$color-optionB-alt: lighten($color-optionB, 50%) !default;
+$color-optionC: #ffef75 !default;
+$color-optionC-alt: lighten($color-optionC, 15%) !default;
+$color-optionD: #f1d4d4 !default;
+$color-optionD-alt: lighten($color-optionD, 5%) !default;
+$color-optionE: #81c7c5 !default;
+$color-optionE-alt: lighten($color-optionE, 30%) !default;
+$color-optionF: #33b0b7 !default;
+$color-optionF-alt: lighten($color-optionF, 40%) !default;
+$color-optionG: #ff904b !default;
+
+// HACK move somewhere
+$color-lime: #d5ebdc;
+$color-pink: #f9b5a8;
+
+// APPLE (ios) COLORS
+// $apple-color-section-border: #bcbbc1 !default; // Default IOS
+// $apple-color-background: #e9e9ef !default; // DEFAULT IOS
+$apple-color-section-border: #f5f5f5 !default;
+$apple-color-background: #f5f5f5 !default;
+
+// DEFAULTS
+$defaults-backgroundColor: white !default;
+$defaults-backgroundColor-alt: darken($defaults-backgroundColor, 5%);
+$defaults-textColor: #000;
+// borders
+$border-primary: solid 1px $color-primary !default;
+$border-radius-size: 3px !default;
+// drop/box shadows
+$defaults-boxShadow-none: none;
+$defaults-boxShadow-base: 0 2px 2px 0 rgba($color-gray-darker, 0.1),
+  0 3px 10px 0 rgba($color-gray-darker, 0.2) !default;
+$defaults-boxShadow-hover: 0 1px 5px 0 rgba($color-gray-darker, 0.2) !default;
+$defaults-boxShadow-active: inset 0 2px 4px 0 rgba($color-gray-darker, 0.4) !default;
+// inputs
+$inputs-textColor: $color-primary-alt !default;
+$label-textColor: black !default;
+$inputs-boxShadow-focus-color: 0 0 0 2px rgba($color-info, 0.5) !default;
+$inputs-borderColor-focus-color: $color-gray-dark !default;
+// links
+$hyperlink-textColor: rgba(25, 120, 200, 1) !default;
+$hyperlink-visited-textColor: darken($hyperlink-textColor, 10%) !default;
+// headings
+$headings-textColor: black !default;
+$font-transform-h3: none;
+//  text shadows
+$defaults-textShadow-base: none;
+// separators
+$separators-color: $color-gray-light;
+// spinner
+$spinner-color: $color-active;
+
+// ICONS
+$icons-textColor: $color-primary !default;
+
+// MODALS
+$modal-overlay-backgroundColor: rgba(#000, 0.5) !default;
+$modal-header-background-color: rgba(#22ff00, 0.5) !default;
+$modal-header-background-color-alt: rgba(#cc0f0f, 0.5) !default;
+$modal-footer-background-color: rgba(#6375ff, 0.5) !default;
+$modal-body-background-color: rgba(#000, 0.5) !default;
+$modal-border-radius: 4px;
+$modal-box-shadow: $defaults-boxShadow-base;
+
+// Nav
+$nav-color-primary: $color-primary !default;
+$nav-color-collapsed: $color-primary !default;
+
+// Tabbed nav
+$tabbed-nav-light-color: #ff2222;
+$tabbed-nav-light-background: #634df5;
+$tabbed-nav-light-active: #1dffb4;
+$tabbed-nav-light-active-alt: #1dffb4;
+$tabbed-nav-dark-color: #00d9ff;
+$tabbed-nav-dark-background: #eedd24;
+$tabbed-nav-dark-active: #e3019b;
+$tabbed-nav-dark-active-alt: #16098d;
+$tabbed-nav-height: 80px;
+
+// Images
+$image-backgroundColor: $color-gray;
+$image-children-backgroundColor: rgba(#fff, 0.6);
+$image-children-backgroundOpacity: 1;
+
+// Gradients
+$gradient-primary: linear-gradient(
+  to bottom,
+  $color-primary 0%,
+  $color-secondary 100%
+) !default;
+
+$gradient-primary-active: linear-gradient(
+  to right,
+  $color-primary 0%,
+  $color-secondary 50%,
+  #fff 75%
+) !default;
+
+$gradient-goal: linear-gradient(
+  to right,
+  $color-goal 0%,
+  ligthen($color-goal, 50%) 100%
+) !default;
+
+// BUTTONS
+$button-radius: 0px !default;
+$button-text-transform: none;
+$button-font-weight: normal !default;
+$button-color-primary: $color-primary !default;
+$button-boxShadow-base: $defaults-boxShadow-base !default;
+$button-boxShadow-active: $defaults-boxShadow-active !default;
+$button-boxShadow-hover: $defaults-boxShadow-hover !default;
+
+// LISTS
+$list-li-background: none;
+$list-li-font-weight: normal;
+
+// SIDEBAR
+$sidebar-backgroundColor: $color-gray-lighter;
+$sidebar-header-background: $color-gray-light;
+$sidebar-header-text: $color-gray-dark;
+$sidebar-section-background: $color-gray-lighter;
+$sidebar-section-header-background: $color-gray-lighter;
+$sidebar-section-body-background: $color-gray-lighter;
+
+// Page
+$page-background: $defaults-backgroundColor;
+$page-header-background: rgba($defaults-backgroundColor, 0.95);
+$page-body-background: $defaults-backgroundColor;
+
+// inline options
+$inline-options-disabled: #777;
+
+// labels
+$labels-weight: "bold";
+
+// inputs
+$input-clear-size: 20px;
+$input-clear-spacing: 8px;
+
+// charts
+$bar-1: #68bb37 !default;
+$bar-2: #dead25 !default;
+$bar-3: #00bfc0 !default;
+$bar-4: #ffffbf !default;
+$bar-5: #dadada !default;
+$bar-success: $color-success;
+$bar-warning: $color-warning;
+$bar-danger: $color-danger;
+
+// dialogs
+$dialog-border-radius: 0px !default;
+$dialog-border: $border-primary !default;
+$dialog-box-shadow: $defaults-boxShadow-base !default;
+$dialog-color-background: $defaults-backgroundColor !default;
+
+// cards
+$card-border: $border-primary;
+$card-boxShadow: $defaults-boxShadow-base;
+$card-backgroundColor: $defaults-backgroundColor;
+// use either one of the following. e.g. one has to be 0
+// default is classic boxed card
+// used for boxed style cards with borders/shadow (padding used to space elements)
+$card-base-padding: $spacing-md;
+// used for minimal style cards with no hard borders (and no padding)
+$card-base-element-spacing: 0px;
+
+// flow summary
+$flowSummary-backgroundColor: $color-primary;
+$flowSummary-inlineSummary-backgroundColor: $color-primary;
+$flowSummary-inlineSummary-borderColor: none;
+$flowSummary-chevron-color: $color-active-alt;
+
+// widget
+$widgetLabel-textColor: $color-gray-dark;
+
+// messaging
+$messaging-standard-size: 1rem;
+$messaging-compact-size: 0.8rem;
+
+// well
+$well-border-color: #cb2900;
+$well-border-radius: 8px;
+$well-options-background-color: #2fff00;
+
+// filters
+$filters-color: #ff0000;
+$filters-color-accent: #d000ff;
+$filters-color-alt: #00d9ff;
+$filters-popup-background: #00d9ff;
+
+// decorations
+$decoration-background-color: #cb2900;
+$decoration-border-color: #d000ff;
+$decoration-border-radius: 8px;
+
+// utility variable containing all colors. Used in component ColorSwatch
+$colors: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  highlight: $color-active,
+  main-text: $color-primary-alt,
+  headings: $headings-textColor,
+  success: $color-success,
+  error: $color-error,
+  info: $color-info,
+  gray-lightest: $color-gray-lightest,
+  gray-light: $color-gray-light,
+  gray: $color-gray,
+  gray-dark: $color-gray-dark,
+  gray-darker: $color-gray-darker,
+);
+
+// FONTS
+$font-name-icons: "icons" !default;
+$font-name-primary: "primary" !default;
+$font-name-body: "body" !default;
+$font-name-button: "button" !default;
+
+@if $theme== "connectivf" or $theme== "next" {
+  $font-name-primary: "runda";
+  $font-name-body: "runda";
+}
+
+// each theme use the same font names, but load different files for each
+$font-primary: $font-name-primary, sans-serif !default;
+$font-body: $font-name-body, sans-serif !default;
+$font-mono: "Courier New", monospace !default;
+$font-button: $font-name-button, sans-serif !default;
+
+$button-font-family: $font-button;
+$badge-font-family: $font-body;
+
+// FONT SIZES
+$font-size: 16px !default;
+$font-size-h1: 3.1em !default;
+$font-size-h2: 2.3em !default;
+$font-size-h3: 1.8em !default;
+$font-size-h4: 1.3em !default;
+$font-size-h5: 1em !default;
+$font-size-h6: 0.75em !default;
+
+$line-height: 1.4 !default;
+$line-height-headings: 1.1 !default;
+$letter-spacing-sm: 0.1px !default;
+$letter-spacing-lg: 0.2px !default;
+$word-spacing-body: 1px !default;
+
+// $input-padding: 0.4em 0.5em !default;
+$input-padding: $spacing-sm !default;
+$input-font-size: 1em !default;
+$input-line-height: 40px !default;
+$input-border-radius: 0px !default;
+$input-spacing: $spacing-xs !default;
+
+$btn-padding: $input-padding !default;
+$btn-line-height: $input-line-height !default;
+$btn-font-size: $input-font-size * 0.8 !default;
+
+// Side nav
+$sideNav-link-color: #fff;
+$sideNav-link-color-active: $color-active;
+$sideNav-link-color-hover: $color-active;
+$sideNav-desktop-open: 400px;
+$sideNav-desktop-closed: 70px;
+$sideNav-tablet-open: 300px;
+$sideNav-tablet-closed: 55px;
+
+$sideNavRow-fontSize: 18px;
+$sideNavRow-height: 50px;
+$sideNavRow-lineHeight: 1.2;
+$sideNavRow-color-active: rgba(#fff, 0.1);
+
+// Mobile nav
+$mobileNav-height: 50px;
+
+// Extra small screen / phone / iphone X
+$screen-sm-min: 768px !default;
+
+// Medium screen / desktop / tablet landscape
+$screen-md-min: 1024px !default;
+
+// Large screen / wide desktop
+$screen-lg-min: 1200px !default;
+
+// Xtra-Large screen / ultra wide desktop
+$screen-xl-min: 1441px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: $screen-sm-min - 1 !default;
+$screen-sm-max: $screen-md-min - 1 !default;
+$screen-md-max: $screen-lg-min - 1 !default;
+$screen-lg-max: $screen-xl-min - 1 !default;
+
+$paydockFormHeight: 360px;
+
+// NextBar variables
+$next-bar-dock-height: 80px;
+$next-bar-icon-width: 100px;
+$navbar-panel-height: 520px;
+$navbar-panel-background-color: white;
+$navbar-info-width: 340px;
+
+// HACK good to move to the top to flow down the variables, but the way conditions variables
+// are handled doesn't permit this currently
+@import "variables-next.scss";
+@import "variables-connectivf.scss";
+
+// abstract must be placed after the variable import
+%label {
+  text-transform: uppercase;
+  color: $color-active !important;
+}
+
+%button {
+  text-transform: $button-text-transform;
+  font-family: $button-font-family;
+  font-weight: $button-font-weight;
+  text-align: center;
+  letter-spacing: $letter-spacing-sm;
+  outline: none;
+  line-height: 1;
+  letter-spacing: 0.1px;
+  border-radius: $button-radius;
+  box-shadow: $button-boxShadow-base;
+  transition: color 0.5s, box-shadow 0.5s, background-position 0.5s,
+    border-color 0.5s, background-color 0.5s;
+  display: inline-block;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  // changing may cause issues with the grid
+  box-sizing: border-box;
+}

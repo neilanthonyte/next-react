@@ -1,0 +1,161 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/contentLayout.scss";
+@import "../../../scss/core/transitions.scss";
+
+$name: "FlowSummary";
+
+@mixin variant($width) {
+  width: $width;
+}
+
+@mixin mobileStyles {
+  @include variant(100%);
+  height: auto;
+
+  &.#{$name}_transition {
+    @include slideInOutFromBottom;
+  }
+
+  .#{$name}_desktopHeader {
+    display: none !important;
+  }
+
+  .#{$name}_inlineSummary {
+    display: flex !important;
+    flex-grow: 1;
+    align-items: center;
+    background-color: $flowSummary-inlineSummary-backgroundColor;
+    // add a bit of padding at the bottom for mobile safe area
+    padding: $spacing-sm $spacing-sm $spacing-md $spacing-sm;
+  }
+
+  .#{$name}_summaryAction {
+    margin-left: $spacing-sm;
+  }
+
+  .#{$name}_expandedSummary {
+    &.-collapse {
+      display: none;
+    }
+  }
+
+  .#{$name}_decoration {
+    position: relative;
+
+    &.-hide {
+      display: none;
+    }
+  }
+
+  .#{$name}_inlineSummary_action {
+    display: none !important;
+  }
+  .#{$name}_inlineSummary_body {
+    flex-grow: 1;
+  }
+}
+
+.#{$name} {
+  flex-direction: column;
+  background-color: $flowSummary-backgroundColor;
+  overflow-y: auto;
+  transition: transform 0.5s;
+  z-index: $zIndex-flowSummary;
+  // assume desktop by default (overridden for mobile)
+  height: 100vh;
+
+  // HACK make the titles more legible without mucking around with deeper content
+  // replace with better colour scheme management
+  > * > h1,
+  > * > h2,
+  > * > h3,
+  > * > h4,
+  > * > p {
+    color: $color-active-alt;
+  }
+
+  &.-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  &_desktopHeader {
+    display: flex !important;
+    padding: $spacing-sm;
+  }
+
+  &_expandedSummary {
+    &_inner {
+      padding: $spacing-sm;
+      display: flex;
+      flex-direction: column;
+      max-height: 80vh;
+      overflow-y: auto;
+
+      // HACK
+      @if $theme== "zam" {
+        padding: 1px;
+      }
+    }
+  }
+
+  &_decoration {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &_action {
+    margin-top: $spacing-sm;
+    flex-grow: 1;
+    flex: 1;
+  }
+
+  &_chevron {
+    padding: 0 $spacing-sm 0 $spacing-md;
+    font-size: 12pt;
+    transform: rotate(0);
+    transition: transform 0.5s;
+
+    * {
+      color: $flowSummary-chevron-color;
+    }
+    &.-isExpanded {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &_inlineSummary {
+    display: none !important;
+  }
+
+  &_transition {
+    @include slideInOutFromLeft;
+  }
+
+  // auto-sizing
+  @include aboveTabletLandscape {
+    @include variant($sideNav-desktop-open);
+  }
+  @include belowTabletLandscape {
+    @include variant($sideNav-tablet-open);
+  }
+  @include belowTabletPortrait {
+    @include mobileStyles();
+  }
+  // manual sizing
+  &.-mobile {
+    @include mobileStyles();
+  }
+}
+
+.FlowSummaryOffset {
+  @include forMobile {
+    height: 60px;
+  }
+  &.-mobile {
+    height: 60px;
+  }
+}

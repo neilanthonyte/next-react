@@ -1,0 +1,23 @@
+@import "../../../scss/variables.scss";
+
+.SaveStatus {
+  display: inline-flex;
+  column-gap: $spacing-sm;
+  &_decoration {
+    width: $spacing-base;
+    height: $spacing-base;
+    margin-right: $spacing-xs;
+  }
+  &_loader {
+    color: $color-primary;
+  }
+  &_title {
+    display: flex;
+    align-items: center;
+    line-height: 1em;
+  }
+  &_description {
+    margin-left: $spacing-base + $spacing-xs;
+    color: $color-gray-dark;
+  }
+}

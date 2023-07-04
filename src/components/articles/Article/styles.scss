@@ -1,0 +1,47 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/backgroundImage.scss";
+@import "../../../scss/mixins/breakpoints.scss";
+@import "../../../scss/mixins/clearfix.scss";
+
+.Article {
+  &_lighten {
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: lighten;
+  }
+
+  &_next_lead {
+    text-transform: uppercase;
+    text-align: end;
+  }
+
+  &_posterImg {
+    @include backgroundImage;
+    height: 400px;
+  }
+
+  &.-landscape {
+    .Article {
+      &_posterImg {
+        min-height: 400px;
+        width: 50%;
+        float: right;
+        margin: 0 0 $spacing-lg $spacing-lg;
+        z-index: 100;
+      }
+    }
+
+    div {
+      // HACK remove all backgrounds to avoid obscuring poster image
+      background-color: transparent !important;
+    }
+  }
+
+  &_authors {
+    color: $color-gray;
+    margin: $spacing-sm 0;
+  }
+
+  &_section {
+    @include clearfix;
+  }
+}

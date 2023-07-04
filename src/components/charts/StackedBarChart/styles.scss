@@ -1,0 +1,35 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/charts";
+
+@value fontBody #{$font-name-primary};
+@value labelFontSize 12px;
+@value markerLabelFontSize 20px;
+@value markerLabelFontWeight bold;
+
+.stackedBarChart {
+  &_label {
+    text-anchor: end;
+    font-family: $font-name-primary;
+    font-size: labelFontSize;
+  }
+
+  @include barChartColors();
+
+  &_rangeLine,
+  &_markerLine {
+    stroke: $color-gray-darker;
+    stroke-width: 2px;
+  }
+
+  &_rangeLine {
+    stroke-dasharray: 2, 2;
+  }
+
+  &_markerLabel {
+    alignment-baseline: middle;
+    text-anchor: start;
+    font-size: markerLabelFontSize;
+    font-weight: markerLabelFontWeight;
+    text-transform: uppercase;
+  }
+}

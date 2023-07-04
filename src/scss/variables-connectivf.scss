@@ -1,0 +1,103 @@
+@if $theme== "connectivf" {
+  $_purple-light: rgb(181, 98, 240);
+  $_purple: rgb(120, 30, 148);
+  $_pistachio: rgb(182, 204, 195);
+  $_pistachio-light: rgb(234, 242, 240);
+  $_charcoal: rgb(35, 32, 33);
+  $_jade: rgb(0, 110, 99);
+  $_emerald: rgb(0, 141, 113);
+
+  $defaults-backgroundColor: #fff;
+  $defaults-textColor: $_charcoal;
+
+  $border-radius-size: 8px;
+
+  $color-gray-lightest: #fafafa;
+  $color-gray-lighter: rgb(240, 240, 240);
+  $color-gray-light: rgba(230, 230, 230, 1);
+  $color-gray: rgba(200, 200, 200, 1);
+  $color-gray-dark: rgba(155, 155, 155, 1);
+  $color-gray-darker: rgba(70, 70, 70, 1);
+
+  $color-primary: rgb(104, 211, 196);
+  $color-primary-light: lighten($color-primary, 15%);
+  $color-primary-lighter: lighten($color-primary, 35%);
+  $color-primary-dark: darken($color-primary, 15%);
+  $color-primary-darker: darken($color-primary, 30%);
+  $color-primary-alt: #fff;
+
+  $color-secondary: $_charcoal;
+  $color-secondary-alt: #fff;
+
+  $color-dark: $color-primary;
+  $color-light: #fff;
+  $color-text-on-dark: #fff;
+  $color-text-on-light: $color-primary;
+
+  $color-text-on-dark: #fff;
+  $color-text-on-light: $color-primary;
+
+  $color-active: darken($color-primary, 10%);
+  $color-active-alt: #fff;
+
+  $color-disabled: $color-gray-light;
+  $color-disabled-alt: $color-gray;
+
+  $inputs-textColor: $_charcoal;
+  $headings-textColor: $color-primary-dark;
+
+  $hyperlink-textColor: $_jade;
+  $hyperlink-visited-textColor: $_emerald;
+
+  // nav
+  $sideNav-link-color: $color-primary-dark;
+  $sideNav-link-color-active: #fff;
+  $sideNav-link-color-hover: #fff;
+  $sideNavRow-color-active: $color-primary-light;
+
+  $nav-color-primary: $color-primary-lighter;
+  $nav-color-collapsed: $color-primary;
+
+  // sidebar
+  $sidebar-backgroundColor: $nav-color-primary;
+  $sidebar-header-background: $nav-color-primary;
+  $sidebar-header-text: $color-primary;
+  $sidebar-section-background: $nav-color-primary;
+  $sidebar-section-header-background: $nav-color-primary;
+  $sidebar-section-body-background: $nav-color-primary;
+
+  $icons-textColor: $color-active;
+  $label-textColor: $color-active;
+
+  $modal-overlay-backgroundColor: rgba($defaults-backgroundColor, 0.5);
+
+  // goals
+  $color-goal: $_purple;
+  $color-goal-alt: #fff;
+  $gradient-goal: linear-gradient(to right, $_purple 0%, $_purple-light 100%);
+
+  $border-primary: 1px solid $color-gray-lighter;
+
+  // dialogs
+  $dialog-border-radius: 12px;
+  $dialog-box-shadow: 0 0 35px rgba(0, 0, 0, 0.2);
+  $dialog-border: $border-primary;
+
+  // cards
+  $card-border: none;
+  $card-boxShadow: none;
+  $card-backgroundColor: transparent;
+  $card-base-padding: 0px;
+  $card-base-element-spacing: $spacing-base;
+
+  // buttons
+  $button-color-primary: $color-primary;
+  $button-radius: 0.5em;
+  $button-boxShadow-base: none;
+  $button-boxShadow-active: none;
+  $button-boxShadow-hover: none;
+  $button-font-weight: 600;
+
+  // page sections
+  $decoration-page-section-color: $_pistachio;
+}

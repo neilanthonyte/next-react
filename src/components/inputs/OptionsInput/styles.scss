@@ -1,0 +1,26 @@
+@import "../../../scss/variables.scss";
+
+.OptionsInput {
+  &_dot {
+    margin: 0 $spacing-xs $spacing-xs 0;
+    display: inline-block;
+  }
+
+  &.-icons {
+    display: flex;
+  }
+
+  &_icon {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: $spacing-sm;
+    // HACK based on the size of the icon set via code
+    width: $standard-size-md * 1.5;
+    padding: $spacing-xs;
+
+    label {
+      font-size: 80%;
+      display: block;
+    }
+  }
+}

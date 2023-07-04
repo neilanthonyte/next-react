@@ -1,0 +1,14 @@
+@import "../../../scss/variables.scss";
+
+.Trend {
+  font-size: $font-size-h4;
+  font-weight: bolder;
+
+  &.-positive {
+    color: $color-success;
+  }
+
+  &.-negative {
+    color: $color-error;
+  }
+}

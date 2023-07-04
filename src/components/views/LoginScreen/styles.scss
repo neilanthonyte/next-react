@@ -1,0 +1,9 @@
+@import "../../../scss/variables";
+
+.LoginScreen {
+  // HACK: fix to get manager app released
+  h3,
+  label {
+    color: $color-primary !important;
+  }
+}

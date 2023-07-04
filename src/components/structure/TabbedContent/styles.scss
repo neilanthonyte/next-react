@@ -1,0 +1,60 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/core/transitions.scss";
+
+$tabs-height: 40px;
+$panels-margin-top: $spacing-base;
+
+.TabbedContent {
+  height: 100%;
+  position: relative;
+
+  &_tabs {
+    position: relative;
+    height: $tabs-height;
+  }
+
+  &_panels {
+    position: relative;
+    height: calc(100% - #{$tabs-height} - #{$panels-margin-top});
+  }
+
+  &.-compact {
+    // HACK can't find another way to make this work
+    .TabbedContent_panels_content,
+    .TabbedContent_panel {
+      height: 100%;
+    }
+  }
+
+  &_tabs + &_panels {
+    margin-top: $panels-margin-top;
+  }
+  &_tab {
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: $spacing-xs;
+    &:not(:first-child) {
+      margin-left: $spacing-md;
+    }
+    &_badge,
+    &_loader {
+      margin-left: $spacing-xs;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &_active {
+    position: relative;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $color-active;
+    transition: transform 300ms ease-out;
+    transform-origin: left;
+  }
+
+  &_transition {
+    @include fadeInAbsolute;
+  }
+}

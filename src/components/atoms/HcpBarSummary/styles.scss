@@ -1,0 +1,52 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+.HcpBarSummary {
+  display: flex;
+  align-items: center;
+  color: #fff;
+
+  h4 {
+    color: #fff;
+  }
+
+  &_avatar {
+    // HACK needs to match the size of the chosen icon
+    width: $standard-size-md + $spacing-sm;
+    flex-grow: 0;
+    flex-shrink: 0;
+    // centers the element vertically
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    // required for the logo
+    height: 100%;
+
+    &_content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.-loading {
+        opacity: 30%;
+      }
+    }
+  }
+
+  &_loader {
+    position: absolute;
+  }
+
+  &_details {
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 5px;
+
+    &_children {
+      // HACK reset line-height because of spacing constraints
+      line-height: 1;
+      margin-top: math.div($spacing-xs, 2);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.CameraPreview {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  &.-round {
+    border-radius: 50%;
+  }
+}

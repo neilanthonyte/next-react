@@ -1,0 +1,5 @@
+@import "../../../scss/mixins/contentLayout";
+
+.featureBlock {
+  @include dynamicContentWithDecoration("featureBlock", 15%, 100px, left);
+}

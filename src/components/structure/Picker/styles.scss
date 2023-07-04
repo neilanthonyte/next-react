@@ -1,0 +1,25 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/clearfix.scss";
+
+.picker {
+  &_body {
+    padding: $spacing-md 0;
+  }
+
+  &_header {
+    @include clearfix;
+    padding-bottom: $spacing-sm;
+    text-align: center;
+    border-bottom: 1px solid $color-gray-lighter;
+
+    &_filter {
+      float: right;
+    }
+  }
+
+  &_footer {
+    border-top: 1px solid $color-gray-lighter;
+    padding-top: $spacing-sm;
+    text-align: center;
+  }
+}

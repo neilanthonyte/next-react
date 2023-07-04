@@ -1,0 +1,64 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/pill.scss";
+
+.Dropdown {
+  &_button {
+    @include pill();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.-open,
+    &.-active {
+      border-color: $color-active;
+      // !important needed to override pill mixin.
+      color: white !important;
+      background-color: $color-active;
+    }
+
+    &_label {
+      white-space: nowrap;
+      padding-right: 0.5em;
+
+      &.-truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &_caret {
+      padding-left: 5px;
+      color: $color-gray-dark;
+
+      &.-open,
+      &.-active {
+        color: white;
+      }
+    }
+  }
+
+  &_option {
+    border: 1px solid black;
+    min-width: 100px;
+    padding: $btn-padding;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &_tick {
+      color: white;
+      margin-left: 5px;
+    }
+
+    // Add a margin to the bottom of each dropdown option except the last.
+    &:not(:last-of-type) {
+      margin-bottom: 5px;
+    }
+
+    &.-selected {
+      background-color: $color-active;
+      border-color: $color-active;
+      color: white;
+    }
+  }
+}

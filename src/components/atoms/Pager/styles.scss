@@ -1,0 +1,19 @@
+.PagerFrame {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  > *:first-child {
+    height: 100%;
+    flex-grow: 1;
+  }
+
+  &.-hasFooter > *:first-child {
+    // HACK - 100% height will be the height of the outer component, so we manually
+    // add some space for the pager
+    height: calc(100% - 55px);
+  }
+  &_footer {
+    padding-top: 4px;
+  }
+}

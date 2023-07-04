@@ -1,0 +1,22 @@
+@import "../../../scss/variables.scss";
+
+.ObservationCard {
+  &_footer {
+    border-top: 1px solid $color-gray-light;
+    margin: 0px $spacing-base;
+    padding: $spacing-base 0px;
+    // padding: $spacing-md;
+    // padding-top: 0;
+    color: $color-gray-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_footer_edit {
+    flex-grow: 1;
+    text-align: right;
+  }
+  &_footer_meta + &_footer_edit {
+    margin-left: $spacing-sm;
+  }
+}

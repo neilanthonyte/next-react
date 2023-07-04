@@ -1,0 +1,6 @@
+@mixin altText {
+  color: $color-active;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  font-weight: light;
+}

@@ -1,0 +1,32 @@
+@import "../../../scss/mixins/stdActionSizes.scss";
+@import "../../../scss/mixins/stdColors.scss";
+
+$border-width: 2px;
+
+.circularMetric {
+  @include stdActionSizes(0.5, $border-width, true);
+  @include stdColorSchemesSubtle;
+
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  box-sizing: content-box;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-weight: bold;
+  border: $border-width solid $color-gray;
+  background: $color-gray-light;
+  color: $color-gray-dark;
+
+  &.-clear-success {
+    background: none;
+  }
+  &.-clickable {
+    cursor: pointer;
+    &:hover {
+      background-color: $color-active;
+    }
+  }
+
+  transition: background-color 0.5s;
+}

@@ -1,0 +1,53 @@
+@import "../../../../../scss/variables.scss";
+
+.formGroup {
+  > header {
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: $spacing-lg * 2 0 $spacing-md 0;
+      padding-bottom: $spacing-sm;
+      border-bottom: $border-primary;
+    }
+  }
+
+  &_label {
+    margin-bottom: $spacing-xs;
+  }
+
+  &_description {
+    margin: 0;
+  }
+
+  &.-multiValue {
+    > .formGroup {
+      &_instance {
+        background-color: $color-gray-light;
+        border: 1px solid $color-gray;
+        padding: $spacing-md;
+        margin-bottom: $spacing-sm;
+        transition: background-color 500ms;
+
+        &_placeholder {
+          background-color: lighten($color-active, 35%);
+          border-color: $color-active;
+          text-align: center;
+          cursor: pointer;
+
+          * {
+            color: $color-active;
+          }
+
+          &:hover {
+            background-color: lighten($color-active, 20%);
+
+            * {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+$point-size: 20px;
+$label-font-size: 1.1em;
+// set line-height same as point size to keep it aligned
+$label-line-height: $point-size;
+
+$color-base: $color-gray;
+
+// space between point and line
+$point-padding: $spacing-sm;
+// space between point and label
+$point-margin-right: $spacing-sm;
+$point-border-width: 3px;
+
+// Seems to work well based on label font size
+$step-vspacing: $label-font-size * 2;
+
+$line-color: $color-base;
+$line-width: 4px;
+
+.progressTrackerStacked {
+  .step {
+    position: relative;
+    padding-bottom: $step-vspacing;
+    color: $color-base;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &_heading {
+      display: flex;
+      // align-items: center;
+    }
+
+    &_label {
+      font-size: $label-font-size;
+      // line-height: $label-line-height;
+      font-weight: bold;
+    }
+
+    &_point {
+      // Easier to align elements if set to content-box
+      box-sizing: content-box;
+      min-width: $point-size;
+      width: $point-size;
+      height: $point-size;
+      background-color: $color-base;
+      border-radius: 50%;
+      border: $point-border-width solid white;
+      margin-right: $point-margin-right;
+    }
+
+    // Line
+    &:not(:last-child) .step_point:before,
+    &:not(:last-child) .step_point:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: $line-width;
+      left: math.div($point-size, 2) - math.div($line-width, 2) +
+        $point-border-width;
+      top: $point-size + $point-padding + $point-border-width;
+      background-color: $line-color;
+    }
+
+    &:not(:last-child) .step_point:before {
+      height: calc(100% - #{$point-size} - #{$point-padding} * 2);
+    }
+
+    &:not(:last-child) .step_point:after {
+      transition: height 0.5s ease-in-out;
+      height: 0;
+    }
+
+    &_description {
+      padding-left: $point-size + $point-margin-right + $point-border-width * 2;
+      padding-top: math.div($label-font-size, 2);
+    }
+
+    &.-clickable {
+      cursor: pointer;
+    }
+
+    &.-active {
+      color: $color-active;
+
+      .step_point {
+        background-color: white;
+        border: $point-border-width solid $color-info;
+        animation: pulse 1s infinite;
+      }
+    }
+
+    &.-completed {
+      color: $color-active;
+
+      .step_point {
+        background-color: $color-success;
+
+        &:after {
+          height: calc(100% - #{$point-size} - #{$point-padding} * 2);
+          background-color: $color-success;
+        }
+      }
+    }
+
+    &.-invalid {
+      color: $color-error;
+
+      .step_point {
+        background-color: $color-error;
+
+        &:after {
+          height: calc(100% - #{$point-size} - #{$point-padding} * 2);
+          background-color: $color-error;
+        }
+      }
+    }
+
+    // &.-sub {
+    // }
+    // &.-group {
+    // }
+  }
+
+  @keyframes pulse {
+    50% {
+      box-shadow: 0 0 4px 4px rgba($color-info, 0.3);
+    }
+  }
+}

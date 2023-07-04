@@ -1,0 +1,23 @@
+@import "../../../../../scss/variables.scss";
+
+.articleGallery {
+  margin: $spacing-lg auto;
+  max-width: 800px;
+
+  &_item {
+    height: 600px;
+  }
+
+  &_navLeft,
+  &_navRight {
+    position: absolute;
+    bottom: $spacing-sm;
+    z-index: 10;
+  }
+  &_navLeft {
+    left: $spacing-sm;
+  }
+  &_navRight {
+    right: $spacing-sm;
+  }
+}

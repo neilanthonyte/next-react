@@ -1,0 +1,7 @@
+@import "../../../scss/variables.scss";
+
+.AppointmentSelectionSummary {
+  background-color: $color_active_alt;
+  padding: $spacing-base;
+  border-radius: $border-radius-size;
+}

@@ -1,0 +1,36 @@
+@import "../../../scss/variables.scss";
+
+$size: 30px;
+
+.numericStatistic {
+  display: inline-block;
+  margin-right: $spacing-lg;
+  line-height: $size;
+  margin-bottom: $spacing-xs;
+
+  &_value {
+    display: inline-block;
+    font-family: $badge-font-family;
+    font-size: $size * 0.7;
+    text-align: center;
+    padding: 0.1em 0.5em;
+    font-weight: bold;
+    background-color: $color-info;
+    color: $color-secondary-alt;
+
+    @if $theme == "zam" {
+      background-color: $color-primary;
+      color: $color-secondary-alt;
+    } @else {
+      background-color: $color-info;
+      color: $color-secondary-alt;
+    }
+    border-radius: $size * 0.6;
+  }
+
+  &_label {
+    padding-left: $spacing-sm;
+    font-size: $size * 0.5;
+    text-transform: uppercase;
+  }
+}

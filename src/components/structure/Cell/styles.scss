@@ -1,0 +1,147 @@
+@import "../../../scss/variables.scss";
+
+$elements-spacing: $spacing-sm * 2;
+$left-decoration-width: 30px;
+
+.cell {
+  overflow: hidden;
+  display: flex;
+
+  &:not(.-isLead) {
+    display: flex;
+    align-items: center;
+    // justify-content: flex-end;
+    flex-grow: 1;
+  }
+
+  &.-isLead {
+    flex: 1;
+    flex-direction: column;
+    font-size: 110%;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    .cell_body + .cell_actions {
+      margin-top: 12px;
+      margin-left: 0;
+    }
+  }
+
+  &_metric {
+    line-height: 1;
+    &_value {
+      font-size: $font-size-h1;
+      font-weight: bolder;
+    }
+
+    &_label {
+      margin-left: $spacing-sm;
+      text-transform: uppercase;
+    }
+  }
+
+  & + & {
+    margin-top: $spacing-md;
+  }
+
+  &_type {
+    color: $color-active;
+    margin-bottom: $spacing-xs;
+
+    label {
+      @extend %label;
+    }
+
+    &_icon {
+      margin-bottom: $spacing-xs;
+    }
+  }
+
+  &_body {
+    flex-grow: 1;
+  }
+
+  &_header {
+    margin-bottom: $spacing-xs;
+  }
+
+  &_header-small {
+    margin-top: $spacing-md;
+    margin-bottom: $spacing-xs;
+  }
+
+  &_decoration {
+    margin: 5px 12px 5px 5px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    position: relative;
+
+    &_img {
+      width: $left-decoration-width;
+      height: $left-decoration-width;
+      border-radius: 50%;
+      margin: $spacing-xs;
+    }
+
+    &_icon {
+      font-size: $left-decoration-width;
+      padding: $spacing-xs;
+      color: $color-primary;
+    }
+  }
+
+  &_actions {
+    -js-display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_action {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &_icon + &_button {
+        margin-top: $spacing-xs;
+      }
+    }
+
+    &_action + &_action {
+      margin-left: $spacing-xs;
+    }
+  }
+
+  &_body + &_actions {
+    margin-left: 12px;
+  }
+
+  &_goal {
+    color: $color-goal;
+    position: absolute;
+    left: 49%;
+    bottom: 0;
+  }
+
+  &_description {
+    text-align: left;
+    color: $defaults-textColor;
+    line-height: 1.2;
+    white-space: pre-line;
+
+    @if $theme== "svc" {
+      color: $color-primary-alt;
+    }
+    & + & {
+      margin-top: $spacing-sm;
+    }
+  }
+
+  &_center {
+    text-align: center;
+    padding: 1em;
+
+    h3 {
+      padding-top: 0.5em;
+    }
+  }
+}

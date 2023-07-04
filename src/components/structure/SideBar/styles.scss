@@ -1,0 +1,22 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/schemes.scss";
+
+.SideBar {
+  background-color: $sidebar-backgroundColor;
+  min-height: 100%;
+
+  &_header {
+    background-color: $sidebar-header-background;
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      color: $sidebar-header-text;
+    }
+  }
+
+  &_title {
+    padding-top: 0.5em;
+  }
+}

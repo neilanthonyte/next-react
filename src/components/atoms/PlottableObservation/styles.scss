@@ -1,0 +1,32 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/clearfix";
+
+$chart-size: 400px;
+$subchart-size: 240px;
+
+.PlottableObservation {
+  position: relative;
+  height: $chart-size;
+  display: flex;
+
+  &_chart {
+    flex-grow: 1;
+    min-width: 300px;
+    position: relative;
+
+    &_subchart {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: $subchart-size;
+      background: rgba(#fff, 0.7);
+      padding: 0 $spacing-sm $spacing-sm $spacing-sm;
+      // HACK make bp chart look nice
+      height: $subchart-size + 10px;
+    }
+  }
+
+  &_metrics {
+    width: 260px;
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../../scss/variables.scss";
+
+$filter-border-radius: 4px;
+$v-padding: $spacing-xs;
+
+.Tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $filters-color;
+  column-gap: $spacing-xs;
+  border-radius: $filter-border-radius;
+  overflow: hidden;
+  font-size: 0.9em;
+  padding: 0 $spacing-sm;
+
+  &.-clearable {
+    padding-right: 0;
+  }
+
+  &_label {
+    padding: $v-padding 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+  }
+
+  &.-clickable:hover {
+    cursor: pointer;
+  }
+
+  &.-hidden {
+    display: none;
+  }
+
+  &_decoration {
+    color: $filters-color-accent;
+  }
+
+  &_clear {
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    padding: 0 $spacing-sm;
+
+    &:not(.-disabled):hover {
+      cursor: pointer;
+      background-color: rgba($color-error, 0.25);
+      color: $color-error;
+    }
+
+    &.-disabled {
+      color: $color-gray-dark;
+      &:hover {
+        cursor: auto;
+        color: $color-gray-dark;
+      }
+    }
+  }
+}

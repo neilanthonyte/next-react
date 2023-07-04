@@ -1,0 +1,8 @@
+@import "../../../scss/variables.scss";
+
+.MultiForm {
+  &_progress {
+    text-align: center;
+    padding: $spacing-md 0;
+  }
+}

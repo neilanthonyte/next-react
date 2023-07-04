@@ -1,0 +1,9 @@
+@import "../../../scss/variables.scss";
+
+.BookingPayment {
+  &_disclaimer {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: $spacing-base;
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../../scss/variables.scss";
+
+$vertical-spacing: $spacing-md;
+
+.AppointmentsWithDetailsList {
+  &_appointment + &_appointment {
+    margin-top: $vertical-spacing;
+    &:before {
+      content: "";
+      display: block;
+      margin-bottom: $vertical-spacing;
+      border-top: 1px solid rgba($color-primary, 0.2);
+    }
+  }
+}

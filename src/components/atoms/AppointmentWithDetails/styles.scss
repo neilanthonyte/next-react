@@ -1,0 +1,24 @@
+@import "../../../scss/variables.scss";
+
+.AppointmentWithDetails {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  &_summary {
+    width: 50%;
+  }
+  &_detail {
+    margin-left: $spacing-base;
+    width: 50%;
+  }
+  &_item + &_item {
+    margin-top: $spacing-base;
+  }
+  &_info {
+    color: $color-error;
+    a {
+      color: $color-error;
+      border-bottom: 1px solid $color-error;
+    }
+  }
+}

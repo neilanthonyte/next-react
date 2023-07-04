@@ -1,0 +1,26 @@
+@import "../variables.scss";
+@import "../variables-icons.scss";
+@import "../mixins/input";
+
+// HACK - avoid using a large line height on the input instead
+textarea {
+  line-height: ($input-font-size * 1.2) !important;
+  padding: $input-padding !important;
+}
+
+// Select tweaks
+select:not([multiple]) {
+  height: $input-line-height;
+}
+
+// Mute the standard up-down toggle
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="radio"] {
+  font-size: 60px;
+  padding: 32px;
+}

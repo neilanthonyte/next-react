@@ -1,0 +1,12 @@
+@import "../../../scss/mixins/schemes.scss";
+
+.ProviderAppPatient {
+  // @include infoScheme;
+  padding: 5px 0;
+  background-color: $color-info;
+  color: #fff;
+
+  &_button {
+    margin-right: 5px;
+  }
+}

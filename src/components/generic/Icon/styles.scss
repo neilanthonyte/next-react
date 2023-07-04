@@ -1,0 +1,57 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/variables-icons";
+@import "../../../scss/mixins/icons";
+@import "../../../scss/mixins/stdColors.scss";
+
+.Icon {
+  @include icon;
+  @include stdColors;
+
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
+  position: relative;
+
+  &.-size {
+    &-xs {
+      font-size: $standard-size-xs;
+    }
+
+    &-sm {
+      font-size: $standard-size-sm;
+    }
+
+    &-md {
+      font-size: $standard-size-md;
+    }
+
+    &-lg {
+      font-size: $standard-size-lg;
+    }
+  }
+
+  &.-clickable:hover {
+    cursor: pointer;
+  }
+
+  & &_childIcon {
+    font-size: 0.5em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    &:before {
+      display: block;
+      background-color: white;
+      border-radius: 50%;
+    }
+  }
+}
+
+// generate the font classes
+@each $iconName, $icon in $icons {
+  .#{$iconName} {
+    &:before {
+      content: unicode($icon);
+    }
+  }
+}

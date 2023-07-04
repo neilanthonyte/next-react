@@ -1,0 +1,14 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins/stdActionSizes.scss";
+
+.AvatarInitials {
+  @include stdActionSizes($font-scale: 0.35, $isSquare: true);
+  border-radius: 50%;
+  background-color: $color-accent;
+  color: $color-accent-alt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}

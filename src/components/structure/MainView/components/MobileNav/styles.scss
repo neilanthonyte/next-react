@@ -1,0 +1,26 @@
+@import "../../../../../scss/variables.scss";
+@import "../../../../../scss/mixins/breakpoints";
+
+.mobileNav {
+  display: flex;
+  align-items: center;
+  padding-left: $spacing-base;
+  background-color: $nav-color-primary;
+  width: 100%;
+  height: $mobileNav-height;
+
+  &.-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  > span {
+    color: $sideNav-link-color;
+    padding: $spacing-xs;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

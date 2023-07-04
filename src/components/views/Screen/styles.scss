@@ -1,0 +1,189 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/core/animations";
+@import "../../../scss/mixins/schemes";
+@import "../../../scss/mixins/layered";
+@import "../../../scss/mixins/backgroundImage";
+@import "../../../scss/mixins/breakpoints";
+
+$attachment-width: 30%;
+// percentages used for padding & margin are based on the width of the
+// containing block. instead, use vh for percentages of the viewport
+// height.
+$attachment-height: 20vh;
+
+@keyframes holdingScreenPulse {
+  0% {
+    //opacity: 0;
+    background-color: $color-secondary;
+  }
+  50% {
+    //opacity: 1;
+    background-color: mix($color-secondary, $color-primary, 50%);
+  }
+  100% {
+    //opacity: 0;
+    background-color: $color-secondary;
+  }
+}
+
+@keyframes svcBackgroundGlow {
+  0% {
+    background-color: $color-primary;
+  }
+  50% {
+    background-color: $color-secondary;
+  }
+  100% {
+    background-color: $color-primary;
+  }
+}
+
+.screen {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: $zIndex-overlays;
+
+  // set the scheme used based on if "alt" Screen variant is set.
+  &:not(.-alt) {
+    background: $color-primary;
+  }
+  &.-alt {
+    @include secondaryScheme;
+  }
+
+  &.-fullScreen {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  &_top,
+  &_bottom {
+    pointer-events: none;
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    align-items: center;
+  }
+
+  &_top {
+    top: 0;
+    &.-gradient {
+      background: linear-gradient(
+        0deg,
+        rgba($color-primary, 0) 0%,
+        rgba($color-primary, 1) 100%
+      );
+    }
+  }
+
+  &_bottom {
+    bottom: 0;
+    &.-gradient {
+      background: linear-gradient(
+        0deg,
+        rgba($color-primary, 1) 0%,
+        rgba($color-primary, 0) 100%
+      );
+    }
+  }
+
+  &_body {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    &.-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.-withSafety {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+  }
+
+  &.-increaseAttachmentVisibility {
+    .screen_body {
+      padding-top: $attachment-height;
+      padding-bottom: $attachment-height;
+    }
+  }
+
+  // The subtle details listed at the bottom of the screen.
+  &_attachmentTL,
+  &_attachmentTM,
+  &_attachmentTR,
+  &_attachmentBL,
+  &_attachmentBM,
+  &_attachmentBR {
+    pointer-events: auto;
+    position: absolute;
+    padding: $spacing-md;
+    max-width: $attachment-width;
+    max-height: 100%;
+    z-index: 10;
+
+    @include belowTabletPortrait {
+      padding: $spacing-sm;
+    }
+
+    &.-fullSize {
+      height: 100%;
+    }
+  }
+
+  &_attachmentTL,
+  &_attachmentBL {
+    text-align: left;
+    left: 0;
+  }
+  &_attachmentTM,
+  &_attachmentBM {
+    text-align: center;
+    transform: translate(-50%);
+    left: 50%;
+  }
+  &_attachmentTR,
+  &_attachmentBR {
+    text-align: right;
+    right: 0;
+  }
+
+  &_attachmentTL,
+  &_attachmentTM,
+  &_attachmentTR {
+    top: 0;
+  }
+  &_attachmentBL,
+  &_attachmentBM,
+  &_attachmentBR {
+    bottom: 0;
+  }
+
+  &_attachmentBM {
+    opacity: 0;
+    animation: fadeIn 3s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+    color: rgba($color-primary-alt, 0.5);
+    text-align: center;
+    font-size: 120%;
+    padding: $spacing-md;
+    @if $theme == "svc" {
+      color: $color-primary;
+    }
+  }
+
+  &_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+  }
+}

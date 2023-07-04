@@ -1,0 +1,14 @@
+@import "../../../scss/variables.scss";
+
+.NextAccountBenefits {
+  &_list {
+    margin-top: $spacing-sm;
+  }
+  &_benefit {
+    text-align: center;
+    margin-top: $spacing-sm;
+    &_label {
+      line-height: 1em;
+    }
+  }
+}

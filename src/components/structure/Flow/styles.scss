@@ -1,0 +1,43 @@
+@import "../../../scss/variables.scss";
+
+$badgeBorder: 2px;
+
+.Flow {
+  &_step {
+    &.-pending {
+      opacity: 0.5;
+    }
+  }
+
+  &_icon {
+    padding-right: $spacing-sm;
+  }
+
+  &_badge {
+    // kinda hacky use relative element font size and set size to double.
+    // seems to work well up to 2 digits, which should be plenty
+    font-size: 1em;
+    width: 2em;
+    height: 2em;
+    //
+    line-height: calc(2em - #{$badgeBorder} * 2);
+    border: $badgeBorder solid $color-primary;
+    border-radius: 50%;
+    color: $color-primary;
+    position: relative;
+    font-weight: bold;
+    margin-right: $spacing-sm;
+    display: inline-block;
+    text-align: center;
+  }
+
+  &_header {
+    * {
+      color: $color-primary;
+    }
+    vertical-align: middle;
+  }
+  &_body {
+    padding: $spacing-md 0 $spacing-lg 0;
+  }
+}

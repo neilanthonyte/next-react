@@ -1,0 +1,26 @@
+@import "../../../scss/variables.scss";
+
+.FoyerAnatomyView {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  // HACK
+  pointer-events: initial;
+
+  &_palette {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    // HACK - higher than the drawing canvas
+    z-index: 20;
+
+    > span {
+      display: inline-block;
+      margin: $spacing-sm;
+      pointer-events: initial;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import "../../../scss/variables.scss";
+
+.Task {
+  display: flex;
+  align-items: center;
+  padding: $spacing-xs;
+
+  &_title {
+    flex-grow: 1;
+  }
+  &_icon + &_title {
+    margin-left: $spacing-sm;
+  }
+  &_details {
+    white-space: nowrap;
+    font-size: 70%;
+    color: $color-gray-dark;
+  }
+  &_actions {
+    flex-shrink: 0;
+    > span {
+      margin-left: $spacing-xs;
+    }
+  }
+  &_badge {
+    margin-right: $spacing-xs;
+  }
+  &_result {
+    // push past the icon
+    padding-left: 60px;
+    margin-bottom: $spacing-sm;
+  }
+  &.-highlighted {
+    &-unchecked {
+      background-color: $color-warning-alt;
+    }
+    &-successful {
+      background-color: $color-success-alt;
+    }
+    &-unsuccessful {
+      background-color: $color-danger-alt;
+    }
+  }
+}

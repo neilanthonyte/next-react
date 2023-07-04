@@ -1,0 +1,29 @@
+#folders
+/coverage
+/node_modules
+/vendor
+/bower_components
+/public
+/dist
+/build
+/compiled
+/test-reports
+/styleguide
+
+# files
+.*
+*.log
+env-client.js
+# image-key is used in the CameraUpload component, we use this to persist local state and images taken for demo purposes.
+image-key.txt
+styleguide.config.auto.js
+
+# exceptions
+!.gitignore
+!.env.example
+!.expose-env
+!.env.ci
+!.eslintrc.js
+!.prettierrc.json
+!/.prettierignore
+!.eslintignore

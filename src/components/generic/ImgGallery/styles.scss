@@ -1,0 +1,28 @@
+@import "../../../scss/mixins/cards";
+@import "../../../scss/mixins/flexGrid";
+@import "../../../scss/mixins/backgroundImage";
+
+$gallery-image-height: 150px;
+
+.gallery {
+  @media (min-width: $screen-md-min) {
+    @include flexGrid($spacing-base, 5);
+  }
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @include flexGrid($spacing-base, 4);
+  }
+  @media (max-width: $screen-xs-max) {
+    @include flexGrid($spacing-base, 2);
+  }
+  &_item {
+    @include card("gallery_item");
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &_image {
+    @include backgroundImage;
+    height: $gallery-image-height;
+    width: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+@use "sass:math";
+@import "../../../scss/variables.scss";
+
+.statusLabels {
+  &_labels {
+    position: relative;
+    clear: both;
+  }
+
+  &_label {
+    $margin-label: math.div($spacing-base, 2);
+    margin: $margin-label $margin-label $margin-label 0;
+  }
+
+  &_label.-size-xs {
+    font-size: $font-size * 0.6;
+  }
+
+  &_label.-size-sm {
+    font-size: $font-size * 0.8;
+  }
+
+  &_label.-size-md {
+    font-size: $font-size;
+  }
+
+  &_label.-size-lg {
+    font-size: $font-size-h4;
+  }
+}

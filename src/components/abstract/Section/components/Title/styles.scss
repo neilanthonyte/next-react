@@ -1,0 +1,43 @@
+@import "../../../../../scss/variables.scss";
+
+.BaseTitle {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    flex-grow: 1;
+  }
+
+  &.-center {
+    text-align: center;
+  }
+
+  &.-right {
+    text-align: right;
+  }
+
+  &.-collapsible {
+    cursor: pointer;
+  }
+
+  &_chevron {
+    margin-right: $spacing-sm;
+    transform: rotate(90deg);
+  }
+
+  &.-isCollapsed &_chevron {
+    transform: rotate(0deg);
+  }
+
+  // HACK
+  @if ($theme== "next") {
+    label {
+      margin: $spacing-sm 0;
+      font-size: 70%;
+    }
+  }
+}
