@@ -79,9 +79,11 @@
     "react-query": "^2.5.13",
     "react-responsive-modal": "^6.4.1",
     "react-sizeme": "^2.6.7",
+    "reflect-metadata": "0.1.13",
     "socket.io-client": "2.2.0",
     "soundmanager2": "^2.97.20170602",
     "three": "^0.88.0",
+    "uuid": "8.2.0",
     "validate.js": "^0.13.1",
     "window-or-global": "^1.0.1"
   },
